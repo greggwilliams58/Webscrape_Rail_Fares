@@ -110,7 +110,7 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("child", "0");
 	
-		googletag.pubads().setTargeting("toc", "GW");
+		googletag.pubads().setTargeting("toc", "GN");
 	
 		googletag.pubads().setTargeting("toc", "XC");
 	
