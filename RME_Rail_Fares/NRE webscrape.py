@@ -8,7 +8,7 @@ import pprint as pp
 
 def main():
 
-    response = urllib.request.urlopen(f"http://ojp.nationalrail.co.uk/service/timesandfares/PAD/BRI/120419/1830/dep/150419/1730/dep")
+    response = urllib.request.urlopen(f"http://ojp.nationalrail.co.uk/service/timesandfares/KGX/EDB/120419/1830/dep/150419/1200/dep")
     soup = BeautifulSoup(response,'html.parser')
 
     datapackage = list()

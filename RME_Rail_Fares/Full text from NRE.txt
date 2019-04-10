@@ -18,7 +18,7 @@ document.documentElement.className += " jq js ojp";var nreEnv = 'ojp';
 
 
 
-    	window.universal_variable = {"page":{"train_status":"On Time"},"user":{"logged_in":false},"query":{"when_preference":"Depart","return_when_preference":"Depart","picker_Date":"2019-04-12T18:30:00.000+01:00","picker_ReturnDate":"2019-04-15T17:30:00.000+01:00","picker_from":"PAD","picker_to":"BRI","picker_return":true,"picker_fastest_only":false,"picker_adults":"1","picker_children":"0","picker_standard_class":"Queried standard class","picker_first_class":"Queried first class","picker_railcard":[]}};
+    	window.universal_variable = {"page":{"train_status":"On Time"},"user":{"logged_in":false},"query":{"when_preference":"Depart","return_when_preference":"Depart","picker_Date":"2019-04-12T18:30:00.000+01:00","picker_ReturnDate":"2019-04-15T12:00:00.000+01:00","picker_from":"KGX","picker_to":"EDB","picker_return":true,"picker_fastest_only":false,"picker_adults":"1","picker_children":"0","picker_standard_class":"Queried standard class","picker_first_class":"Queried first class","picker_railcard":[]}};
 		dataLayer = [window.universal_variable];
 	
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -70,19 +70,15 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("loccity", "182");
 	
-		googletag.pubads().setTargeting("locst", "PAD");
+		googletag.pubads().setTargeting("locst", "KGX");
 	
-		googletag.pubads().setTargeting("destcity", "191");
+		googletag.pubads().setTargeting("destst", "EDB");
 	
-		googletag.pubads().setTargeting("destst", "BRI");
-	
-		googletag.pubads().setTargeting("loccity", "191");
-	
-		googletag.pubads().setTargeting("locst", "BRI");
+		googletag.pubads().setTargeting("locst", "EDB");
 	
 		googletag.pubads().setTargeting("destcity", "182");
 	
-		googletag.pubads().setTargeting("destst", "PAD");
+		googletag.pubads().setTargeting("destst", "KGX");
 	
 		googletag.pubads().setTargeting("ovngt", "1");
 	
@@ -100,7 +96,7 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("yyyy", "2019");
 	
-		googletag.pubads().setTargeting("ti", "1730");
+		googletag.pubads().setTargeting("ti", "1200");
 	
 		googletag.pubads().setTargeting("class", "1");
 	
@@ -110,15 +106,17 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("child", "0");
 	
-		googletag.pubads().setTargeting("toc", "GN");
+		googletag.pubads().setTargeting("toc", "");
 	
-		googletag.pubads().setTargeting("toc", "XC");
+		googletag.pubads().setTargeting("toc", "CS");
+	
+		googletag.pubads().setTargeting("toc", "SR");
 	
 		googletag.pubads().setTargeting("tic", "adv");
 	
-		googletag.pubads().setTargeting("tic", "off");
-	
 		googletag.pubads().setTargeting("tic", "any");
+	
+		googletag.pubads().setTargeting("tic", "off");
 	
 	if(typeof window.segAry != "undefined") {
 		googletag.pubads().setTargeting('pubseg',window.segAry);
@@ -480,7 +478,7 @@ Times and fares
 										
 										
 										
-												London Paddington [PAD]
+												London Kings Cross [KGX]
 											
 									
 									 to
@@ -489,13 +487,13 @@ Times and fares
 										
 										
 										
-												Bristol Temple Meads [BRI]
+												Edinburgh [EDB]
 											
 									
 								
 
  First
-															class From �148.50
+															class From �269.50
 														
  
 
@@ -505,7 +503,7 @@ Times and fares
 
 
 
-Buy cheapest for � 61.40
+Buy cheapest for � 145.00
 										
 
 
@@ -521,11 +519,11 @@ Other cheap fares
 Other cheap fares?
 
 									This is the cheapest fare of the five journeys shown below and
-									is from London Paddington
+									is from London Kings Cross
 									
-									to Bristol Temple Meads
+									to Edinburgh
 									
-									 and Bristol Temple Meads to London Paddington
+									 and Edinburgh to London Kings Cross
 									
 									.
 								
@@ -542,7 +540,7 @@ Where two journeys have the same fare, we've highlighted
 
 
 
-Long journey? Why not upgrade to First Class from �87.10
+Long journey? Why not upgrade to First Class from �124.50
 
 
 
@@ -571,13 +569,13 @@ Status
 
 
 Buy tickets as Return from
-											�61.40
+											�147.40
 
 
 
 
 Buy tickets as 2 Singles from
-											�70.80
+											�145.00
 
 
 
@@ -598,257 +596,7 @@ Buy tickets as 2 Singles from
 	
 
 		
-		London Paddington  [PAD]
-		
-			
-			
-			
-		 
-			Platform
-				3
-
- 
-			Bristol Temple Meads  [BRI]
-			
-				
-				
-				
-			 
-				Platform
-					12
-
-20:14
-	
-1h
-		 44m
-0
-
- More 
-			Details  on the 18:30
-				service from London Paddington to
-				Bristol Temple Meads
-		
-
-
-
-
-
-
-
-
-
-			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"18:30","arrivalTime":"20:14","durationHours":1,"durationMinutes":44,"changes":0,"journeyId":1,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Anytime Single","ticketRestriction":null,"fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Anytime Single","ticketTypeCode":"SOS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":1,"numberOfTickets":1,"fullFarePrice":109.0,"discount":0,"ticketPrice":109.0,"cheapestFirstClassFare":39.5,"nreFareCategory":"OPEN","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Anytime Return","ticketRestriction":null,"fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Anytime Return","ticketTypeCode":"SOR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":2,"numberOfTickets":1,"fullFarePrice":218.0,"discount":0,"ticketPrice":218.0,"cheapestFirstClassFare":-69.5,"nreFareCategory":"OPEN","redRoute":false}]}
-		
-
-Return Fare
-
-
-�218.00
-
-
-
-
-
-
-
- Anytime
-Other tickets
-
-
-
-Single Fare
-
-
-									�109.00
-								
-
-
-
-
-
-
- Anytime
- Other
-												tickets
-
-
-
-
-
-
-
-
-Ticket summary - RETURN
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-Ticket summary SINGLE
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Outward total
-ï¿½0.00
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Return total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-
-Single fare - Outward journey
-1 x Adult - Anytime(16-25 Railcard)Saving
-											ï¿½19.00
-ï¿½14.00
-
-
-Total
-ï¿½14.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-
-
-
-
-18:45
-	
-
-		
-		London Paddington  [PAD]
+		London Kings Cross  [KGX]
 		
 			
 			
@@ -858,29 +606,25 @@ Return
 				5
 
  
-			Bristol Temple Meads  [BRI]
+			Edinburgh  [EDB]
 			
 				
 				
 				
 			 
 				Platform
-					1
+					8
 
-20:38
+23:18
 	
-1h
-		 53m
-
-
-1
-
-
+4h
+		 48m
+0
 
  More 
-			Details  on the 18:45
-				service from London Paddington to
-				Bristol Temple Meads
+			Details  on the 18:30
+				service from London Kings Cross to
+				Edinburgh
 		
 
 
@@ -891,13 +635,13 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"18:45","arrivalTime":"20:38","durationHours":1,"durationMinutes":53,"changes":1,"journeyId":2,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Off-Peak Single","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Single","ticketTypeCode":"SVS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":9,"numberOfTickets":1,"fullFarePrice":50.1,"discount":0,"ticketPrice":50.1,"cheapestFirstClassFare":98.4,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Off-Peak Return","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Return","ticketTypeCode":"SVR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":82.3,"discount":0,"ticketPrice":82.3,"cheapestFirstClassFare":66.2,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"18:30","arrivalTime":"23:18","durationHours":4,"durationMinutes":48,"changes":0,"journeyId":1,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":195.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
 
 
-�82.30
+�147.40
 
 
 
@@ -913,7 +657,7 @@ Other tickets
 Single Fare
 
 
-									�50.10
+									�73.70
 								
 
 
@@ -924,45 +668,6 @@ Single Fare
  Off-Peak
  Other
 												tickets
-
-
-
-
-
-
-
-
-
-
-Travel by
-Leaving
-From
-To
-Arriving
-
-
-
-
-
-
-
-
-18:45
-London Paddington [PAD]
-Bristol Parkway [BPW]
-20:06
-
-
-
-
-
-
-20:27
-Bristol Parkway [BPW]
-Bristol Temple Meads [BRI]
-20:38
-
-
 
 
 
@@ -1028,7 +733,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1120,7 +825,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1141,35 +846,35 @@ Return
 	
 
 		
-		London Paddington  [PAD]
+		London Kings Cross  [KGX]
 		
 			
 			
 			
 		 
 			Platform
-				10
+				0
 
  
-			Bristol Temple Meads  [BRI]
+			Edinburgh  [EDB]
 			
 				
 				
 				
 			 
 				Platform
-					13
+					2
 
-20:43
+23:31
 	
-1h
-		 43m
+4h
+		 31m
 0
 
  More 
 			Details  on the 19:00
-				service from London Paddington to
-				Bristol Temple Meads
+				service from London Kings Cross to
+				Edinburgh
 		
 
 
@@ -1180,13 +885,13 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:00","arrivalTime":"20:43","durationHours":1,"durationMinutes":43,"changes":0,"journeyId":3,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Off-Peak Single","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Single","ticketTypeCode":"SVS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":9,"numberOfTickets":1,"fullFarePrice":50.1,"discount":0,"ticketPrice":50.1,"cheapestFirstClassFare":98.4,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Off-Peak Return","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Return","ticketTypeCode":"SVR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":82.3,"discount":0,"ticketPrice":82.3,"cheapestFirstClassFare":66.2,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"19:00","arrivalTime":"23:31","durationHours":4,"durationMinutes":31,"changes":0,"journeyId":2,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":195.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
 
 
-�82.30
+�147.40
 
 
 
@@ -1202,7 +907,7 @@ Other tickets
 Single Fare
 
 
-									�50.10
+									�73.70
 								
 
 
@@ -1278,7 +983,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1370,7 +1075,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1387,39 +1092,39 @@ Return
 
 
 
-19:12
+19:30
 	
 
 		
-		London Paddington  [PAD]
+		London Kings Cross  [KGX]
 		
 			
 			
 			
 		 
 			Platform
-				9
+				6
 
  
-			Bristol Temple Meads  [BRI]
+			Edinburgh  [EDB]
 			
 				
 				
 				
 			 
 				Platform
-					6
+					8
 
-20:59
+00:28
 	
-1h
-		 47m
+4h
+		 58m
 0
 
  More 
-			Details  on the 19:12
-				service from London Paddington to
-				Bristol Temple Meads
+			Details  on the 19:30
+				service from London Kings Cross to
+				Edinburgh
 		
 
 
@@ -1430,14 +1135,13 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:12","arrivalTime":"20:59","durationHours":1,"durationMinutes":47,"changes":0,"journeyId":4,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"19:30","arrivalTime":"00:28","durationHours":4,"durationMinutes":58,"changes":0,"journeyId":3,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":75,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
-cheapest fare
 Return Fare
 
 
-�61.40
+�147.40
 
 
 
@@ -1449,21 +1153,12 @@ Return Fare
 Other tickets
 
 
-									var pageLoadSelectedFare = $
-									{
-										fareRow.cheapestReturnDisplayableFare.ticketPriceId
-									};
-									var responseId = $
-									{
-										fareRow.responseId
-									}
-								
 
-
+cheapest fare
 Single Fare
 
 
-									�35.40
+									�72.50
 								
 
 
@@ -1471,7 +1166,7 @@ Single Fare
 
 
 
- Off-Peak
+ Advance
  Other
 												tickets
 
@@ -1539,7 +1234,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1631,7 +1326,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1648,43 +1343,41 @@ Return
 
 
 
-19:15
+20:50
 	
 
 		
-		London Paddington  [PAD]
+		London Kings Cross  [KGX]
 		
 			
 			
 			
 		 
-			Platform
-				1
-
+	
  
-			Bristol Temple Meads  [BRI]
+			Edinburgh  [EDB]
 			
 				
 				
 				
 			 
 				Platform
-					4
+					15
 
-21:05
+06:25
 	
-1h
-		 50m
+9h
+		 35m
 
 
-1
+2
 
 
 
  More 
-			Details  on the 19:15
-				service from London Paddington to
-				Bristol Temple Meads
+			Details  on the 20:50
+				service from London Kings Cross to
+				Edinburgh
 		
 
 
@@ -1695,39 +1388,32 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:15","arrivalTime":"21:05","durationHours":1,"durationMinutes":50,"changes":1,"journeyId":5,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"20:50","arrivalTime":"06:25","durationHours":9,"durationMinutes":35,"changes":2,"journeyId":4,"responseId":4,"statusIcon":"AMBER_TRIANGLE","hoverInformation":null},"singleJsonFareBreakdowns":[],"returnJsonFareBreakdowns":[]}
 		
 
 Return Fare
 
-
-�61.40
-
+ 
 
 
 
 
 
 
- Off-Peak
-Other tickets
+
+ 
+
+ Show Other tickets
 
 
 
 Single Fare
 
 
-									�35.40
-								
 
 
 
 
-
-
- Off-Peak
- Other
-												tickets
 
 
 
@@ -1751,21 +1437,44 @@ Arriving
 
 
 
-19:15
-London Paddington [PAD]
-Bristol Parkway [BPW]
-20:44
+20:50
+London Kings Cross [KGX]
+London Euston [EUS]
+21:00
 
 
 
 
 
 
-20:56
-Bristol Parkway [BPW]
-Bristol Temple Meads [BRI]
-21:05
+21:15
+London Euston [EUS]
+Stirling [STG]
+04:53
 
+
+
+
+
+
+05:30
+Stirling [STG]
+Edinburgh [EDB]
+06:25
+
+
+
+
+
+
+
+
+
+
+
+Service Update
+Caledonian Sleeper Trains -
+All fares shown include seating accommodation ONLY. Reservations are compulsory and travel cannot be guaranteed if reservations are not made in advance. For further information and to make bookings for fares that include Sleeper Berth accommodation, please visit http://sleeper.scot or telephone 0330 060 0500.
 
 
 
@@ -1832,7 +1541,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1924,7 +1633,304 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+23:28
+	
+
+		
+		London Kings Cross  [KGX]
+		
+			
+			
+			
+		 
+	
+ 
+			Edinburgh  [EDB]
+			
+				
+				
+				
+			 
+				Platform
+					9
+
+07:25
+	
+7h
+		 57m
+
+
+1
+
+
+
+ More 
+			Details  on the 23:28
+				service from London Kings Cross to
+				Edinburgh
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"23:28","arrivalTime":"07:25","durationHours":7,"durationMinutes":57,"changes":1,"journeyId":5,"responseId":4,"statusIcon":"AMBER_TRIANGLE","hoverInformation":null},"singleJsonFareBreakdowns":[],"returnJsonFareBreakdowns":[]}
+		
+
+Return Fare
+
+ 
+
+
+
+
+
+
+
+ 
+
+ Show Other tickets
+
+
+
+Single Fare
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+23:28
+London Kings Cross [KGX]
+London Euston [EUS]
+23:38
+
+
+
+
+
+
+23:53
+London Euston [EUS]
+Edinburgh [EDB]
+07:25
+
+
+
+
+
+
+
+
+
+
+
+Service Update
+Caledonian Sleeper Trains -
+All fares shown include seating accommodation ONLY. Reservations are compulsory and travel cannot be guaranteed if reservations are not made in advance. For further information and to make bookings for fares that include Sleeper Berth accommodation, please visit http://sleeper.scot or telephone 0330 060 0500.
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -1972,13 +1978,13 @@ Status
 
 
 Buy tickets as Return from
-											�61.40
+											�147.40
 
 
 
 
 Buy tickets as 2 Singles from
-											�70.80
+											�145.00
 
 
 
@@ -1995,39 +2001,39 @@ Buy tickets as 2 Singles from
 
 
 
-17:31
+12:00
 	
 
 		
-		Bristol Temple Meads  [BRI]
+		Edinburgh  [EDB]
 		
 			
 			
 			
 		 
 			Platform
-				7
+				2
 
  
-			London Paddington  [PAD]
+			London Kings Cross  [KGX]
 			
 				
 				
 				
 			 
 				Platform
-					2
+					0
 
-19:13
+16:39
 	
-1h
-		 42m
+4h
+		 39m
 0
 
  More 
-			Details  on the 17:31
-				service from Bristol Temple Meads to
-				London Paddington
+			Details  on the 12:00
+				service from Edinburgh to
+				London Kings Cross
 		
 
 
@@ -2038,7 +2044,7 @@ Buy tickets as 2 Singles from
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"17:31","arrivalTime":"19:13","durationHours":1,"durationMinutes":42,"changes":0,"journeyId":6,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:00","arrivalTime":"16:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":6,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2052,21 +2058,12 @@ Return Fare
 
 
 
-									var pageLoadSelectedFare = $
-									{
-										fareRow.cheapestReturnDisplayableFare.ticketPriceId
-									};
-									var responseId = $
-									{
-										fareRow.responseId
-									}
-								
 
-
+cheapest fare
 Single Fare
 
 
-									�35.40
+									�72.50
 								
 
 
@@ -2074,7 +2071,7 @@ Single Fare
 
 
 
- Off-Peak
+ Advance
  Other
 												tickets
 
@@ -2142,7 +2139,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -2234,7 +2231,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -2251,556 +2248,21 @@ Return
 
 
 
-17:41
+12:30
 	
 
 		
-		Bristol Temple Meads  [BRI]
+		Edinburgh  [EDB]
 		
 			
 			
 			
 		 
 			Platform
-				9
+				2
 
  
-			London Paddington  [PAD]
-			
-				
-				
-				
-			 
-				Platform
-					1
-
-19:34
-	
-1h
-		 53m
-
-
-1
-
-
-
- More 
-			Details  on the 17:41
-				service from Bristol Temple Meads to
-				London Paddington
-		
-
-
-
-
-
-
-
-
-
-			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"17:41","arrivalTime":"19:34","durationHours":1,"durationMinutes":53,"changes":1,"journeyId":7,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
-		
-
-Return Fare
-
-
-
-
-
-
-
-
-
-
-
-Single Fare
-
-
-									�35.40
-								
-
-
-
-
-
-
- Off-Peak
- Other
-												tickets
-
-
-
-
-
-
-
-
-
-
-Travel by
-Leaving
-From
-To
-Arriving
-
-
-
-
-
-
-
-
-17:41
-Bristol Temple Meads [BRI]
-Bristol Parkway [BPW]
-17:52
-
-
-
-
-
-
-18:03
-Bristol Parkway [BPW]
-London Paddington [PAD]
-19:34
-
-
-
-
-
-
-
-
-
-
-Ticket summary - RETURN
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-Ticket summary SINGLE
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Outward total
-ï¿½0.00
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Return total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-
-Single fare - Outward journey
-1 x Adult - Anytime(16-25 Railcard)Saving
-											ï¿½19.00
-ï¿½14.00
-
-
-Total
-ï¿½14.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-
-
-
-
-18:00
-	
-
-		
-		Bristol Temple Meads  [BRI]
-		
-			
-			
-			
-		 
-			Platform
-				13
-
- 
-			London Paddington  [PAD]
-			
-				
-				
-				
-			 
-				Platform
-					5
-
-19:38
-	
-1h
-		 38m
-0
-
- More 
-			Details  on the 18:00
-				service from Bristol Temple Meads to
-				London Paddington
-		
-
-
-
-
-
-
-
-
-
-			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:00","arrivalTime":"19:38","durationHours":1,"durationMinutes":38,"changes":0,"journeyId":8,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
-		
-
-Return Fare
-
-
-
-
-
-
-
-
-
-
-
-Single Fare
-
-
-									�35.40
-								
-
-
-
-
-
-
- Off-Peak
- Other
-												tickets
-
-
-
-
-
-
-
-
-Ticket summary - RETURN
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-Ticket summary SINGLE
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Outward total
-ï¿½0.00
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Return total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-
-Single fare - Outward journey
-1 x Adult - Anytime(16-25 Railcard)Saving
-											ï¿½19.00
-ï¿½14.00
-
-
-Total
-ï¿½14.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-
-
-
-
-18:30
-	
-
-		
-		Bristol Temple Meads  [BRI]
-		
-			
-			
-			
-		 
-			Platform
-				7
-
- 
-			London Paddington  [PAD]
+			London Kings Cross  [KGX]
 			
 				
 				
@@ -2809,16 +2271,16 @@ Return
 				Platform
 					3
 
-20:14
+16:50
 	
-1h
-		 44m
+4h
+		 20m
 0
 
  More 
-			Details  on the 18:30
-				service from Bristol Temple Meads to
-				London Paddington
+			Details  on the 12:30
+				service from Edinburgh to
+				London Kings Cross
 		
 
 
@@ -2829,7 +2291,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:30","arrivalTime":"20:14","durationHours":1,"durationMinutes":44,"changes":0,"journeyId":9,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:30","arrivalTime":"16:50","durationHours":4,"durationMinutes":20,"changes":0,"journeyId":7,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2847,7 +2309,7 @@ Return Fare
 Single Fare
 
 
-									�35.40
+									�72.50
 								
 
 
@@ -2855,7 +2317,7 @@ Single Fare
 
 
 
- Off-Peak
+ Advance
  Other
 												tickets
 
@@ -2923,7 +2385,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -3015,7 +2477,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -3032,11 +2494,257 @@ Return
 
 
 
-18:36
+13:00
 	
 
 		
-		Bristol Temple Meads  [BRI]
+		Edinburgh  [EDB]
+		
+			
+			
+			
+		 
+			Platform
+				8
+
+ 
+			London Kings Cross  [KGX]
+			
+				
+				
+				
+			 
+				Platform
+					5
+
+17:40
+	
+4h
+		 40m
+0
+
+ More 
+			Details  on the 13:00
+				service from Edinburgh to
+				London Kings Cross
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:00","arrivalTime":"17:40","durationHours":4,"durationMinutes":40,"changes":0,"journeyId":8,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�72.50
+								
+
+
+
+
+
+
+ Advance
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+13:30
+	
+
+		
+		Edinburgh  [EDB]
 		
 			
 			
@@ -3046,29 +2754,25 @@ Return
 				5
 
  
-			London Paddington  [PAD]
+			London Kings Cross  [KGX]
 			
 				
 				
 				
 			 
 				Platform
-					2
+					7
 
-20:32
+17:52
 	
-1h
-		 56m
-
-
-1
-
-
+4h
+		 22m
+0
 
  More 
-			Details  on the 18:36
-				service from Bristol Temple Meads to
-				London Paddington
+			Details  on the 13:30
+				service from Edinburgh to
+				London Kings Cross
 		
 
 
@@ -3079,7 +2783,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:36","arrivalTime":"20:32","durationHours":1,"durationMinutes":56,"changes":1,"journeyId":10,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:30","arrivalTime":"17:52","durationHours":4,"durationMinutes":22,"changes":0,"journeyId":9,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -3097,7 +2801,7 @@ Return Fare
 Single Fare
 
 
-									�35.40
+									�72.50
 								
 
 
@@ -3105,48 +2809,9 @@ Single Fare
 
 
 
- Off-Peak
+ Advance
  Other
 												tickets
-
-
-
-
-
-
-
-
-
-
-Travel by
-Leaving
-From
-To
-Arriving
-
-
-
-
-
-
-
-
-18:36
-Bristol Temple Meads [BRI]
-Bristol Parkway [BPW]
-18:47
-
-
-
-
-
-
-19:03
-Bristol Parkway [BPW]
-London Paddington [PAD]
-20:32
-
-
 
 
 
@@ -3212,7 +2877,7 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -3304,7 +2969,253 @@ Total
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+14:00
+	
+
+		
+		Edinburgh  [EDB]
+		
+			
+			
+			
+		 
+			Platform
+				6
+
+ 
+			London Kings Cross  [KGX]
+			
+				
+				
+				
+			 
+				Platform
+					5
+
+18:39
+	
+4h
+		 39m
+0
+
+ More 
+			Details  on the 14:00
+				service from Edinburgh to
+				London Kings Cross
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"14:00","arrivalTime":"18:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":10,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�72.50
+								
+
+
+
+
+
+
+ Advance
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 Outward
@@ -3452,7 +3363,7 @@ Buy Now
   Routes, availability and fares
 									are subject to these provisions
 
-
+  
   About journeys that require more than one ticket
 
 
@@ -3963,7 +3874,7 @@ Check Fares
 
 
 Fare information
-Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
 
 
 
@@ -3979,21 +3890,25 @@ Great Western Railway offers fares between London Paddington and Bristol Parkway
 Days out and promotions
 
 London Bus and Tram Pass
+Discounted group Travel
 City Cruises 2FOR1
+Scottish Executive Package
 London Theatre - 2for1
-Explore-At-Bristol Travel and Admission Package
-Group Off-Peak Day Travelcard
-Bristol Zoo Ticket - NO FARE AVAILABLE UFN
+Save 20% off Catering Vouchers
+Carnet 5 with Virgin Trains East Coast
+Flexible off peak travel for less!
+National Railway Museum
 Weekend First
-Bristol Ferry Boats
-PLUSBUS - Bristol
+PLUSBUS - Edinburgh
 Original London Sightseeing Tour
+Club 50
 
 Save money with these great railcards
 
 HM Forces Railcard
 Network Railcard
 Greater Anglia Club 50 Railcard
+Scottish Youth Railcard
 Senior Railcard
 Disabled Persons Railcard
 Family & Friends Railcard
@@ -4022,7 +3937,7 @@ See all railcards
 
 	                    Pocket Timetables
 
-	                    Get your pocket timetable between London Paddington and Bristol Temple Meads.
+	                    Get your pocket timetable between London Kings Cross and Edinburgh.
 
 Download PDF
 
@@ -4152,6 +4067,42 @@ Back to top [Accesskey '5']
 
 
 
+    
+          
+     	
+         
+         
+         	
+         
+         	
+     
+     		
+ 
+    		 
+     		
+             
+             
+             
+             
+         
+         	
+     
+        	 
+         	
+     		 
+     									
+			FC.modalPopup("Multiple Tickets Required for Journey", "Please note, some of the journeys shown require multiple tickets. Please confirm with the retailer that this is the cheapest fare when purchasing.","");
+			
+     		 
+     		 
+     		 
+     		
+            
+            
+         
+         
+         
+     
 
 
 
