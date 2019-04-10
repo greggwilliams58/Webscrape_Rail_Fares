@@ -13,7 +13,7 @@ def main():
 
     resp = getfares("cov","cdf")
     #print(type(resp))
-    #pp.pprint(resp)
+    pp.pprint(resp)
     #pp.pprint(resp['dest']['code'])
     #pp.pprint(resp['fares'][2]['adult'])
 

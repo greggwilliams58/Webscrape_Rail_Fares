@@ -1,0 +1,4226 @@
+
+
+
+
+Journey Planner - Trains Times and Fares - National Rail Enquiries
+document.documentElement.className += " jq js ojp";var nreEnv = 'ojp';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	window.universal_variable = {"page":{"train_status":"On Time"},"user":{"logged_in":false},"query":{"when_preference":"Depart","return_when_preference":"Depart","picker_Date":"2019-04-12T18:30:00.000+01:00","picker_ReturnDate":"2019-04-15T17:30:00.000+01:00","picker_from":"PAD","picker_to":"BRI","picker_return":true,"picker_fastest_only":false,"picker_adults":"1","picker_children":"0","picker_standard_class":"Queried standard class","picker_first_class":"Queried first class","picker_railcard":[]}};
+		dataLayer = [window.universal_variable];
+	
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5ML3C49');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    window.universal_variable = {};
+
+
+googletag.cmd.push(function() {
+
+	
+		
+    	
+		
+			googletag.defineSlot('/7369/nre/train_time/landing/jp_results/fares', [[728, 90],[468,60]], 'ad-top').addService(googletag.pubads()).setTargeting('pos', '0');
+			googletag.defineSlot('/7369/nre/train_time/landing/jp_results/fares', [[728, 90],[468,60]], 'ad-bottom').addService(googletag.pubads()).setTargeting('pos', '1');
+			googletag.defineSlot('/7369/nre/train_time/landing/jp_results/fares', [[125, 125],[1,1]], 'ad-side-1').addService(googletag.pubads()).setTargeting('pos', '0');
+		    googletag.defineSlot('/7369/nre/train_time/landing/jp_results/fares', [[120, 600],[160,600]], 'ad-side-2').addService(googletag.pubads()).setTargeting('pos', '0');
+		
+		
+		
+	
+		
+    
+		googletag.pubads().setTargeting("user", "public");
+	
+		googletag.pubads().setTargeting("loccity", "182");
+	
+		googletag.pubads().setTargeting("locst", "PAD");
+	
+		googletag.pubads().setTargeting("destcity", "191");
+	
+		googletag.pubads().setTargeting("destst", "BRI");
+	
+		googletag.pubads().setTargeting("loccity", "191");
+	
+		googletag.pubads().setTargeting("locst", "BRI");
+	
+		googletag.pubads().setTargeting("destcity", "182");
+	
+		googletag.pubads().setTargeting("destst", "PAD");
+	
+		googletag.pubads().setTargeting("ovngt", "1");
+	
+		googletag.pubads().setTargeting("dd", "12");
+	
+		googletag.pubads().setTargeting("mm", "04");
+	
+		googletag.pubads().setTargeting("yyyy", "2019");
+	
+		googletag.pubads().setTargeting("ti", "1830");
+	
+		googletag.pubads().setTargeting("dd", "15");
+	
+		googletag.pubads().setTargeting("mm", "04");
+	
+		googletag.pubads().setTargeting("yyyy", "2019");
+	
+		googletag.pubads().setTargeting("ti", "1730");
+	
+		googletag.pubads().setTargeting("class", "1");
+	
+		googletag.pubads().setTargeting("class", "2");
+	
+		googletag.pubads().setTargeting("adult", "1");
+	
+		googletag.pubads().setTargeting("child", "0");
+	
+		googletag.pubads().setTargeting("toc", "GW");
+	
+		googletag.pubads().setTargeting("toc", "XC");
+	
+		googletag.pubads().setTargeting("tic", "adv");
+	
+		googletag.pubads().setTargeting("tic", "off");
+	
+		googletag.pubads().setTargeting("tic", "any");
+	
+	if(typeof window.segAry != "undefined") {
+		googletag.pubads().setTargeting('pubseg',window.segAry);
+	} else {
+		var count = 0;
+		var MAX_TRY = 20;
+		var interval = setInterval(function() {
+		    if (window.segAry || window.count >= MAX_TRY) { 
+		    	if( window.count < MAX_TRY){
+		    		googletag.pubads().setTargeting('pubseg',window.segAry);
+		    	}
+		        clearInterval(interval);
+		    }else {
+		    	window.count = window.count + 1;
+		    }
+		}, 100);
+	}
+	googletag.pubads().enableSingleRequest(); 
+    googletag.enableServices();
+});
+
+
+
+
+
+Please type your station name  Search by postcode
+
+
+
+
+
+Sorry, no stations found. 
+
+
+
+
+Sorry, we can't plan this journey. 
+
+
+Loading stations... 
+
+
+
+
+TodayTomorrowApril 2019May 2019June 2019July 2019
+
+		function loadHandoff(){
+			var vendorNameDropDown = document.getElementById("provider");
+			var selectedIndex = vendorNameDropDown.selectedIndex;
+			var selectedVendorName = vendorNameDropDown.options[selectedIndex].value;
+			var url = window.location.href;
+			if(selectedVendorName != null && selectedVendorName != "" && selectedVendorName != "null"){
+				window.location='/service/purchaseticket/handoff?url='+url;
+			}
+	        if(tocHandoff !== null){
+	            tocHandoff.focus();
+	        }
+		}
+	
+
+
+
+
+
+Skip to content [Accesskey '1']
+Skip to navigation [Accesskey '2']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		                    	Sign in
+		                    
+
+
+
+
+	                		Create Account
+	                	
+
+
+
+
+
+
+
+
+
+
+Share on
+
+
+
+
+
+                    Facebook
+
+                    Twitter
+Email
+
+                    Digg
+
+                    Delicious
+
+                    StumbleUpon
+
+                    reddit
+
+
+
+
+                        Google+
+                    
+
+
+
+
+
+
+                        Google +1
+                    
+
+
+
+
+
+
+Email a friend
+
+
+Send
+
+
+
+
+
+
+
+
+ Search
+
+
+
+
+
+Search site
+
+
+Search
+
+
+
+
+
+
+
+
+	function loadHandoffBasket() {
+		window.location = '/service/purchasebasket/handoff';
+		if (tocHandoff !== null) {
+			tocHandoff.focus();
+		}
+	}
+
+
+
+
+Basket   - 0 items
+
+
+
+
+
+
+View basket
+
+
+
+
+		         	Total �0.00
+
+
+Ticket 1
+
+
+
+
+0
+View basket
+
+
+
+
+				Total �0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			var basketEditInProgress = false;
+		
+	
+	
+		
+			var basketTotalCount = 0;
+		
+		
+	
+
+
+
+
+
+
+
+
+
+Home
+
+
+Train times & tickets
+
+
+Stations & on train
+
+
+Changes to train times
+
+
+Help
+
+
+
+
+
+
+Journey planner
+Live departure boards
+Season ticket calculator
+Your ticket
+Discounts
+Travel tools
+Special offers
+Timetables
+
+
+
+
+
+
+
+Train times & tickets
+
+Edit journey / remove return
+Passengers & railcards
+Print
+
+Save
+
+
+
+
+
+
+
+
+
+Your trains & tickets summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other services you can travel on with this ticket
+You can get more flexibility by buying a different ticket
+
+
+
+Back to other tickets
+
+
+
+
+
+
+
+
+Earlier trains
+
+
+
+
+
+
+Dep.
+From
+To
+Arr.
+Dur.
+Info
+Status
+Validity
+
+
+
+
+
+
+
+
+Later trains
+
+
+
+
+Routes, availability and fares are subject to these provisions
+
+
+
+
+
+Times and fares 
+									
+									
+										
+										
+										
+												London Paddington [PAD]
+											
+									
+									 to
+									
+									
+										
+										
+										
+												Bristol Temple Meads [BRI]
+											
+									
+								
+
+ First
+															class From �148.50
+														
+ 
+
+
+"Set up journey alerts" 
+
+
+
+
+Buy cheapest for � 61.40
+										
+
+
+
+Add to basket
+
+
+
+Other cheap fares
+
+
+
+Other cheap fares?
+
+									This is the cheapest fare of the five journeys shown below and
+									is from London Paddington
+									
+									to Bristol Temple Meads
+									
+									 and Bristol Temple Meads to London Paddington
+									
+									.
+								
+The cheapest fare applies to all passengers and railcards
+									that have been added.
+Where two journeys have the same fare, we've highlighted
+									the first to depart.
+
+									There may be cheaper fares at other times of the day or on
+									different dates - use our cheapest
+										fare finder.
+
+
+
+
+
+Long journey? Why not upgrade to First Class from �87.10
+
+
+
+Outward
+journey on 
+Fri�12�Apr
+
+
+
+Earlier trains
+
+
+
+
+
+Dep.
+From
+To
+Arr.
+Dur.
+Chg.
+Info
+Status
+
+
+
+
+Buy tickets as Return from
+											�61.40
+
+
+
+
+Buy tickets as 2 Singles from
+											�70.80
+
+
+
+						Based on 
+						
+							1 adult
+						
+						
+						
+					
+
+
+
+
+
+
+18:30
+	
+
+		
+		London Paddington  [PAD]
+		
+			
+			
+			
+		 
+			Platform
+				3
+
+ 
+			Bristol Temple Meads  [BRI]
+			
+				
+				
+				
+			 
+				Platform
+					12
+
+20:14
+	
+1h
+		 44m
+0
+
+ More 
+			Details  on the 18:30
+				service from London Paddington to
+				Bristol Temple Meads
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"18:30","arrivalTime":"20:14","durationHours":1,"durationMinutes":44,"changes":0,"journeyId":1,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Anytime Single","ticketRestriction":null,"fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Anytime Single","ticketTypeCode":"SOS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":1,"numberOfTickets":1,"fullFarePrice":109.0,"discount":0,"ticketPrice":109.0,"cheapestFirstClassFare":39.5,"nreFareCategory":"OPEN","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Anytime Return","ticketRestriction":null,"fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Anytime Return","ticketTypeCode":"SOR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":2,"numberOfTickets":1,"fullFarePrice":218.0,"discount":0,"ticketPrice":218.0,"cheapestFirstClassFare":-69.5,"nreFareCategory":"OPEN","redRoute":false}]}
+		
+
+Return Fare
+
+
+�218.00
+
+
+
+
+
+
+
+ Anytime
+Other tickets
+
+
+
+Single Fare
+
+
+									�109.00
+								
+
+
+
+
+
+
+ Anytime
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+18:45
+	
+
+		
+		London Paddington  [PAD]
+		
+			
+			
+			
+		 
+			Platform
+				5
+
+ 
+			Bristol Temple Meads  [BRI]
+			
+				
+				
+				
+			 
+				Platform
+					1
+
+20:38
+	
+1h
+		 53m
+
+
+1
+
+
+
+ More 
+			Details  on the 18:45
+				service from London Paddington to
+				Bristol Temple Meads
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"18:45","arrivalTime":"20:38","durationHours":1,"durationMinutes":53,"changes":1,"journeyId":2,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Off-Peak Single","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Single","ticketTypeCode":"SVS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":9,"numberOfTickets":1,"fullFarePrice":50.1,"discount":0,"ticketPrice":50.1,"cheapestFirstClassFare":98.4,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Off-Peak Return","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Return","ticketTypeCode":"SVR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":82.3,"discount":0,"ticketPrice":82.3,"cheapestFirstClassFare":66.2,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+�82.30
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+
+Single Fare
+
+
+									�50.10
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+18:45
+London Paddington [PAD]
+Bristol Parkway [BPW]
+20:06
+
+
+
+
+
+
+20:27
+Bristol Parkway [BPW]
+Bristol Temple Meads [BRI]
+20:38
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+19:00
+	
+
+		
+		London Paddington  [PAD]
+		
+			
+			
+			
+		 
+			Platform
+				10
+
+ 
+			Bristol Temple Meads  [BRI]
+			
+				
+				
+				
+			 
+				Platform
+					13
+
+20:43
+	
+1h
+		 43m
+0
+
+ More 
+			Details  on the 19:00
+				service from London Paddington to
+				Bristol Temple Meads
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:00","arrivalTime":"20:43","durationHours":1,"durationMinutes":43,"changes":0,"journeyId":3,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Off-Peak Single","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Single","ticketTypeCode":"SVS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":9,"numberOfTickets":1,"fullFarePrice":50.1,"discount":0,"ticketPrice":50.1,"cheapestFirstClassFare":98.4,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Off-Peak Return","ticketRestriction":"YC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Off-Peak Return","ticketTypeCode":"SVR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":82.3,"discount":0,"ticketPrice":82.3,"cheapestFirstClassFare":66.2,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+�82.30
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+
+Single Fare
+
+
+									�50.10
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+19:12
+	
+
+		
+		London Paddington  [PAD]
+		
+			
+			
+			
+		 
+			Platform
+				9
+
+ 
+			Bristol Temple Meads  [BRI]
+			
+				
+				
+				
+			 
+				Platform
+					6
+
+20:59
+	
+1h
+		 47m
+0
+
+ More 
+			Details  on the 19:12
+				service from London Paddington to
+				Bristol Temple Meads
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:12","arrivalTime":"20:59","durationHours":1,"durationMinutes":47,"changes":0,"journeyId":4,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+cheapest fare
+Return Fare
+
+
+�61.40
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+									var pageLoadSelectedFare = $
+									{
+										fareRow.cheapestReturnDisplayableFare.ticketPriceId
+									};
+									var responseId = $
+									{
+										fareRow.responseId
+									}
+								
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+19:15
+	
+
+		
+		London Paddington  [PAD]
+		
+			
+			
+			
+		 
+			Platform
+				1
+
+ 
+			Bristol Temple Meads  [BRI]
+			
+				
+				
+				
+			 
+				Platform
+					4
+
+21:05
+	
+1h
+		 50m
+
+
+1
+
+
+
+ More 
+			Details  on the 19:15
+				service from London Paddington to
+				Bristol Temple Meads
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Paddington","departureStationCRS":"PAD","arrivalStationName":"Bristol Temple Meads","arrivalStationCRS":"BRI","statusMessage":null,"departureTime":"19:15","arrivalTime":"21:05","durationHours":1,"durationMinutes":50,"changes":1,"journeyId":5,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+�61.40
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+19:15
+London Paddington [PAD]
+Bristol Parkway [BPW]
+20:44
+
+
+
+
+
+
+20:56
+Bristol Parkway [BPW]
+Bristol Temple Meads [BRI]
+21:05
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+
+
+
+Later trains
+
+
+
+
+Return journey on Mon�15�Apr
+
+
+
+Earlier trains
+
+
+
+
+
+Dep.
+From
+To
+Arr.
+Dur.
+Chg.
+Info
+Status
+
+
+
+
+Buy tickets as Return from
+											�61.40
+
+
+
+
+Buy tickets as 2 Singles from
+											�70.80
+
+
+
+						Based on 
+						
+							1 adult
+						
+						
+						
+					
+
+
+
+
+
+
+17:31
+	
+
+		
+		Bristol Temple Meads  [BRI]
+		
+			
+			
+			
+		 
+			Platform
+				7
+
+ 
+			London Paddington  [PAD]
+			
+				
+				
+				
+			 
+				Platform
+					2
+
+19:13
+	
+1h
+		 42m
+0
+
+ More 
+			Details  on the 17:31
+				service from Bristol Temple Meads to
+				London Paddington
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"17:31","arrivalTime":"19:13","durationHours":1,"durationMinutes":42,"changes":0,"journeyId":6,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+									var pageLoadSelectedFare = $
+									{
+										fareRow.cheapestReturnDisplayableFare.ticketPriceId
+									};
+									var responseId = $
+									{
+										fareRow.responseId
+									}
+								
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+17:41
+	
+
+		
+		Bristol Temple Meads  [BRI]
+		
+			
+			
+			
+		 
+			Platform
+				9
+
+ 
+			London Paddington  [PAD]
+			
+				
+				
+				
+			 
+				Platform
+					1
+
+19:34
+	
+1h
+		 53m
+
+
+1
+
+
+
+ More 
+			Details  on the 17:41
+				service from Bristol Temple Meads to
+				London Paddington
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"17:41","arrivalTime":"19:34","durationHours":1,"durationMinutes":53,"changes":1,"journeyId":7,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+17:41
+Bristol Temple Meads [BRI]
+Bristol Parkway [BPW]
+17:52
+
+
+
+
+
+
+18:03
+Bristol Parkway [BPW]
+London Paddington [PAD]
+19:34
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+18:00
+	
+
+		
+		Bristol Temple Meads  [BRI]
+		
+			
+			
+			
+		 
+			Platform
+				13
+
+ 
+			London Paddington  [PAD]
+			
+				
+				
+				
+			 
+				Platform
+					5
+
+19:38
+	
+1h
+		 38m
+0
+
+ More 
+			Details  on the 18:00
+				service from Bristol Temple Meads to
+				London Paddington
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:00","arrivalTime":"19:38","durationHours":1,"durationMinutes":38,"changes":0,"journeyId":8,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+18:30
+	
+
+		
+		Bristol Temple Meads  [BRI]
+		
+			
+			
+			
+		 
+			Platform
+				7
+
+ 
+			London Paddington  [PAD]
+			
+				
+				
+				
+			 
+				Platform
+					3
+
+20:14
+	
+1h
+		 44m
+0
+
+ More 
+			Details  on the 18:30
+				service from Bristol Temple Meads to
+				London Paddington
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:30","arrivalTime":"20:14","durationHours":1,"durationMinutes":44,"changes":0,"journeyId":9,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+18:36
+	
+
+		
+		Bristol Temple Meads  [BRI]
+		
+			
+			
+			
+		 
+			Platform
+				5
+
+ 
+			London Paddington  [PAD]
+			
+				
+				
+				
+			 
+				Platform
+					2
+
+20:32
+	
+1h
+		 56m
+
+
+1
+
+
+
+ More 
+			Details  on the 18:36
+				service from Bristol Temple Meads to
+				London Paddington
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"Bristol Temple Meads","departureStationCRS":"BRI","arrivalStationName":"London Paddington","arrivalStationCRS":"PAD","statusMessage":null,"departureTime":"18:36","arrivalTime":"20:32","durationHours":1,"durationMinutes":56,"changes":1,"journeyId":10,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"XC","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":133,"numberOfTickets":1,"fullFarePrice":35.4,"discount":0,"ticketPrice":35.4,"cheapestFirstClassFare":113.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"YU","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"GWR","fareProvider":"Great Western Railway","tocName":"Great Western Railway","tocProvider":"Great Western Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":61.4,"discount":0,"ticketPrice":61.4,"cheapestFirstClassFare":87.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+
+
+
+
+
+
+
+
+
+Single Fare
+
+
+									�35.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+18:36
+Bristol Temple Meads [BRI]
+Bristol Parkway [BPW]
+18:47
+
+
+
+
+
+
+19:03
+Bristol Parkway [BPW]
+London Paddington [PAD]
+20:32
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+
+
+
+Later trains
+
+
+
+
+
+
+
+
+Tickets
+Price
+
+
+
+
+Single
+												Fare - Outward journey
+
+
+Outward total
+�0.00
+
+
+
+
+Please
+												select return journey
+
+
+
+
+Return
+												Fare
+
+
+Total
+�00.00
+
+
+
+
+Single
+												Fare - Return journey
+
+
+Return total
+�00.00
+
+
+
+
+Single
+												Fare
+
+
+Total
+�0.00
+
+
+
+
+
+										Total �00.00
+
+
+
+
+Choose
+				another Ticket provider: 
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+ 
+
+
+
+
+
+Buy from
+		another ticket provider
+
+
+
+
+
+Add to basket
+
+
+
+Buy Now
+
+
+
+
+
+
+  Routes, availability and fares
+									are subject to these provisions
+
+
+  About journeys that require more than one ticket
+
+
+
+
+
+Show the cheapest
+
+filter your journey details
+
+
+
+
+
+
+
+
+
+
+
+Advance fares
+
+
+
+
+
+Advance fares offer great value for money when you  book in advance and travel on a specific train. 
+	            Find out more about Advance tickets.
+
+
+
+
+
+
+
+Off-Peak fares
+
+
+
+
+
+Cheaper tickets for travelling at quieter times, for example outside the rush hour. 
+            	Find out more about Off-Peak tickets.
+
+
+
+
+
+
+
+Anytime fares
+
+
+
+
+
+Fully flexible tickets with no time restrictions on when you can travel. Perfect if your plans may change.
+            	Find out more about Anytime tickets.
+
+
+
+
+
+
+
+Standard class
+
+
+
+
+
+
+
+First class
+
+
+
+Update
+
+
+
+
+
+
+
+Journey details
+
+change your journey details
+
+
+
+
+
+
+
+
+
+
+Outward Journey
+
+
+From
+
+�
+
+
+		                        spOne();
+		                    
+
+
+to
+
+�
+
+
+		                        spOne();
+		                    
+
+
+
+
+Leaving / arriving
+
+
+Leaving
+Arriving
+First train
+Last train
+
+
+
+
+Date
+
+
+Calendar - opens in a popup
+
+
+
+at Hours
+
+
+00
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+
+: Minutes
+
+00
+15
+30
+45
+
+
+
+
+Go
+
+
+
+Return Journey
+
+Leaving / arriving
+
+
+Leaving
+Arriving
+First train
+Last train
+
+
+
+
+Date
+
+
+Return Calendar
+
+
+
+at Hours
+
+
+00
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+
+: Minutes
+
+00
+15
+30
+45
+
+
+
+
+
+
+
+
+
+Show only fastest trains
+
+
+
+
+
+Add a return journey
+Advanced search
+
+
+
+Hide advanced search
+
+
+
+
+Advanced search: Route
+
+Travel via / avoid
+
+
+Travel via
+Avoid
+Include Interchange
+Exclude Interchange
+
+
+
+
+destination
+
+�
+
+
+
+Add
+
+
+
+
+Specify your route
+
+
+
+
+
+
+
+Allow extra time to change trains
+Allow extra time to change trains
+
+
+
+Use recommended
+1/2 hour increment
+1 hour increment
+1 hour 30 minute increment
+2 hours increment
+
+
+
+
+
+
+
+
+
+
+
+
+Allow less time to transfer through London
+
+
+
+
+Allow less time to transfer through London
+
+
+
+
+
+
+
+
+
+
+Changing trains
+
+
+Train operator
+
+All Train Operators
+c2c
+Caledonian Sleeper
+Chiltern Railways
+CrossCountry
+East Midlands Trains
+Gatwick Express
+Grand Central Railway
+Great Northern
+Great Western Railway
+Greater Anglia
+Heathrow Express
+Hull Trains
+Island Line
+London North Eastern Railway
+London Overground
+London Underground
+Merseyrail
+Northern
+ScotRail
+South Western Railway
+Southeastern
+Southern
+TfL Rail
+Thameslink
+TransPennine Express
+Transport for Wales
+Virgin Trains
+West Midlands Trains
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search options
+
+
+
+
+Search only sleeper trains
+
+
+
+
+
+Show only direct trains
+
+
+
+
+
+
+
+
+
+
+Update train times
+
+
+
+
+
+
+
+
+Passengers and railcards
+
+change your passengers details
+
+
+
+
+Passengers
+
+
+
+
+
+
+
+
+
+
+Adults
+
+
+
+
+
+
+
+Children (Ages 5 - 15)
+
+
+
+
+
+
+
+Class preferences
+
+
+
+
+
+
+Standard class
+
+
+
+
+
+
+
+First class
+
+
+
+
+Add railcards
+
+
+
+Railcards
+
+
+
+
+
+Choose railcard:
+
+
+Select a railcard
+16-25 Railcard
+26-30 Railcard
+Annual Gold Card
+Devon & Cornwall Gold Card
+Devon & Cornwall Railcard
+Disabled Persons Railcard
+Family & Friends Railcard
+HM Forces Railcard
+Highland Railcard : North Scotland
+Jobcentre Plus Travel Discount Card
+Network Railcard
+New Deal Photocard
+Senior Railcard
+Two Together Railcard
+
+
+
+Add
+
+
+
+
+
+
+
+Check Fares
+
+
+
+
+
+
+
+Fare information
+Great Western Railway offers fares between London Paddington and Bristol Parkway, or Bristol Temple Meads. South Western Railway offers fares between London Waterloo and Bristol Temple Meads.
+
+
+
+
+            �
+
+
+
+
+                Promotions and Railcards
+
+
+Days out and promotions
+
+London Bus and Tram Pass
+City Cruises 2FOR1
+London Theatre - 2for1
+Explore-At-Bristol Travel and Admission Package
+Group Off-Peak Day Travelcard
+Bristol Zoo Ticket - NO FARE AVAILABLE UFN
+Weekend First
+Bristol Ferry Boats
+PLUSBUS - Bristol
+Original London Sightseeing Tour
+
+Save money with these great railcards
+
+HM Forces Railcard
+Network Railcard
+Greater Anglia Club 50 Railcard
+Senior Railcard
+Disabled Persons Railcard
+Family & Friends Railcard
+16-25 Railcard
+See all railcards
+
+
+
+
+
+
+            �
+
+
+
+
+
+
+
+	            �
+
+
+
+
+
+
+	                    Pocket Timetables
+
+	                    Get your pocket timetable between London Paddington and Bristol Temple Meads.
+
+Download PDF
+
+
+
+
+
+
+	            �
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You are here:
+
+Home
+Timetable Results and Fares
+
+
+
+
+
+Close modal
+�
+
+
+Your basket is full. 
+To purchase this journey please select Buy Now.
+
+
+Cancel
+
+
+
+View Basket
+
+
+
+
+
+
+
+�
+
+
+
+
+
+
+
+
+
+
+Train times & tickets
+
+Journey planner
+Live departure board
+Cheapest fare finder
+Your ticket
+Discounts
+Travel tools
+Special offers
+Timetables
+
+
+
+Plan your Journey
+
+Rail maps
+Stations & destinations
+On the train
+Passengers with disabilities
+Cyclists
+Animals and luggage
+
+
+
+Changes to train times
+
+Current service disruptions
+Engineering work
+Special seasonal events
+Timetable changes
+
+
+
+ 
+
+
+
+
+
+
+
+
+About this site
+Train Operating Companies
+Sitemap
+Accessibility
+Terms & Conditions
+Privacy
+Contact us
+
+Ad Choices
+
+
+
+Back to top [Accesskey '5']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advertisement information
+
+
+			        googletag.cmd.push(function () {
+			            googletag.display("ad-top");
+			        });
+			 	
+
+
+
+
+
+
+
+
+Advertisement information
+
+
+			        googletag.cmd.push(function () {
+			            googletag.display("ad-bottom");
+			        });
+			 	
+
+
+
+
+
+
+
+
+
+
+
+
+Advertisement information
+
+
+								        googletag.cmd.push(function () {
+								            googletag.display("ad-side-1");
+								        });
+								 	
+
+
+
+
+
+
+
+
+Advertisement information
+
+
+								        googletag.cmd.push(function () {
+								            googletag.display("ad-side-2");
+								        });
+								 	
+
+
+
+
+
+
+
+
+
+
+
+

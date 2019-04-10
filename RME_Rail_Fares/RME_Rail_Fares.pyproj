@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LNER.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NRE webscrape.py">
       <SubType>Code</SubType>
     </Compile>
