@@ -18,7 +18,7 @@ document.documentElement.className += " jq js ojp";var nreEnv = 'ojp';
 
 
 
-    	window.universal_variable = {"page":{"train_status":"On Time"},"user":{"logged_in":false},"query":{"when_preference":"Depart","return_when_preference":"Depart","picker_Date":"2019-04-12T18:30:00.000+01:00","picker_ReturnDate":"2019-04-15T12:00:00.000+01:00","picker_from":"KGX","picker_to":"EDB","picker_return":true,"picker_fastest_only":false,"picker_adults":"1","picker_children":"0","picker_standard_class":"Queried standard class","picker_first_class":"Queried first class","picker_railcard":[]}};
+    	window.universal_variable = {"page":{"train_status":"On Time"},"user":{"logged_in":false},"query":{"when_preference":"Depart","return_when_preference":"Depart","picker_Date":"2019-04-20T18:30:00.000+01:00","picker_ReturnDate":"2019-04-22T12:00:00.000+01:00","picker_from":"KGX","picker_to":"EDB","picker_return":true,"picker_fastest_only":false,"picker_adults":"1","picker_children":"0","picker_standard_class":"Queried standard class","picker_first_class":"Queried first class","picker_railcard":[]}};
 		dataLayer = [window.universal_variable];
 	
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -82,7 +82,7 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("ovngt", "1");
 	
-		googletag.pubads().setTargeting("dd", "12");
+		googletag.pubads().setTargeting("dd", "20");
 	
 		googletag.pubads().setTargeting("mm", "04");
 	
@@ -90,7 +90,7 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("ti", "1830");
 	
-		googletag.pubads().setTargeting("dd", "15");
+		googletag.pubads().setTargeting("dd", "22");
 	
 		googletag.pubads().setTargeting("mm", "04");
 	
@@ -108,15 +108,15 @@ googletag.cmd.push(function() {
 	
 		googletag.pubads().setTargeting("toc", "");
 	
-		googletag.pubads().setTargeting("toc", "CS");
+		googletag.pubads().setTargeting("toc", "XC");
 	
-		googletag.pubads().setTargeting("toc", "SR");
+		googletag.pubads().setTargeting("toc", "TP");
 	
 		googletag.pubads().setTargeting("tic", "adv");
 	
-		googletag.pubads().setTargeting("tic", "any");
-	
 		googletag.pubads().setTargeting("tic", "off");
+	
+		googletag.pubads().setTargeting("tic", "any");
 	
 	if(typeof window.segAry != "undefined") {
 		googletag.pubads().setTargeting('pubseg',window.segAry);
@@ -493,7 +493,7 @@ Times and fares
 								
 
  First
-															class From �269.50
+															class From �353.50
 														
  
 
@@ -503,7 +503,7 @@ Times and fares
 
 
 
-Buy cheapest for � 145.00
+Buy cheapest for � 132.70
 										
 
 
@@ -540,14 +540,15 @@ Where two journeys have the same fare, we've highlighted
 
 
 
-Long journey? Why not upgrade to First Class from �124.50
+Long journey? Why not upgrade to First Class from �220.80
 
 
 
 Outward
 journey on 
-Fri�12�Apr
-
+Sat�20�Apr
+								+ 1 day
+							
 
 
 Earlier trains
@@ -575,7 +576,7 @@ Buy tickets as Return from
 
 
 Buy tickets as 2 Singles from
-											�145.00
+											�132.70
 
 
 
@@ -592,257 +593,7 @@ Buy tickets as 2 Singles from
 
 
 
-18:30
-	
-
-		
-		London Kings Cross  [KGX]
-		
-			
-			
-			
-		 
-			Platform
-				5
-
- 
-			Edinburgh  [EDB]
-			
-				
-				
-				
-			 
-				Platform
-					8
-
-23:18
-	
-4h
-		 48m
-0
-
- More 
-			Details  on the 18:30
-				service from London Kings Cross to
-				Edinburgh
-		
-
-
-
-
-
-
-
-
-
-			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"18:30","arrivalTime":"23:18","durationHours":4,"durationMinutes":48,"changes":0,"journeyId":1,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":195.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
-		
-
-Return Fare
-
-
-�147.40
-
-
-
-
-
-
-
- Off-Peak
-Other tickets
-
-
-
-Single Fare
-
-
-									�73.70
-								
-
-
-
-
-
-
- Off-Peak
- Other
-												tickets
-
-
-
-
-
-
-
-
-Ticket summary - RETURN
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-Ticket summary SINGLE
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Outward total
-ï¿½0.00
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Return total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-
-Single fare - Outward journey
-1 x Adult - Anytime(16-25 Railcard)Saving
-											ï¿½19.00
-ï¿½14.00
-
-
-Total
-ï¿½14.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-
-
-
-
-19:00
+21:00
 	
 
 		
@@ -863,16 +614,20 @@ Return
 				
 			 
 				Platform
-					2
+					11
 
-23:31
+10:28
 	
-4h
-		 31m
-0
+13h
+		 28m
+
+
+1
+
+
 
  More 
-			Details  on the 19:00
+			Details  on the 21:00
 				service from London Kings Cross to
 				Edinburgh
 		
@@ -885,7 +640,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"19:00","arrivalTime":"23:31","durationHours":4,"durationMinutes":31,"changes":0,"journeyId":2,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":8,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":195.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"21:00","arrivalTime":"10:28","durationHours":13,"durationMinutes":28,"changes":1,"journeyId":1,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":146.4,"discount":0,"ticketPrice":146.4,"cheapestFirstClassFare":207.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -907,7 +662,7 @@ Other tickets
 Single Fare
 
 
-									�73.70
+									�146.40
 								
 
 
@@ -918,6 +673,45 @@ Single Fare
  Off-Peak
  Other
 												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+21:00
+London Kings Cross [KGX]
+Newcastle [NCL]
+00:05
+
+
+
+
+
+
+08:45
+Newcastle [NCL]
+Edinburgh [EDB]
+10:28
+
+
 
 
 
@@ -1092,7 +886,608 @@ Return
 
 
 
-19:30
+22:00
+	
+
+		
+		London Kings Cross  [KGX]
+		
+			
+			
+			
+		 
+			Platform
+				5
+
+ 
+			Edinburgh  [EDB]
+			
+				
+				
+				
+			 
+				Platform
+					7
+
+11:12
+	
+13h
+		 12m
+
+
+2
+
+
+
+ More 
+			Details  on the 22:00
+				service from London Kings Cross to
+				Edinburgh
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"22:00","arrivalTime":"11:12","durationHours":13,"durationMinutes":12,"changes":2,"journeyId":2,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":146.4,"discount":0,"ticketPrice":146.4,"cheapestFirstClassFare":207.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+�147.40
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+
+Single Fare
+
+
+									�146.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+22:00
+London Kings Cross [KGX]
+Leeds [LDS]
+00:22
+
+
+
+
+
+
+07:39
+Leeds [LDS]
+Newcastle [NCL]
+09:16
+
+
+
+
+
+
+09:45
+Newcastle [NCL]
+Edinburgh [EDB]
+11:12
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+22:00
+	
+
+		
+		London Kings Cross  [KGX]
+		
+			
+			
+			
+		 
+			Platform
+				5
+
+ 
+			Edinburgh  [EDB]
+			
+				
+				
+				
+			 
+				Platform
+					2
+
+11:58
+	
+13h
+		 58m
+
+
+1
+
+
+
+ More 
+			Details  on the 22:00
+				service from London Kings Cross to
+				Edinburgh
+		
+
+
+
+
+
+
+
+
+
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"22:00","arrivalTime":"11:58","durationHours":13,"durationMinutes":58,"changes":1,"journeyId":3,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Super Off-Peak Single","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single","ticketTypeCode":"SSS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":7,"numberOfTickets":1,"fullFarePrice":146.4,"discount":0,"ticketPrice":146.4,"cheapestFirstClassFare":207.1,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+		
+
+Return Fare
+
+
+�147.40
+
+
+
+
+
+
+
+ Off-Peak
+Other tickets
+
+
+
+Single Fare
+
+
+									�146.40
+								
+
+
+
+
+
+
+ Off-Peak
+ Other
+												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+22:00
+London Kings Cross [KGX]
+Leeds [LDS]
+00:22
+
+
+
+
+
+
+08:30
+Leeds [LDS]
+Edinburgh [EDB]
+11:58
+
+
+
+
+
+
+
+
+
+
+Ticket summary - RETURN
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+Ticket summary SINGLE
+Buy from
+
+Select train operator
+London Overground
+Southeastern
+East Midlands Trains
+Great Western Railway
+Greater Anglia
+Thameslink
+Grand Central
+RailEasy
+Hull Trains
+thetrainline.com
+C2C
+Great Northern
+Northern
+Southern
+Chiltern Railways
+Caledonian Sleeper
+London Northwestern Railway
+Virgin Trains
+CrossCountry
+London North Eastern Railway
+ScotRail
+South Western Railway
+Transport for Wales
+TransPennine Express
+
+
+
+RailEasy
+thetrainline.com
+
+
+
+
+
+
+
+
+Outward total
+ï¿½0.00
+
+
+
+
+Please select return
+										journey
+
+
+
+
+Return total
+ï¿½00.00
+
+
+Total
+ï¿½00.00
+
+
+
+
+Single fare - Outward journey
+1 x Adult - Anytime(16-25 Railcard)Saving
+											ï¿½19.00
+ï¿½14.00
+
+
+Total
+ï¿½14.00
+
+
+Total
+ï¿½00.00
+
+
+
+Fare information
+London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
+
+
+Outward
+
+
+
+Return
+
+
+
+
+
+
+
+
+
+
+Sun 21 Apr
+
+
+
+08:48
 	
 
 		
@@ -1113,16 +1508,16 @@ Return
 				
 			 
 				Platform
-					8
+					9
 
-00:28
+13:08
 	
 4h
-		 58m
+		 20m
 0
 
  More 
-			Details  on the 19:30
+			Details  on the 08:48
 				service from London Kings Cross to
 				Edinburgh
 		
@@ -1135,7 +1530,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"19:30","arrivalTime":"00:28","durationHours":4,"durationMinutes":58,"changes":0,"journeyId":3,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":75,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"08:48","arrivalTime":"13:08","durationHours":4,"durationMinutes":20,"changes":0,"journeyId":4,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BTS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":74,"numberOfTickets":1,"fullFarePrice":59.0,"discount":0,"ticketPrice":59.0,"cheapestFirstClassFare":294.5,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -1158,7 +1553,7 @@ cheapest fare
 Single Fare
 
 
-									�72.50
+									�59.00
 								
 
 
@@ -1343,7 +1738,7 @@ Return
 
 
 
-20:50
+09:00
 	
 
 		
@@ -1353,7 +1748,9 @@ Return
 			
 			
 		 
-	
+			Platform
+				4
+
  
 			Edinburgh  [EDB]
 			
@@ -1362,20 +1759,16 @@ Return
 				
 			 
 				Platform
-					15
+					5
 
-06:25
+13:19
 	
-9h
-		 35m
-
-
-2
-
-
+4h
+		 19m
+0
 
  More 
-			Details  on the 20:50
+			Details  on the 09:00
 				service from London Kings Cross to
 				Edinburgh
 		
@@ -1388,12 +1781,13 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"20:50","arrivalTime":"06:25","durationHours":9,"durationMinutes":35,"changes":2,"journeyId":4,"responseId":4,"statusIcon":"AMBER_TRIANGLE","hoverInformation":null},"singleJsonFareBreakdowns":[],"returnJsonFareBreakdowns":[]}
+			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"09:00","arrivalTime":"13:19","durationHours":4,"durationMinutes":19,"changes":0,"journeyId":5,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareOutward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":75,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":281.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
 
- 
+
+�147.40
 
 
 
@@ -1401,378 +1795,25 @@ Return Fare
 
 
 
- 
-
- Show Other tickets
+ Off-Peak
+Other tickets
 
 
 
 Single Fare
 
 
+									�72.50
+								
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-Travel by
-Leaving
-From
-To
-Arriving
-
-
-
-
-
-
-
-
-20:50
-London Kings Cross [KGX]
-London Euston [EUS]
-21:00
-
-
-
-
-
-
-21:15
-London Euston [EUS]
-Stirling [STG]
-04:53
-
-
-
-
-
-
-05:30
-Stirling [STG]
-Edinburgh [EDB]
-06:25
-
-
-
-
-
-
-
-
-
-
-
-Service Update
-Caledonian Sleeper Trains -
-All fares shown include seating accommodation ONLY. Reservations are compulsory and travel cannot be guaranteed if reservations are not made in advance. For further information and to make bookings for fares that include Sleeper Berth accommodation, please visit http://sleeper.scot or telephone 0330 060 0500.
-
-
-
-
-
-
-
-
-
-Ticket summary - RETURN
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-Ticket summary SINGLE
-Buy from
-
-Select train operator
-London Overground
-Southeastern
-East Midlands Trains
-Great Western Railway
-Greater Anglia
-Thameslink
-Grand Central
-RailEasy
-Hull Trains
-thetrainline.com
-C2C
-Great Northern
-Northern
-Southern
-Chiltern Railways
-Caledonian Sleeper
-London Northwestern Railway
-Virgin Trains
-CrossCountry
-London North Eastern Railway
-ScotRail
-South Western Railway
-Transport for Wales
-TransPennine Express
-
-
-
-RailEasy
-thetrainline.com
-
-
-
-
-
-
-
-
-Outward total
-ï¿½0.00
-
-
-
-
-Please select return
-										journey
-
-
-
-
-Return total
-ï¿½00.00
-
-
-Total
-ï¿½00.00
-
-
-
-
-Single fare - Outward journey
-1 x Adult - Anytime(16-25 Railcard)Saving
-											ï¿½19.00
-ï¿½14.00
-
-
-Total
-ï¿½14.00
-
-
-Total
-ï¿½00.00
-
-
-
-Fare information
-London North Eastern Railway and Caledonian Sleeper offers fares between London Kings Cross and Edinburgh. Virgin Trains offers fares between London Euston and Edinburgh.
-
-
-Outward
-
-
-
-Return
-
-
-
-
-
-
-
-
-
-23:28
-	
-
-		
-		London Kings Cross  [KGX]
-		
-			
-			
-			
-		 
-	
- 
-			Edinburgh  [EDB]
-			
-				
-				
-				
-			 
-				Platform
-					9
-
-07:25
-	
-7h
-		 57m
-
-
-1
-
-
-
- More 
-			Details  on the 23:28
-				service from London Kings Cross to
-				Edinburgh
-		
-
-
-
-
-
-
-
-
-
-			{"jsonJourneyBreakdown":{"departureStationName":"London Kings Cross","departureStationCRS":"KGX","arrivalStationName":"Edinburgh","arrivalStationCRS":"EDB","statusMessage":null,"departureTime":"23:28","arrivalTime":"07:25","durationHours":7,"durationMinutes":57,"changes":1,"journeyId":5,"responseId":4,"statusIcon":"AMBER_TRIANGLE","hoverInformation":null},"singleJsonFareBreakdowns":[],"returnJsonFareBreakdowns":[]}
-		
-
-Return Fare
-
- 
-
-
-
-
-
-
-
- 
-
- Show Other tickets
-
-
-
-Single Fare
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Travel by
-Leaving
-From
-To
-Arriving
-
-
-
-
-
-
-
-
-23:28
-London Kings Cross [KGX]
-London Euston [EUS]
-23:38
-
-
-
-
-
-
-23:53
-London Euston [EUS]
-Edinburgh [EDB]
-07:25
-
-
-
-
-
-
-
-
-
-
-
-Service Update
-Caledonian Sleeper Trains -
-All fares shown include seating accommodation ONLY. Reservations are compulsory and travel cannot be guaranteed if reservations are not made in advance. For further information and to make bookings for fares that include Sleeper Berth accommodation, please visit http://sleeper.scot or telephone 0330 060 0500.
-
+ Advance
+ Other
+												tickets
 
 
 
@@ -1955,7 +1996,7 @@ Later trains
 
 
 
-Return journey on Mon�15�Apr
+Return journey on Mon�22�Apr
 
 
 
@@ -1984,7 +2025,7 @@ Buy tickets as Return from
 
 
 Buy tickets as 2 Singles from
-											�145.00
+											�132.70
 
 
 
@@ -2044,7 +2085,7 @@ Buy tickets as 2 Singles from
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:00","arrivalTime":"16:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":6,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:00","arrivalTime":"16:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":6,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"1K","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":104,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":279.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2063,7 +2104,7 @@ cheapest fare
 Single Fare
 
 
-									�72.50
+									�73.70
 								
 
 
@@ -2071,7 +2112,7 @@ Single Fare
 
 
 
- Advance
+ Off-Peak
  Other
 												tickets
 
@@ -2248,7 +2289,7 @@ Return
 
 
 
-12:30
+12:08
 	
 
 		
@@ -2259,7 +2300,7 @@ Return
 			
 		 
 			Platform
-				2
+				7
 
  
 			London Kings Cross  [KGX]
@@ -2274,11 +2315,15 @@ Return
 16:50
 	
 4h
-		 20m
-0
+		 42m
+
+
+1
+
+
 
  More 
-			Details  on the 12:30
+			Details  on the 12:08
 				service from Edinburgh to
 				London Kings Cross
 		
@@ -2291,7 +2336,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:30","arrivalTime":"16:50","durationHours":4,"durationMinutes":20,"changes":0,"journeyId":7,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"12:08","arrivalTime":"16:50","durationHours":4,"durationMinutes":42,"changes":1,"journeyId":7,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"1K","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":104,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":279.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2309,7 +2354,7 @@ Return Fare
 Single Fare
 
 
-									�72.50
+									�73.70
 								
 
 
@@ -2317,9 +2362,48 @@ Single Fare
 
 
 
- Advance
+ Off-Peak
  Other
 												tickets
+
+
+
+
+
+
+
+
+
+
+Travel by
+Leaving
+From
+To
+Arriving
+
+
+
+
+
+
+
+
+12:08
+Edinburgh [EDB]
+Newcastle [NCL]
+13:35
+
+
+
+
+
+
+13:59
+Newcastle [NCL]
+London Kings Cross [KGX]
+16:50
+
+
 
 
 
@@ -2537,7 +2621,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:00","arrivalTime":"17:40","durationHours":4,"durationMinutes":40,"changes":0,"journeyId":8,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:00","arrivalTime":"17:40","durationHours":4,"durationMinutes":40,"changes":0,"journeyId":8,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"1K","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":104,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":279.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2555,7 +2639,7 @@ Return Fare
 Single Fare
 
 
-									�72.50
+									�73.70
 								
 
 
@@ -2563,7 +2647,7 @@ Single Fare
 
 
 
- Advance
+ Off-Peak
  Other
 												tickets
 
@@ -2783,7 +2867,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:30","arrivalTime":"17:52","durationHours":4,"durationMinutes":22,"changes":0,"journeyId":9,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"13:30","arrivalTime":"17:52","durationHours":4,"durationMinutes":22,"changes":0,"journeyId":9,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"1K","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":104,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":279.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -2801,7 +2885,7 @@ Return Fare
 Single Fare
 
 
-									�72.50
+									�73.70
 								
 
 
@@ -2809,7 +2893,7 @@ Single Fare
 
 
 
- Advance
+ Off-Peak
  Other
 												tickets
 
@@ -3029,7 +3113,7 @@ Return
 
 
 
-			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"14:00","arrivalTime":"18:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":10,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Advance (Standard Class)","ticketRestriction":"GC","fareRouteDescription":"Only valid on booked London North Eastern Railway services and required connecting services.","fareRouteName":"LNER & CONNECTNS","passengerType":"Adult","railcardName":"","ticketType":"Advance (Standard Class)","ticketTypeCode":"BUS","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":385,"numberOfTickets":1,"fullFarePrice":72.5,"discount":0,"ticketPrice":72.5,"cheapestFirstClassFare":197.0,"nreFareCategory":"RESTRICTED","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":122.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
+			{"jsonJourneyBreakdown":{"departureStationName":"Edinburgh","departureStationCRS":"EDB","arrivalStationName":"London Kings Cross","arrivalStationCRS":"KGX","statusMessage":null,"departureTime":"14:00","arrivalTime":"18:39","durationHours":4,"durationMinutes":39,"changes":0,"journeyId":10,"responseId":4,"statusIcon":"GREEN_TICK","hoverInformation":null},"singleJsonFareBreakdowns":[{"breakdownType":"SingleFareInward","fareTicketType":"Super Off-Peak Single [Online Only]","ticketRestriction":"1K","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Single [Online Only]","ticketTypeCode":"SSU","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":104,"numberOfTickets":1,"fullFarePrice":73.7,"discount":0,"ticketPrice":73.7,"cheapestFirstClassFare":279.8,"nreFareCategory":"FLEXIBLE","redRoute":false}],"returnJsonFareBreakdowns":[{"breakdownType":"ReturnFare","fareTicketType":"Super Off-Peak Return","ticketRestriction":"9F","fareRouteDescription":"Travel is allowed via any permitted route.","fareRouteName":"ANY PERMITTED","passengerType":"Adult","railcardName":"","ticketType":"Super Off-Peak Return","ticketTypeCode":"SSR","fareSetter":"IEC","fareProvider":"London North Eastern Railway","tocName":"London North Eastern Railway","tocProvider":"London North Eastern Railway","fareId":6,"numberOfTickets":1,"fullFarePrice":147.4,"discount":0,"ticketPrice":147.4,"cheapestFirstClassFare":206.1,"nreFareCategory":"FLEXIBLE","redRoute":false}]}
 		
 
 Return Fare
@@ -3047,7 +3131,7 @@ Return Fare
 Single Fare
 
 
-									�72.50
+									�73.70
 								
 
 
@@ -3055,7 +3139,7 @@ Single Fare
 
 
 
- Advance
+ Off-Peak
  Other
 												tickets
 
@@ -3363,7 +3447,7 @@ Buy Now
   Routes, availability and fares
 									are subject to these provisions
 
-  
+
   About journeys that require more than one ticket
 
 
@@ -4067,42 +4151,8 @@ Back to top [Accesskey '5']
 
 
 
-    
-          
-     	
-         
-         
-         	
-         
-         	
-     
-     		
- 
-    		 
-     		
-             
-             
-             
-             
-         
-         	
-     
-        	 
-         	
-     		 
-     									
-			FC.modalPopup("Multiple Tickets Required for Journey", "Please note, some of the journeys shown require multiple tickets. Please confirm with the retailer that this is the cheapest fare when purchasing.","");
-			
-     		 
-     		 
-     		 
-     		
-            
-            
-         
-         
-         
-     
+
+
 
 
 
