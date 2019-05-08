@@ -18,37 +18,29 @@ def main():
     # the real process here
     #full list of URLs to be generated
     urlstoprocess = generateurl(collecteddata)
-    print(type(urlstoprocess))
-
-    for k,v in urlstoprocess.values():
-        pp.pprint( f":{k} {v}")
-#        for times in v:
-#            pp.pprint(times)
-
-    print("getting url info")
-
-    rawjsondata = list()
     
-    
-    #for k,v in urlstoprocess.items():
+    print("getting NRE data now...")
+    rawjsondata=[]
+    for counter, items in enumerate(urlstoprocess):
+        print(f"getting item {counter} of {len(urlstoprocess)}")
 
-    #    response = urllib.request.urlopen(v)
-    #    soup = BeautifulSoup(response,'html.parser')
+        response = urllib.request.urlopen(items[1])
+        soup = BeautifulSoup(response,'html.parser')
 
-    #    td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
+        td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
 
-   #     jsonData = json.loads(td_class)
-   #     jsonData['jsonJourneyBreakdown'].update(TravelDate = k)
+        jsonData = json.loads(td_class)
+        jsonData['jsonJourneyBreakdown'].update(TravelDate = items[0])
+        
+        rawjsondata.append(jsonData)
 
-   #     rawjsondata.append(jsonData)
-
-   # answer = processjson(rawjsondata)
+    answer = processjson(rawjsondata)
 
 
 
 def processjson(jsoninfo):
     for journey in jsoninfo:
-        print(type(journey))
+        
         print (f"travel date \t {journey['jsonJourneyBreakdown']['TravelDate']}")
         print (f"arrival \t {journey['jsonJourneyBreakdown']['arrivalStationName']}")
         print(f"departure \t{journey['jsonJourneyBreakdown']['departureStationName']}")
@@ -63,42 +55,37 @@ def processjson(jsoninfo):
         print(f"full fare \t{journey['singleJsonFareBreakdowns'][0]['fullFarePrice']}")
         print(f"nre category \t{journey['singleJsonFareBreakdowns'][0]['nreFareCategory']}")
         print(f"ticket price \t{journey['singleJsonFareBreakdowns'][0]['ticketPrice']}")
+        print("\n")
 
 
 
 
 
 def generateurl(collecteddata):
-    urltoprocess = defaultdict(list)
-    tempurldown = list()
-    tempurlup = list()
+    urltoprocess = {}
+    tempurldown = []
+    tempurlup = []
+
 
     dateoftravel = list(collecteddata.keys())
 
     for date in dateoftravel:
-        #print(date)
+        
         for data in collecteddata[date]:
             if data[0][0] ==  'KGX':
                 for counter,downtime in enumerate(data[1],0):
-                    url = 'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[0][0]+'/'+data[0][1]+'/'+date+'/'+str(data[1][counter])+'/dep/'
+                    url = [date,'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[0][0]+'/'+data[0][1]+'/'+date+'/'+str(data[1][counter])+'/dep/']
+                    tempurldown.append(url)
+
                     
-                    
-                    
-                
             if data[2][0] == 'EDB':
                 for counter,updtime in enumerate(data[3],0):
-                    url = 'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[2][0]+'/'+data[2][1]+'/'+date+'/'+str(data[3][counter])+'/dep/'
+                    url = [date,'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[2][0]+'/'+data[2][1]+'/'+date+'/'+str(data[3][counter])+'/dep/']
                     tempurlup.append(url)
-    urltoprocess[date] = [tempurldown,tempurlup]               
-    print(date)
-    
-    #pp.pprint(tempurldown)
-    #pp.pprint(tempurlup)
-    #urltoprocess[date] = [tempurldown,tempurlup]
-    
-    #for k,v in urltoprocess.items():
-    #    print(k)
-    #    print(v)
+
+
+    urltoprocess = tempurldown + tempurlup
+    #pp.pprint(urltoprocess)
 
     return urltoprocess
         
