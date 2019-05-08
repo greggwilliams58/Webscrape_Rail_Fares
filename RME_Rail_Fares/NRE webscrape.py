@@ -13,43 +13,77 @@ def main():
     filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
     filename = f'RME_data_{formatted_date}.csv'
 
-    collecteddata = collatedata()
+    #generated the sets of dates and times to work with
+    collateddatesandtime = getdatetimesinfo()
 
-
-    #test URLS
-    #urlstoprocess =  {'140519':'http://ojp.nationalrail.co.uk/service/timesandfares/KGX/EDB/140519/1430/dep','150519':'http://ojp.nationalrail.co.uk/service/timesandfares/KGX/EDB/150519/1430/dep'}
-
-    # the real process here
     #full list of URLs to be generated
-    urlstoprocess = generateurl(collecteddata)
+    urlstoprocess = generateurl(collateddatesandtime)
     
     print("getting NRE data now...")
+
+    #extracting the data from the webset and converting to json
+    jsondata = extractwebdata(urlstoprocess)
+
+    #convert the json into csv format and save externally
+    processjson(jsondata,filepath,filename)
+
+
+def extractwebdata(urlstr):
+    """
+    This makes a call to the NRE webset and parses the html, selecting the relevant journey data as json format
+    it also adds the travel date to the json dataset
+
+    Parameters 
+    urlstr:         A list of urls to be used to interrogate the NRE website
+
+    Returns:
+    rawjsondata     A list of json-formatted journey information 
+    """
+
     rawjsondata=[]
-    for counter, items in enumerate(urlstoprocess,1):
-        print(f"getting item {counter} of {len(urlstoprocess)}")
+    for counter, items in enumerate(urlstr,1):
+        print(f"getting item {counter} of {len(urlstr)}")
 
         response = urllib.request.urlopen(items[1])
         soup = BeautifulSoup(response,'html.parser')
 
+        #extract the required json data
         td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
 
+        #convert the json data into a dictionary
         jsonData = json.loads(td_class)
+
+        #add the travel date information to the json data
         jsonData['jsonJourneyBreakdown'].update(TravelDate = items[0])
         
         rawjsondata.append(jsonData)
 
-    processjson(rawjsondata,filepath,filename)
-
+    return rawjsondata
 
 
 def processjson(jsoninfo,fp, fn):
-    
+    """
+    This converts the json formatted data into CSV and exports it to a specified location
+
+    Parameters
+    jsoninfo:   A list of json-formatted data
+    fp:         A string of the file path to where the data is exported
+    gn:         A string with the name of the file to be exported
+
+    Returns:
+    None,
+    but a csv file is exported
+    """
+
     print("preparing the csv file")
+
     #create a blank csv object
     datafile = open(fp + fn, 'w',newline='')
+    
+    #create a csvwriter object
     csvwriter = csv.writer(datafile)
 
-
+    #create a header for the csv file
     response_header = []
     
     response_header.append('date_data_generated')
@@ -68,13 +102,20 @@ def processjson(jsoninfo,fp, fn):
     response_header.append('nre_fare_category')
     response_header.append('ticketprice')
 
+    #write the csv header row
     csvwriter.writerow(response_header)
 
+    #extract data from the json file
     response = []
     for journey in jsoninfo:
+        #derived formatted date for date of data extraction
         response.append(datetime.now().strftime('%Y%m%d_%H-%M'))
-        traveldate = journey['jsonJourneyBreakdown']['TravelDate'].zfill(6)
-        traveldate = traveldate[0:1] + '/' + traveldate[2:4] + '/' + traveldate [5:6] 
+        
+        #fill travel date trailing zeros
+        traveldate = str(journey['jsonJourneyBreakdown']['TravelDate']).zfill(6)
+        #add / marks to avoid excel formatting doing odd things
+        traveldate = traveldate[0:2] + '/' + traveldate[2:4] + '/' + traveldate [4:6]
+        #add the formatted travel date to list
         response.append(traveldate)
         response.append(journey['jsonJourneyBreakdown']['departureStationName'])
         response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
@@ -90,29 +131,38 @@ def processjson(jsoninfo,fp, fn):
         response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
         response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
 
+        #write data to the row of the csv file
         csvwriter.writerow(response)
 
+        #flush the list to prepare for the next row
         response = []
 
+    #close the file and export the data
     datafile.close()
 
     
+def generateurl(collecteddateinfo):
+    """
+    This generates a list of urls based on provided date,route and time information, which are then fed to the NRE website
 
+    Parameters:
+    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times]]}
 
+    Returns:
+    urltoprocess:       a list containting travel date and url information [traveldate, url]
+    """
 
-
-
-def generateurl(collecteddata):
     urltoprocess = {}
     tempurldown = []
     tempurlup = []
 
+    #extract dates of travel from keys of dictionary
+    dateoftravel = list(collecteddateinfo.keys())
 
-    dateoftravel = list(collecteddata.keys())
-
+    #walk through dates, routes and times to create url
     for date in dateoftravel:
         
-        for data in collecteddata[date]:
+        for data in collecteddateinfo[date]:
             if data[0][0] ==  'KGX':
                 for counter,downtime in enumerate(data[1],0):
                     url = [date,'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[0][0]+'/'+data[0][1]+'/'+date+'/'+str(data[1][counter])+'/dep/']
@@ -124,21 +174,30 @@ def generateurl(collecteddata):
                     url = [date,'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[2][0]+'/'+data[2][1]+'/'+date+'/'+str(data[3][counter])+'/dep/']
                     tempurlup.append(url)
 
-
+    #combine both up and down routes into a new common list
     urltoprocess = tempurldown + tempurlup
-    #pp.pprint(urltoprocess)
-
+    
     return urltoprocess
         
-
-   
-def collatedata(basedate = datetime.today()):
   
-
-    weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
-
-    datesandtimes = defaultdict(list)
+def getdatetimesinfo(dateoffset = 0):
+    """
+    This is an 'initialisation' procedure which sets most of the parameters for the functioning of the whole process
+    It takes a date and derives the dates 1,7 and 30 days in the future and then dertives the appropriate days, origin and destination routes and departure times for each of these factors
     
+    Parameters:
+    dateoffset:     An integer representing the number of days to alter the date of search by.  DEFAULT is 0 days
+
+    Returns:
+    datesandtimes:  A default dictionary containing {dateoftravel:[[up journey],[times],[down journey],[times]]}
+
+    """
+    #increment date to check if needed
+    datetocheck = datetime.today()+timedelta(days=dateoffset)
+    
+    #initialisation information
+    weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+       
     originanddestination = [['KGX','EDB'],['EDB','KGX']]
 
     downweekdaytimes = ['0612','0900','1000','1030','1200','1300','1330','1500','1530','1400','1900']
@@ -149,17 +208,18 @@ def collatedata(basedate = datetime.today()):
     upsaturdaytimes = ['0626','0655','0930','1000','1130','1200','1330','1400','1630','1700']
     upsundaytimes = ['1030','1100','1430','1450','1630','1700','1800','1830']
 
-    datetocheck = datetime.today()+timedelta(days=1)
-   
     daystomoveahead = [1,7,30]
-    datestocheck = []
-
+    
+    #populate defaultdict with values depending on date increments day of the week
+    datesandtimes = defaultdict(list)
+    
+    #for each date to move ahead increment
     for counter,item in enumerate(daystomoveahead):
-        futuredate = basedate + timedelta(daystomoveahead[counter])
+        futuredate = datetocheck + timedelta(daystomoveahead[counter])
 
         formattedfuturedate, dayofweek = futuredate.strftime('%d%m%y'), weekdays[futuredate.weekday()]
-        #print(f"This is the day ahead {formattedfuturedate},  {dayofweek} ")
 
+        #derive day of week from date
         daycheck = weekdays[futuredate.weekday()]
         if daycheck in ("Monday","Tuesday","Wednesday","Thursday","Friday"):
             daytocheck = 'weekday'
@@ -179,7 +239,6 @@ def collatedata(basedate = datetime.today()):
         datesandtimes[formattedfuturedate] = [[originanddestination[0],downtimestocheck,originanddestination[1],uptimestocheck]]
 
     return datesandtimes
-
 
 
 if __name__ == '__main__':
