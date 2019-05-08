@@ -4,14 +4,18 @@ import json
 import pprint as pp
 from datetime import datetime, timedelta
 from collections import defaultdict
-
+import csv
 
 
 def main():
+    formatted_date = datetime.now().strftime('%Y%m%d_%H-%M')
+
+    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
+    filename = f'RME_data_{formatted_date}.csv'
 
     collecteddata = collatedata()
 
-    #print(collecteddata)
+
     #test URLS
     #urlstoprocess =  {'140519':'http://ojp.nationalrail.co.uk/service/timesandfares/KGX/EDB/140519/1430/dep','150519':'http://ojp.nationalrail.co.uk/service/timesandfares/KGX/EDB/150519/1430/dep'}
 
@@ -21,7 +25,7 @@ def main():
     
     print("getting NRE data now...")
     rawjsondata=[]
-    for counter, items in enumerate(urlstoprocess):
+    for counter, items in enumerate(urlstoprocess,1):
         print(f"getting item {counter} of {len(urlstoprocess)}")
 
         response = urllib.request.urlopen(items[1])
@@ -34,28 +38,65 @@ def main():
         
         rawjsondata.append(jsonData)
 
-    answer = processjson(rawjsondata)
+    processjson(rawjsondata,filepath,filename)
 
 
 
-def processjson(jsoninfo):
+def processjson(jsoninfo,fp, fn):
+    
+    print("preparing the csv file")
+    #create a blank csv object
+    datafile = open(fp + fn, 'w',newline='')
+    csvwriter = csv.writer(datafile)
+
+
+    response_header = []
+    
+    response_header.append('date_data_generated')
+    response_header.append('travel_Date')
+    response_header.append('departure_station')
+    response_header.append('arrival_station')
+    response_header.append('departure_time')
+    response_header.append('breakdown_time')
+    response_header.append('cheapest_first_class')
+    response_header.append('discount')
+    response_header.append('fare_provider')
+    response_header.append('route_description')
+    response_header.append('route_name')
+    response_header.append('ticket_type')
+    response_header.append('full_price')
+    response_header.append('nre_fare_category')
+    response_header.append('ticketprice')
+
+    csvwriter.writerow(response_header)
+
+    response = []
     for journey in jsoninfo:
-        
-        print (f"travel date \t {journey['jsonJourneyBreakdown']['TravelDate']}")
-        print (f"arrival \t {journey['jsonJourneyBreakdown']['arrivalStationName']}")
-        print(f"departure \t{journey['jsonJourneyBreakdown']['departureStationName']}")
-        print(f"time \t{journey['jsonJourneyBreakdown']['departureTime']}")
-        print(f"type \t{journey['singleJsonFareBreakdowns'][0]['breakdownType']}")
-        print(f"1st class \t{journey['singleJsonFareBreakdowns'][0]['cheapestFirstClassFare']}")
-        print(f"discount \t{journey['singleJsonFareBreakdowns'][0]['discount']}")
-        print(f"fareprovider \t{journey['singleJsonFareBreakdowns'][0]['fareProvider']}")
-        print(f"route \t{journey['singleJsonFareBreakdowns'][0]['fareRouteDescription']}")
-        print(f"route name\t{journey['singleJsonFareBreakdowns'][0]['fareRouteName']}")
-        print(f"ticket type\t fullfare{journey['singleJsonFareBreakdowns'][0]['fareTicketType']}")
-        print(f"full fare \t{journey['singleJsonFareBreakdowns'][0]['fullFarePrice']}")
-        print(f"nre category \t{journey['singleJsonFareBreakdowns'][0]['nreFareCategory']}")
-        print(f"ticket price \t{journey['singleJsonFareBreakdowns'][0]['ticketPrice']}")
-        print("\n")
+        response.append(datetime.now().strftime('%Y%m%d_%H-%M'))
+        traveldate = journey['jsonJourneyBreakdown']['TravelDate'].zfill(6)
+        traveldate = traveldate[0:1] + '/' + traveldate[2:4] + '/' + traveldate [5:6] 
+        response.append(traveldate)
+        response.append(journey['jsonJourneyBreakdown']['departureStationName'])
+        response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
+        response.append(journey['jsonJourneyBreakdown']['departureTime'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['breakdownType'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['cheapestFirstClassFare'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['discount'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteName'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fullFarePrice'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
+
+        csvwriter.writerow(response)
+
+        response = []
+
+    datafile.close()
+
+    
 
 
 
@@ -91,7 +132,7 @@ def generateurl(collecteddata):
         
 
    
-def collatedata(basedate = datetime.today()+timedelta(days=2)):
+def collatedata(basedate = datetime.today()):
   
 
     weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
