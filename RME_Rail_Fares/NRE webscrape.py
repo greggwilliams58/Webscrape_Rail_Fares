@@ -11,8 +11,8 @@ import pandas as pd
 def main():
     formatted_date = datetime.now().strftime('%Y%m%d_%H-%M')
 
-    routesandtimedatafp = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\datafile.xlsx'
-    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
+    routesandtimedatafp = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\datafile.xlsx'
+    filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
     filename = f'RME_data_{formatted_date}.csv'
 
     alltimesdates = gettingquerydata(routesandtimedatafp)
