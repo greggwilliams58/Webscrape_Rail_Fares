@@ -176,14 +176,15 @@ def generateurl(collecteddateinfo):
 
 
     for routeanddate in routesoftravel:
-        #pp.pprint(routeanddate)
+        pp.pprint(routeanddate)
         for counter,data in enumerate(collecteddateinfo[routeanddate]):
             #pp.pprint(data)
             #print(f"This is origins: {routeanddate[3:6]} and {data[1][0]}")
             #print(f"This is destination: {route[3:6]} and {data[1][1]}")
-
-            if routeanddate[:3] ==  data[1][0] :
-                #print(f"this is down route extract {routeanddate[:3]} and this is the data extract {data[1][0]}")
+            print(data[1][0] + ' '+ routeanddate)
+            print(data[1][1] + ' ' + routeanddate)
+            if routeanddate[:3] ==  data[1][0]:
+                print(f"this is down route extract {routeanddate[:3]} and this is the data extract {data[1][0]}")
                 for counter,downtime in enumerate(data[2],0):
                     #print(counter)
                     url = [data[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[1][0]+'/'+data[1][1]+'/'+data[0]+'/'+str(data[2][counter])+'/dep/']
@@ -191,7 +192,7 @@ def generateurl(collecteddateinfo):
                     tempurldown.append(url)
 
                     
-            if routeanddate[3:6] != data[1][0]:
+            if routeanddate[3:6] == data[1][1]:
                 #print(f"this is up route extract {routeanddate[3:6]} and this is the data extract {data[1][1]}")
                 for counter,uptime in enumerate(data[3],0):
                     url = [data[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[3][0]+'/'+data[3][1]+'/'+data[0]+'/'+str(data[4][counter])+'/dep/']
