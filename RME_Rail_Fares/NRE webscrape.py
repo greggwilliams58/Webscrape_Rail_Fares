@@ -15,34 +15,32 @@ def main():
     #routesandtimedatafp = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Faresdatafile.xlsx'
     #filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares'
 
-
     #file paths to be used when working at home
-    routesandtimedatafp = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\datafile.xlsx'
+    routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
     filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
     filename = f'RME_data_{formatted_date}.csv'
 
-    alltimesdates = gettingquerydata(routesandtimedatafp)
-    #pp.pprint(alltimesdates)
+    #collecting the routes and times metadata
+    alltimesdates = gettingquerydata(routesandtimedata)
     
     #generated the sets of dates and times to work with
     collateddatesandtime = getdatetimesinfo(alltimesdates)
 
-    #pp.pprint(collateddatesandtime)
-    #full list of URLs to be generated
+    #generate the URL's to be processed by NRE website
     urlstoprocess = generateurl(collateddatesandtime)
     
     print("getting NRE data now...")
 
     #extracting the data from the webset and converting to json
-    jsondata = extractwebdata(urlstoprocess)
+    #jsondata = extractwebdata(urlstoprocess)
 
-    #convert the json into csv format and save externally
-    processjson(jsondata,filepath,filename)
+    #convert the json into csv format and saving it externally as excel xlsx file
+    #processjson(jsondata,filepath,filename)
 
 
 def extractwebdata(urlstr):
     """
-    This makes a call to the NRE webset and parses the html, selecting the relevant journey data as json format
+    This makes a request to the NRE webset and parses the html, selecting the relevant journey data as json format
     it also adds the travel date to the json dataset
 
     Parameters 
@@ -163,54 +161,45 @@ def generateurl(collecteddateinfo):
     Returns:
     urltoprocess:       a list containting travel date and url information [traveldate, url]
     """
+    combinedupanddownurls = {}
+    urldown = []
+    urlup = []
 
-    urltoprocess = {}
-    tempurldown = []
-    tempurlup = []
+    #extract date and departure station from key of collecteddata dictionary
+    dateanddeparturestation = list(collecteddateinfo.keys())
 
-    #extract dates of travel from keys of dictionary
-    routesoftravel = list(collecteddateinfo.keys())
-    #pp.pprint(routesoftravel)
     #walk through dates, routes and times to create url
-    #pp.pprint(dateoftravel)
+    for departstationanddate in dateanddeparturestation:
+        
+        for counter,dateroutetimes in enumerate(collecteddateinfo[departstationanddate]):
 
-
-    for routeanddate in routesoftravel:
-        #pp.pprint(routeanddate)
-        for counter,data in enumerate(collecteddateinfo[routeanddate]):
-
-            if routeanddate[6:] ==  data[1][0]:
-                #print(f"this is down route extract {routeanddate[6:]}({routeanddate}) and this is the data extract {data[1][0]}")
-                for counter,downtime in enumerate(data[2],0):
-                    #print(counter)
-                    url = [data[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[1][0]+'/'+data[1][1]+'/'+data[0]+'/'+str(data[2][counter])+'/dep/']
-                    print(url)
-                    tempurldown.append(url)
-
-                    
-            if routeanddate[6:] == data[1][1]:
-                #print(f"this is up route extract {routeanddate[3:6]} and this is the data extract {data[1][1]}")
-                for counter,uptime in enumerate(data[3],0):
-                    url = [data[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+data[3][0]+'/'+data[3][1]+'/'+data[0]+'/'+str(data[4][counter])+'/dep/']
-                    print(url)
-                    tempurlup.append(url)
+            if departstationanddate[6:] ==  dateroutetimes[1][0]:
+                for counter,downtime in enumerate(dateroutetimes[2],0):
+                    url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/']
+                    urldown.append(url)
+  
+            if departstationanddate[6:] == dateroutetimes[1][1]:
+                for counter,uptime in enumerate(dateroutetimes[4],0):
+                    url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/']
+                    urlup.append(url)
 
     #combine both up and down routes into a new common list
-    urltoprocess = tempurldown + tempurlup
+    combinedupanddownurls = urldown + urlup
     
-    return urltoprocess
+    return combinedupanddownurls
         
   
 def getdatetimesinfo(routesandtimes, dateoffset = 0):
     """
-    This is an 'initialisation' procedure which sets most of the parameters for the functioning of the whole process
+    This is an 'initialisation' procedure which sets most of the parameters for the functioning of the whole process.
     It takes a date and derives the dates 1,7 and 30 days in the future and then dertives the appropriate days, origin and destination routes and departure times for each of these factors
     
     Parameters:
+    routesandtimes: A dataframe holding routes and times information
     dateoffset:     An integer representing the number of days to alter the date of search by.  DEFAULT is 0 days
 
     Returns:
-    datesandtimes:  A default dictionary containing {dateoftravel:[[up journey],[times],[down journey],[times]]}
+    datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times]]}
 
     """
     #pp.pprint(routesandtimes)
@@ -242,7 +231,7 @@ def getdatetimesinfo(routesandtimes, dateoffset = 0):
         endpoint = routesandtimes[count][0][0][1]
 
         for upanddown in routesandtimes[count][0]:
-            #print(f"this is upanddown[0] {upanddown[0]}")
+
         #for each date to move ahead increment
             for counter,item in enumerate(daystomoveahead):
 
@@ -270,8 +259,6 @@ def getdatetimesinfo(routesandtimes, dateoffset = 0):
 
                 datesandtimes[ formattedfuturedate + upanddown[0]] = [[formattedfuturedate,   originanddestination[0],downtimestocheck,originanddestination[1],uptimestocheck]]
     
-            
-    pp.pprint(datesandtimes)
     return datesandtimes
 
 
