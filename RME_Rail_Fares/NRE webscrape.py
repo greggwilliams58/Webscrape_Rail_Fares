@@ -313,8 +313,6 @@ def gettingquerydata(fp):
 
     return final_list
 
-
-
-
+#routine boilerplate
 if __name__ == '__main__':
     main()
