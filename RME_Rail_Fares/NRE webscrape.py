@@ -12,12 +12,12 @@ def main():
     formatted_date = datetime.now().strftime('%Y%m%d_%H-%M')
 
     #file paths to be used in the office
-    #routesandtimedatafp = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Faresdatafile.xlsx'
-    #filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares'
+    routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares'
 
     #file paths to be used when working at home
-    routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
+    #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
     filename = f'RME_data_{formatted_date}.csv'
 
     #collecting the routes and times metadata
@@ -32,10 +32,10 @@ def main():
     print("getting NRE data now...")
 
     #extracting the data from the webset and converting to json
-    #jsondata = extractwebdata(urlstoprocess)
+    jsondata = extractwebdata(urlstoprocess)
 
     #convert the json into csv format and saving it externally as excel xlsx file
-    #processjson(jsondata,filepath,filename)
+    processjson(jsondata,filepath,filename)
 
 
 def extractwebdata(urlstr):
@@ -176,11 +176,13 @@ def generateurl(collecteddateinfo):
             if departstationanddate[6:] ==  dateroutetimes[1][0]:
                 for counter,downtime in enumerate(dateroutetimes[2],0):
                     url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/']
+                    print(url)
                     urldown.append(url)
   
             if departstationanddate[6:] == dateroutetimes[1][1]:
                 for counter,uptime in enumerate(dateroutetimes[4],0):
                     url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/']
+                    print(url)
                     urlup.append(url)
 
     #combine both up and down routes into a new common list
