@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import pprint as pp
 from datetime import datetime, timedelta
+import calendar
 from collections import defaultdict
 import csv
 import pandas as pd
@@ -22,20 +23,34 @@ def main():
 
     #collecting the routes and times metadata
     alltimesdates = gettingquerydata(routesandtimedata)
+
+    #check day of the week
+    dayofexecution = calendar.day_name[datetime.today().weekday()]
+
+    if dayofexecution == "Friday":
+        reps = 3
+        loopcounter = 3
+    else:
+        reps = 0
+        loopcounter = 1
+
+
+        ##functionalise this block to allow easier looping?
+
     
-    #generated the sets of dates and times to work with
-    collateddatesandtime = getdatetimesinfo(alltimesdates)
+        #generated the sets of dates and times to work with
+        collateddatesandtime = getdatetimesinfo(alltimesdates)
 
-    #generate the URL's to be processed by NRE website
-    urlstoprocess = generateurl(collateddatesandtime)
+        #generate the URL's to be processed by NRE website
+        urlstoprocess = generateurl(collateddatesandtime)
     
-    print("getting NRE data now...")
+        print("getting NRE data now...")
 
-    #extracting the data from the webset and converting to json
-    jsondata = extractwebdata(urlstoprocess)
+        #extracting the data from the webset and converting to json
+        jsondata = extractwebdata(urlstoprocess)
 
-    #convert the json into csv format and saving it externally as excel xlsx file
-    processjson(jsondata,filepath,filename)
+        #convert the json into csv format and saving it externally as excel xlsx file
+        processjson(jsondata,filepath,filename)
 
 
 def extractwebdata(urlstr):

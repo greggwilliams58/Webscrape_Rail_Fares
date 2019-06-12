@@ -24,6 +24,9 @@
     <Compile Include="readindatatest.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="zzz_not_in_use_LNER.py">
       <SubType>Code</SubType>
     </Compile>
