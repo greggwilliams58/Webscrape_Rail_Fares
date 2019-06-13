@@ -21,19 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="readindatatest.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="zzz_not_in_use_LNER.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="NRE webscrape.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="zzz_not_in_use_RME_Rail_Fares.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
