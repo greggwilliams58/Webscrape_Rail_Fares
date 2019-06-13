@@ -10,36 +10,37 @@ import pandas as pd
 
 
 def main():
-    formatted_date = datetime.now().strftime('%Y%m%d_%H-%M')
-
-    #file paths to be used in the office
-    routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares'
-
-    #file paths to be used when working at home
-    #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
-    filename = f'RME_data_{formatted_date}.csv'
-
     #collecting the routes and times metadata
+    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares'
+    routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    
     alltimesdates = gettingquerydata(routesandtimedata)
 
     #check day of the week
     dayofexecution = calendar.day_name[datetime.today().weekday()]
 
-    if dayofexecution == "Friday":
-        reps = 3
-        loopcounter = 3
+    if dayofexecution == "Thursday":
+        createdataset(filepath,alltimesdates)
+        for i in range(1,3):
+            createdataset(filepath,alltimesdates,i)
     else:
-        reps = 0
-        loopcounter = 1
+        createdataset(filepath,alltimesdates)
 
-
-        ##functionalise this block to allow easier looping?
 
     
-        #generated the sets of dates and times to work with
-        collateddatesandtime = getdatetimesinfo(alltimesdates)
+
+def createdataset(filepath,alltimesdates,datetooffset=0):
+        formatted_date = datetime.now().strftime('%Y%m%d_%H_%M')
+
+        #file paths to be used in the office
+        
+        
+
+        #file paths to be used when working at home
+        #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+        #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
+        filename = f'RME_data_{formatted_date}.csv'#generated the sets of dates and times to work with
+        collateddatesandtime = getdatetimesinfo(alltimesdates,datetooffset)
 
         #generate the URL's to be processed by NRE website
         urlstoprocess = generateurl(collateddatesandtime)
@@ -51,6 +52,7 @@ def main():
 
         #convert the json into csv format and saving it externally as excel xlsx file
         processjson(jsondata,filepath,filename)
+
 
 
 def extractwebdata(urlstr):
@@ -206,7 +208,7 @@ def generateurl(collecteddateinfo):
     return combinedupanddownurls
         
   
-def getdatetimesinfo(routesandtimes, dateoffset = 0):
+def getdatetimesinfo(routesandtimes, dateoffset):
     """
     This is an 'initialisation' procedure which sets most of the parameters for the functioning of the whole process.
     It takes a date and derives the dates 1,7 and 30 days in the future and then dertives the appropriate days, origin and destination routes and departure times for each of these factors
