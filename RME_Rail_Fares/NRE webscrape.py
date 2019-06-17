@@ -7,6 +7,7 @@ import calendar
 from collections import defaultdict
 import csv
 import pandas as pd
+import collections
 
 
 def main():
@@ -244,7 +245,7 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     #populate defaultdict with values depending on date increments day of the week
     
     datesandtimes = defaultdict(list)
-    
+
     ###start loop with all the dates and times here
     for count, items in enumerate(routesandtimes):
         originanddestination = routesandtimes[count][0]
@@ -257,9 +258,6 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         upsaturdaytimes = routesandtimes[count][5]
         upsundaytimes = routesandtimes[count][6]
         
-        startpoint = routesandtimes[count][0][0][0]
-        endpoint = routesandtimes[count][0][0][1]
-
         for upanddown in routesandtimes[count][0]:
 
         #for each date to move ahead increment
@@ -288,7 +286,7 @@ def getdatetimesinfo(routesandtimes, dateoffset):
                     print("error")
 
                 datesandtimes[ formattedfuturedate + upanddown[0]] = [[formattedfuturedate,   originanddestination[0],downtimestocheck,originanddestination[1],uptimestocheck]]
-    
+                
     return datesandtimes
 
 
