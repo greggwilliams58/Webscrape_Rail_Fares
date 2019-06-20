@@ -83,7 +83,29 @@ def extractwebdata(urlstr):
     for counter, items in enumerate(urlstr,1):
         print(f"getting item {counter} of {len(urlstr)}")
 
-        response = urllib.request.urlopen(items[1])
+        try:
+            response = urllib.request.urlopen(items[1])
+        
+        except OSError as e:
+            print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
+            print(str(f"{e}\n"))
+            print(f"The url used was {items[1]}")   
+        except urllib.error.URLError as URLwrong:
+           # print(f"The URL is wrong.  The error code is {URLwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses \n")  
+            print(f"The reason given for the error is: {URLwrong.reason} \n")
+            print(f"The url used was {items[1]}")
+        except urllib.error.HTTPError as HTTPwrong:
+            print(f"HTTP is wrong. The error code is {HTTPwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses")
+            print(f"The reasons given for the error is {HTTPwrong.reason} \n")
+            print(f"The url used was {items[1]}")
+        except TimeoutError as e:
+            print(str(e))
+            print("OOPS!! Timeout Error.  Check that the URL is correct.\n")
+            print(f"The url used was {items[1]}")
+
+
+
+
         soup = BeautifulSoup(response,'html.parser')
 
         #extract the required json data
@@ -94,9 +116,10 @@ def extractwebdata(urlstr):
 
         #add the travel date information to the json data
         jsonData['jsonJourneyBreakdown'].update(TravelDate = items[0])
-        
+            
         rawjsondata.append(jsonData)
-
+  
+            
     return rawjsondata
 
 
@@ -204,48 +227,16 @@ def generateurl(collecteddateinfo):
 
             if departstationanddate[6:] ==  dateroutetimes[1][0]:
                 for counter,downtime in enumerate(dateroutetimes[2],0):
-                    try:
-                        url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/']
-                        urldown.append(url)
-                    except requests.ConnectionError as e:
-                        print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
-                        print(str(e))
-                    except requests.Timeout as e:
-                        print("OOPS!! Timeout Error")
-                        print(str(e))
-                    except requests.URLError as URLwrong:
-                        print(f"URL is wrong.  The error code is {URLwrong}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses")  
-                        print(f"The reasons given for the error is {URLwrong.reason}")
-                    except requests.HTTPError as HTTPwrong:
-                        print(f"HTTP is wrong. The error code is {HTTPwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses")
-                        print(f"The reasons given for the error is {HTTPwrong.reason}")
-                    except requests.RequestException as e:
-                        print("OOPS!! General Error")
-                        print(str(e))    
-
-                        ##print(url)
+                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/']
+                    urldown.append(url)
+                    print(url)
                     
   
             if departstationanddate[6:] == dateroutetimes[1][1]:
                 for counter,uptime in enumerate(dateroutetimes[4],0):
-                    try:
-                        url = [dateroutetimes[0],'http://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/']
-                        urlup.append(url)
-                    except requests.ConnectionError as e:
-                        print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
-                        print(str(e))
-                    except requests.Timeout as e:
-                        print("OOPS!! Timeout Error")
-                        print(str(e))
-                    except requests.URLError as URLwrong:
-                        print(f"URL is wrong.  The error code is {URLwrong}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses")  
-                        print(f"The reasons given for the error is {URLwrong.reason}")
-                    except requests.HTTPError as HTTPwrong:
-                        print(f"HTTP is wrong. The error code is {HTTPwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses")
-                        print(f"The reasons given for the error is {HTTPwrong.reason}")
-                    except requests.RequestException as e:
-                        print("OOPS!! General Error")
-                        print(str(e)) 
+                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/']
+                    urlup.append(url)
+                    print(url)                 
 
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
