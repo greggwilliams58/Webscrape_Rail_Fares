@@ -8,7 +8,8 @@ from collections import defaultdict
 import csv
 import pandas as pd
 import collections
-
+import time
+import random
 
 def main():
     #file paths to be used when working at home
@@ -81,11 +82,14 @@ def extractwebdata(urlstr):
 
     rawjsondata=[]
     for counter, items in enumerate(urlstr,1):
-        print(f"getting item {counter} of {len(urlstr)}")
+        randsleep = random.randrange(10,99)/100
+        
+        print(f"getting item {counter} of {len(urlstr)} with a pause of {randsleep} seconds")
 
         try:
             response = urllib.request.urlopen(items[1])
-        
+            time.sleep(randsleep)
+
         except OSError as e:
             print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
             print(str(f"{e}\n"))
