@@ -11,6 +11,7 @@ import collections
 import time
 import random
 
+
 def main():
     #file paths to be used when working at home
     #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
@@ -142,6 +143,8 @@ def processjson(jsoninfo,fp, fn):
     """
 
     print("preparing the csv file")
+        #initialisation information
+    weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
 
     #create a blank csv object
     datafile = open(fp + fn, 'w',newline='')
@@ -152,21 +155,29 @@ def processjson(jsoninfo,fp, fn):
     #create a header for the csv file
     response_header = []
     
-    response_header.append('date_data_generated')
-    response_header.append('travel_Date')
-    response_header.append('departure_station')
-    response_header.append('arrival_station')
-    response_header.append('departure_time')
-    response_header.append('breakdown_time')
-    response_header.append('cheapest_first_class')
-    response_header.append('discount')
-    response_header.append('fare_provider')
-    response_header.append('route_description')
-    response_header.append('route_name')
-    response_header.append('ticket_type')
-    response_header.append('full_price')
+    response_header.append('Origin')
+    response_header.append('Destination')
+    response_header.append('Date_accessed')
+    response_header.append('Departure')
+    response_header.append('Departure_Date')
+    response_header.append('Departure_Day')
+    response_header.append('Departure_time')
+    response_header.append('Arrival_time')
+    response_header.append('Duration')
+    response_header.append('Price')
+    response_header.append('Ticket_type')
+
+
+    #response_header.append('breakdown_time')
+    #response_header.append('cheapest_first_class')
+    #response_header.append('discount')
+    #response_header.append('fare_provider')
+    #response_header.append('route_description')
+    #response_header.append('route_name')
+    #response_header.append('ticket_type')
+    #response_header.append('full_price')
     response_header.append('nre_fare_category')
-    response_header.append('ticketprice')
+    #response_header.append('ticketprice')
 
     #write the csv header row
     csvwriter.writerow(response_header)
@@ -174,28 +185,51 @@ def processjson(jsoninfo,fp, fn):
     #extract data from the json file
     response = []
     for journey in jsoninfo:
-        #derived formatted date for date of data extraction
-        response.append(datetime.now().strftime('%Y%m%d_%H-%M'))
+        response.append(journey['jsonJourneyBreakdown']['departureStationName'])
+        response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
         
-        #fill travel date trailing zeros
+        #derived formatted date for date of data extraction
+        todaydate = datetime.now()
+        response.append(todaydate.strftime('%Y%m%d_%H-%M'))
+        
+        #get and format date of travel
         traveldate = str(journey['jsonJourneyBreakdown']['TravelDate']).zfill(6)
         #add / marks to avoid excel formatting doing odd things
         traveldate = traveldate[0:2] + '/' + traveldate[2:4] + '/' + traveldate [4:6]
+
+        #placeholder for 'Departure_Days_Ahead'
+        timedelta_gap = (datetime.strptime(traveldate,"%d/%m/%y") - todaydate)+timedelta(days=1)
+        travel_gap = timedelta_gap.days
+        
+        response.append(travel_gap)
+
         #add the formatted travel date to list
         response.append(traveldate)
-        response.append(journey['jsonJourneyBreakdown']['departureStationName'])
-        response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
+
+        #departure day
+        response.append(weekdays[datetime.strptime(traveldate,"%d/%m/%y").weekday()])
+
         response.append(journey['jsonJourneyBreakdown']['departureTime'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['breakdownType'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['cheapestFirstClassFare'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['discount'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteName'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fullFarePrice'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
+        response.append(journey['jsonJourneyBreakdown']['arrivalTime'])
+
+        #journey_duration
+        travel_time = str(journey['jsonJourneyBreakdown']['durationHours']) + ":" + str(journey['jsonJourneyBreakdown']['durationMinutes'])
+
+        response.append(travel_time)
+
         response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
+
+        
+        #response.append(journey['singleJsonFareBreakdowns'][0]['breakdownType'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['cheapestFirstClassFare'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['discount'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteName'])
+        #response.append(journey['singleJsonFareBreakdowns'][0]['fullFarePrice'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
+        
 
         #write data to the row of the csv file
         csvwriter.writerow(response)
@@ -368,6 +402,14 @@ def gettingquerydata(fp):
         temp_list = []
 
     return final_list
+
+
+def convert_timedelta(duration):
+    days, seconds = duration.days, duration.seconds
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = (seconds % 60)
+    return days, hours, minutes, seconds
 
 #routine boilerplate
 if __name__ == '__main__':
