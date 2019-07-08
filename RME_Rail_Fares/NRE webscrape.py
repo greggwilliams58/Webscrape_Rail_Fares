@@ -156,28 +156,26 @@ def processjson(jsoninfo,fp, fn):
     response_header = []
     
     response_header.append('Origin')
+    response_header.append('Origin_Code')
     response_header.append('Destination')
+    response_header.append('Destination_Code')
     response_header.append('Date_accessed')
-    response_header.append('Departure')
+    response_header.append('Departure_Gap')
     response_header.append('Departure_Date')
     response_header.append('Departure_Day')
     response_header.append('Departure_time')
     response_header.append('Arrival_time')
     response_header.append('Duration')
+    response_header.append('Changes')
     response_header.append('Price')
+
+    response_header.append('Fare_Route_Description')
+    response_header.append('Fare_Provider')
+    response_header.append('TOC_Name')
+    response_header.append('TOC_Provider')
     response_header.append('Ticket_type')
-
-
-    #response_header.append('breakdown_time')
-    #response_header.append('cheapest_first_class')
-    #response_header.append('discount')
-    #response_header.append('fare_provider')
-    #response_header.append('route_description')
-    #response_header.append('route_name')
-    #response_header.append('ticket_type')
-    #response_header.append('full_price')
     response_header.append('nre_fare_category')
-    #response_header.append('ticketprice')
+
 
     #write the csv header row
     csvwriter.writerow(response_header)
@@ -186,8 +184,9 @@ def processjson(jsoninfo,fp, fn):
     response = []
     for journey in jsoninfo:
         response.append(journey['jsonJourneyBreakdown']['departureStationName'])
+        response.append(journey['jsonJourneyBreakdown']['departureStationCRS'])
         response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
-        
+        response.append(journey['jsonJourneyBreakdown']['arrivalStationCRS'])
         #derived formatted date for date of data extraction
         todaydate = datetime.now()
         response.append(todaydate.strftime('%Y%m%d_%H-%M'))
@@ -216,18 +215,13 @@ def processjson(jsoninfo,fp, fn):
         travel_time = str(journey['jsonJourneyBreakdown']['durationHours']) + ":" + str(journey['jsonJourneyBreakdown']['durationMinutes'])
 
         response.append(travel_time)
-
+        response.append(journey['jsonJourneyBreakdown']['changes'])
         response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['tocName'])
+        response.append(journey['singleJsonFareBreakdowns'][0]['tocProvider'])
         response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
-
-        
-        #response.append(journey['singleJsonFareBreakdowns'][0]['breakdownType'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['cheapestFirstClassFare'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['discount'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteName'])
-        #response.append(journey['singleJsonFareBreakdowns'][0]['fullFarePrice'])
         response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
         
 
@@ -265,14 +259,14 @@ def generateurl(collecteddateinfo):
 
             if departstationanddate[6:] ==  dateroutetimes[1][0]:
                 for counter,downtime in enumerate(dateroutetimes[2],0):
-                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/']
+                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/?directonly']
                     urldown.append(url)
                     print(url)
                     
   
             if departstationanddate[6:] == dateroutetimes[1][1]:
                 for counter,uptime in enumerate(dateroutetimes[4],0):
-                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/']
+                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/?directonly']
                     urlup.append(url)
                     print(url)                 
 
