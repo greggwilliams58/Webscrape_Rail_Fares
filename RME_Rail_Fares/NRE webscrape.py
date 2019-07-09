@@ -260,19 +260,34 @@ def generateurl(collecteddateinfo):
             if departstationanddate[6:] ==  dateroutetimes[1][0]:
                 for counter,downtime in enumerate(dateroutetimes[2],0):
                     url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/?directonly']
-                    urldown.append(url)
-                    print(url)
+                    
+                    #check if times have been supplied from the metadata
+                    if "//dep" in url[1]:
+                        print("No times supplied here")
+                    else:
+                        urldown.append(url)
+                        print(url)
                     
   
             if departstationanddate[6:] == dateroutetimes[1][1]:
                 for counter,uptime in enumerate(dateroutetimes[4],0):
                     url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/?directonly']
-                    urlup.append(url)
-                    print(url)                 
+                    
+                    #check if times have been supplied from the metadata
+                    if "//dep" in url[1]:
+                        print("No times supplied here")
+                    else:
+                        urlup.append(url)
+                        print(url)                 
 
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
     
+ 
+    ##remove dead URLs (ie no times supplied by source file)
+    #combinedupanddownurls[:] = [url[1] for url[1] in combinedupanddownurls[1] if "//dep/" not in url[1]]
+
+
     return combinedupanddownurls
         
   
@@ -373,11 +388,16 @@ def gettingquerydata(fp):
         routes = [routesup, routesdown]
         temp_list.append(routes)
 
+        
         downweekdaytime = raw_data.iloc[2,count].split(',')
         temp_list.append(downweekdaytime)
+    
         
+
         downsaturdaytime = raw_data.iloc[3,count].split(',')
         temp_list.append(downsaturdaytime)
+
+        
 
         downsundaytime = raw_data.iloc[4,count].split(',')
         temp_list.append(downsundaytime)
