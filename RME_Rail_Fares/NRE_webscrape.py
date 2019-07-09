@@ -14,7 +14,7 @@ import random
 
 def main():
     #file paths to be used when working at home
-    routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
     filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
 
     #input datafile location and data output location
