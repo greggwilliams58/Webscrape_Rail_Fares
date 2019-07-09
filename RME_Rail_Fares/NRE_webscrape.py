@@ -14,12 +14,12 @@ import random
 
 def main():
     #file paths to be used when working at home
-    routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
+    #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
 
     #input datafile location and data output location
-    #routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    #filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
+    routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
+    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
     
     #collect route and times metadata
     alltimesdates = gettingquerydata(routesandtimedata)
