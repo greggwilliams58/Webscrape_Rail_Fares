@@ -11,27 +11,45 @@ import collections
 import time
 import random
 import sys
-
+import os
 
 def main():
     
+    #test for live or frozen running
     if getattr(sys,'frozen',False):
         print("running in a bundle\n")
     else:
         print("running live")
     
+    frozen = 'not'
+
+    #test for live or frozen with path file info
+    if getattr(sys, 'frozen', False):
+            # we are running in a bundle
+            frozen = 'ever so'
+            bundle_dir = sys._MEIPASS
+    else:
+            # we are running in a normal Python environment
+            bundle_dir = os.path.dirname(os.path.abspath(__file__))
     
+    print( 'we are',frozen,'frozen')
+    print( 'bundle dir is', bundle_dir )
+    print( 'sys.argv[0] is', sys.argv[0] )
+    print( 'sys.executable is', sys.executable )
+    print( 'os.getcwd is', os.getcwd() )
     
+
     #file paths to be used when working at home
     #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
     #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
 
     #input datafile location and data output location
-    routesandtimedata = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    filepath = 'C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\'
+    routesandtimedata = resource_path('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\')
+    routesandtimedatafilename = 'route_and_time_metadata.xlsx'
+    filepath = resource_path('C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\')
     
     #collect route and times metadata
-    alltimesdates = gettingquerydata(routesandtimedata)
+    alltimesdates = gettingquerydata(routesandtimedata + routesandtimedatafilename)
 
     #check day of the week
     dayofexecution = calendar.day_name[datetime.today().weekday()]
@@ -433,6 +451,13 @@ def convert_timedelta(duration):
     minutes = (seconds % 3600) // 60
     seconds = (seconds % 60)
     return days, hours, minutes, seconds
+
+
+def resource_path(relative):
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative)
+    return os.path.join(relative)
+
 
 #routine boilerplate
 if __name__ == '__main__':
