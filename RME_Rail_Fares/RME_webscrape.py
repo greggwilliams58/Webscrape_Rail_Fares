@@ -10,9 +10,18 @@ import pandas as pd
 import collections
 import time
 import random
+import sys
 
 
 def main():
+    
+    if getattr(sys,'frozen',False):
+        print("running in a bundle\n")
+    else:
+        print("running live")
+    
+    
+    
     #file paths to be used when working at home
     #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
     #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'

@@ -3,6 +3,26 @@
    'c:\\program '
    'files\\python36\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
   ('pkg_resources._vendor.packaging.version',
    'c:\\program '
    'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
@@ -36,9 +56,17 @@
   ('ctypes._endian',
    'c:\\program files\\python36\\lib\\ctypes\\_endian.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.__about__',
+  ('pkg_resources._vendor.packaging._compat',
    'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.utils',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.markers',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging._structures',
    'c:\\program '
@@ -48,37 +76,9 @@
    'c:\\program '
    'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging._compat',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.specifiers',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
   ('pkg_resources._vendor.six',
    'c:\\program '
    'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.utils',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
    'PYMODULE'),
   ('__main__',
    'C:\\Program Files\\Python36\\Scripts\\pyinstaller.exe\\__main__.py',
@@ -593,7 +593,6 @@
    'c:\\program files\\python36\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('__future__', 'c:\\program files\\python36\\lib\\__future__.py', 'PYMODULE'),
-  ('argparse', 'c:\\program files\\python36\\lib\\argparse.py', 'PYMODULE'),
   ('difflib', 'c:\\program files\\python36\\lib\\difflib.py', 'PYMODULE'),
   ('ast', 'c:\\program files\\python36\\lib\\ast.py', 'PYMODULE'),
   ('inspect', 'c:\\program files\\python36\\lib\\inspect.py', 'PYMODULE'),
@@ -633,8 +632,6 @@
    'PYMODULE'),
   ('plistlib', 'c:\\program files\\python36\\lib\\plistlib.py', 'PYMODULE'),
   ('platform', 'c:\\program files\\python36\\lib\\platform.py', 'PYMODULE'),
-  ('token', 'c:\\program files\\python36\\lib\\token.py', 'PYMODULE'),
-  ('tokenize', 'c:\\program files\\python36\\lib\\tokenize.py', 'PYMODULE'),
   ('urllib.parse',
    'c:\\program files\\python36\\lib\\urllib\\parse.py',
    'PYMODULE'),
@@ -646,7 +643,6 @@
   ('pydoc_data.topics',
    'c:\\program files\\python36\\lib\\pydoc_data\\topics.py',
    'PYMODULE'),
-  ('textwrap', 'c:\\program files\\python36\\lib\\textwrap.py', 'PYMODULE'),
   ('html.entities',
    'c:\\program files\\python36\\lib\\html\\entities.py',
    'PYMODULE'),
@@ -772,13 +768,14 @@
    'c:\\program files\\python36\\lib\\unittest\\__init__.py',
    'PYMODULE'),
   ('doctest', 'c:\\program files\\python36\\lib\\doctest.py', 'PYMODULE'),
-  ('quopri', 'c:\\program files\\python36\\lib\\quopri.py', 'PYMODULE'),
-  ('stringprep', 'c:\\program files\\python36\\lib\\stringprep.py', 'PYMODULE'),
   ('_compression',
    'c:\\program files\\python36\\lib\\_compression.py',
    'PYMODULE'),
   ('bz2', 'c:\\program files\\python36\\lib\\bz2.py', 'PYMODULE'),
-  ('struct', 'c:\\program files\\python36\\lib\\struct.py', 'PYMODULE'),
+  ('quopri', 'c:\\program files\\python36\\lib\\quopri.py', 'PYMODULE'),
+  ('getopt', 'c:\\program files\\python36\\lib\\getopt.py', 'PYMODULE'),
+  ('base64', 'c:\\program files\\python36\\lib\\base64.py', 'PYMODULE'),
+  ('stringprep', 'c:\\program files\\python36\\lib\\stringprep.py', 'PYMODULE'),
   ('stat', 'c:\\program files\\python36\\lib\\stat.py', 'PYMODULE'),
   ('genericpath',
    'c:\\program files\\python36\\lib\\genericpath.py',
@@ -799,10 +796,13 @@
    'PYMODULE'),
   ('subprocess', 'c:\\program files\\python36\\lib\\subprocess.py', 'PYMODULE'),
   ('os', 'c:\\program files\\python36\\lib\\os.py', 'PYMODULE'),
+  ('token', 'c:\\program files\\python36\\lib\\token.py', 'PYMODULE'),
   ('copy', 'c:\\program files\\python36\\lib\\copy.py', 'PYMODULE'),
+  ('textwrap', 'c:\\program files\\python36\\lib\\textwrap.py', 'PYMODULE'),
+  ('struct', 'c:\\program files\\python36\\lib\\struct.py', 'PYMODULE'),
   ('gettext', 'c:\\program files\\python36\\lib\\gettext.py', 'PYMODULE'),
-  ('getopt', 'c:\\program files\\python36\\lib\\getopt.py', 'PYMODULE'),
-  ('base64', 'c:\\program files\\python36\\lib\\base64.py', 'PYMODULE'),
+  ('argparse', 'c:\\program files\\python36\\lib\\argparse.py', 'PYMODULE'),
+  ('tokenize', 'c:\\program files\\python36\\lib\\tokenize.py', 'PYMODULE'),
   ('random', 'c:\\program files\\python36\\lib\\random.py', 'PYMODULE'),
   ('pandas',
    'c:\\program files\\python36\\lib\\site-packages\\pandas\\__init__.py',
@@ -1107,9 +1107,45 @@
   ('setuptools',
    'c:\\program files\\python36\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
+  ('setuptools._vendor.packaging.utils',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
   ('setuptools._vendor.packaging.version',
    'c:\\program '
    'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.markers',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._compat',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.pyparsing',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.specifiers',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('setuptools._vendor',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._structures',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.requirements',
+   'c:\\program '
+   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
    'PYMODULE'),
   ('setuptools._vendor.six',
    'c:\\program '
@@ -1118,42 +1154,6 @@
   ('setuptools._vendor.packaging.__about__',
    'c:\\program '
    'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.utils',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.markers',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._structures',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._compat',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.requirements',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.pyparsing',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
-   'PYMODULE'),
-  ('setuptools._vendor',
-   'c:\\program '
-   'files\\python36\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'c:\\program files\\python36\\lib\\site-packages\\setuptools\\msvc.py',
