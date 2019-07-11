@@ -13,6 +13,7 @@ import random
 import sys
 import os
 
+
 def main():
     
     #test for live or frozen running
@@ -46,8 +47,11 @@ def main():
     #input datafile location and data output location
     routesandtimedata = resource_path('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\')
     routesandtimedatafilename = 'route_and_time_metadata.xlsx'
-    filepath = resource_path('C:\\Users\\gwilliams\\Desktop\\Python Experiments\\work projects\\RME_Rail_Fares\\')
+    filepath = resource_path('C:\\Users\\gwilliams\\Documents\\GitHub\\\RME_Rail_Fares\\')
     
+    print("This is the filepath for routes and times: " +routesandtimedata + "\n")
+    print("This is the working base filepath + bundle_directory:" + bundle_directory())
+
     #collect route and times metadata
     alltimesdates = gettingquerydata(routesandtimedata + routesandtimedatafilename)
 
@@ -62,6 +66,9 @@ def main():
             createdataset(filepath,alltimesdates,i)
     else:
         createdataset(filepath,alltimesdates)
+
+    #keep the console window open
+    input("Press enter to exit after this ;)")
 
 
 def createdataset(filepath,alltimesdates,datetooffset=0):
@@ -454,6 +461,10 @@ def convert_timedelta(duration):
 
 
 def resource_path(relative):
+    """
+    An attempt to redirect the reference to the data file and the output path.
+    """
+    
     if hasattr(sys, "_MEIPASS"):
         return os.path.join(sys._MEIPASS, relative)
     return os.path.join(relative)
