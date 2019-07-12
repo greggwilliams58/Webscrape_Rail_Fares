@@ -1,0 +1,48 @@
+Application for getting data from NRE Website for the RME Team.
+Version 1.0
+Written by Greg Williams at ORR, 11th July 2019
+
+HOW TO INSTALL
+If application has been recieved as a zip file, it should be unzipped to a location of your choice.
+
+HOW TO USE
+go to the //dist/RME_webscrape folder.
+
+The first three folders in this location are relevant.  All other folders and files (apart from the oneending in .exe) should be ignored
+
+1_READ_ME_Instructions
+This is a copy of these instructions
+
+2_Routes_and_times_metadata
+Edit this Excel file to specify the routes and times you want to search
+The first column is fixed
+All other columns may be edited.
+
+Column 1: Variable Name - This is fixed and are descriptions of each of the variables.
+Column 2 and others are lists of routes and times, which can be edited.
+
+Variable Descriptions: 
+origin and destination down: routes which run away from London
+origin and destination up: routes which run up towards London
+
+downweekdaytimes: times for searching on down routes, Monday-Friday
+downsaturdaytimes: times for searching on down routes, Saturday
+downsundaytimes: times for searching on down routes, Sunday
+
+upweekdaytimes: times for searching on up routes, Monday-Friday
+upsaturdaytimes: times for searching on up routes, Saturday
+upsundaytimes: times for searching on up routes, Sunday
+
+
+FORMATTING OF DATA.
+This is important as if metadata is in the incorrect format then then application will fail to run.
+
+FORMATTING OF ROUTES
+Stations are given in the three letter CRS code, which can be found by running a dummy query for your route on the NRE website (https://www.nationalrail.co.uk/default.aspx)
+A comma is used as the separator between origin and destination stations.
+Down routes have non-london station first, london station second; up routes are reversed.
+
+FORMATTING OF TIMES:
+All times should be in text format, with an Apostrophe at the front to enforce text format.
+Times are in HHMM format, with a comma as the separator.
+If no times are required, a single comma should be in the cell.  This is required for the running of the application and to serve as an "intentionally blank" placeholder.

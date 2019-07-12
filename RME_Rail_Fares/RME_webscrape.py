@@ -45,15 +45,12 @@ def main():
     #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
 
     #input datafile location and data output location
-    routesandtimedata = resource_path('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\')
-    routesandtimedatafilename = 'route_and_time_metadata.xlsx'
-    filepath = resource_path('C:\\Users\\gwilliams\\Documents\\GitHub\\\RME_Rail_Fares\\')
+    routesandtimedatafile = '\\2_Route_and_times_metadata\\route_and_time_metadata.xlsx'
+    outputfilepath = '\\3_Data_goes_here\\'
     
-    print("This is the filepath for routes and times: " +routesandtimedata + "\n")
-    print("This is the working base filepath + bundle_directory:" + bundle_directory())
 
     #collect route and times metadata
-    alltimesdates = gettingquerydata(routesandtimedata + routesandtimedatafilename)
+    alltimesdates = gettingquerydata(resource_path(routesandtimedatafile))
 
     #check day of the week
     dayofexecution = calendar.day_name[datetime.today().weekday()]
@@ -61,11 +58,11 @@ def main():
     #decide if weekend data collection is needed
     #handler of bank holiday mondays and Xmas may be needed here
     if dayofexecution == "Friday":
-        createdataset(filepath,alltimesdates)
+        createdataset(resource_path(outputfilepath),alltimesdates)
         for i in range(1,3):
-            createdataset(filepath,alltimesdates,i)
+            createdataset(resource_path(outputfilepath),alltimesdates,i)
     else:
-        createdataset(filepath,alltimesdates)
+        createdataset(resource_path(outputfilepath),alltimesdates)
 
     #keep the console window open
     input("Press enter to exit after this ;)")
@@ -460,15 +457,25 @@ def convert_timedelta(duration):
     return days, hours, minutes, seconds
 
 
-def resource_path(relative):
+def resource_path(relativepath):
     """
-    An attempt to redirect the reference to the data file and the output path.
+    Redirection of approot path based on whether the application is bundled into an .exe file or not
+
+    Parameters:
+    relativepath    A string giving the rest of the path to the required resource
+
+    Returns
+    fullpath        A string containing the right root and relative path
     """
     
-    if hasattr(sys, "_MEIPASS"):
-        return os.path.join(sys._MEIPASS, relative)
-    return os.path.join(relative)
+    fullpath = ''
 
+    if getattr(sys, 'frozen',False):
+        fullpath = sys._MEIPASS + relativepath
+    else:
+        fullpath = os.path.dirname(os.path.abspath(__file__)) + relativepath
+    
+    return fullpath
 
 #routine boilerplate
 if __name__ == '__main__':
