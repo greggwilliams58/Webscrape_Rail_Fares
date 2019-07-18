@@ -146,8 +146,10 @@ def extractwebdata(urlstr):
         soup = BeautifulSoup(response,'html.parser')
 
         #extract the required json data
-        td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
-
+        if soup.find('script',{ 'id':f'jsonJourney-4-1' }) is not None:
+            td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
+        else:
+            pass
         #convert the json data into a dictionary
         jsonData = json.loads(td_class)
 
@@ -234,7 +236,7 @@ def processjson(jsoninfo,fp, fn):
         
         travel_gap = timedelta_gap.days
         
-        #response.append(travel_gap)
+        response.append(travel_gap)
 
         #add the formatted travel date to list
         response.append(traveldate)
@@ -266,7 +268,15 @@ def processjson(jsoninfo,fp, fn):
         response = []
 
     #close the file and export the data
-    datafile.close()
+    csv_data = datafile.close()
+    
+    #convert into a dataframe
+    df_data = pd.read_csv(fp + fn)
+
+    #identify duplicates
+    df_data['Duplicate']= df_data.duplicated(subset=['Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='last')
+
+    df_data.to_excel(fp + fn.replace('csv','xlsx'))
 
     
 def generateurl(downinfo,upinfo):
@@ -279,34 +289,50 @@ def generateurl(downinfo,upinfo):
     Returns:
     urltoprocess:       a list containting travel date and url information [traveldate, url]
     """
+    
+    
     combinedupanddownurls = {}
     urldown = []
     urlup = []
 
     #walk through dates, routes and times to create url
     for trip in upinfo:
-        
-        for tcounter,times in enumerate(trip[3],0):
-            url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'
-                    
-        #check if times have been supplied from the metadata
-            if "//dep" in url:
-                print("No times supplied here")
-            else:
-                urldown.append(url)
-                print(url)
+
+        if trip[4] == 'All TOCs':
+            for tcounter,times in enumerate(trip[3],0):
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
+            #check if times have been supplied from the metadata
+                if "//dep" in url:
+                        print("No times supplied here")
+        else:
+            for tcounter,times in enumerate(trip[3],0):
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+            #check if times have been supplied from the metadata
+                if "//dep" in url:
+                        print("No times supplied here")
+
+        urldown.append(url)
+        print(url)
                   
+
     for trip in downinfo:
-        
-        for tcounter,times in enumerate(trip[3],0):
-            url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'
-                    
-    #check if times have been supplied from the metadata
-            if "//dep" in url:
-                print("No times supplied here")
-            else:
-                urldown.append(url)
-                print(url)
+
+        if trip[4] == 'All TOCs':
+            for tcounter,times in enumerate(trip[3],0):
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
+            #check if times have been supplied from the metadata
+                if "//dep" in url:
+                        print("No times supplied here")
+        else:
+            for tcounter,times in enumerate(trip[3],0):
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+            #check if times have been supplied from the metadata
+                if "//dep" in url:
+                        print("No times supplied here")
+
+        urldown.append(url)
+        print(url)
+
 
 
 
@@ -356,6 +382,8 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         upsaturdaytimes = routesandtimes[count][5]
         upsundaytimes = routesandtimes[count][6]
         
+        toc_filter = routesandtimes[count][7]
+        
         for upanddown in routesandtimes[count][0]:
             
         #for each date to move ahead increment
@@ -383,9 +411,9 @@ def getdatetimesinfo(routesandtimes, dateoffset):
                 else:
                     print("error")
 
-                downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck])
-                updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck])
-
+                downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter])
+                updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter])
+    
     return downdatesandtimes,updatesandtimes
 
 
@@ -410,39 +438,44 @@ def gettingquerydata(fp):
     
     for count, items in enumerate(raw_data):
         
-        routesup = raw_data.iloc[0,count].split(',') 
-        routesdown = raw_data.iloc[1,count].split(',')
+        routesup = raw_data.iloc[1,count].split(',') 
+        routesdown = raw_data.iloc[2,count].split(',')
     
         routes = [routesup, routesdown]
         temp_list.append(routes)
 
         
-        downweekdaytime = raw_data.iloc[2,count].split(',')
+        downweekdaytime = raw_data.iloc[3,count].split(',')
         temp_list.append(downweekdaytime)
     
         
 
-        downsaturdaytime = raw_data.iloc[3,count].split(',')
+        downsaturdaytime = raw_data.iloc[4,count].split(',')
         temp_list.append(downsaturdaytime)
 
         
 
-        downsundaytime = raw_data.iloc[4,count].split(',')
+        downsundaytime = raw_data.iloc[5,count].split(',')
         temp_list.append(downsundaytime)
 
-        upweekdaytime = raw_data.iloc[5,count].split(',')
+        upweekdaytime = raw_data.iloc[6,count].split(',')
         temp_list.append(upweekdaytime)
 
-        upsaturdaytime = raw_data.iloc[6,count].split(',')
+        upsaturdaytime = raw_data.iloc[7,count].split(',')
         temp_list.append(upsaturdaytime)
 
-        upsundaytime = raw_data.iloc[7,count].split(',')
+        upsundaytime = raw_data.iloc[8,count].split(',')
         temp_list.append(upsundaytime)
+
+        toc_filter = raw_data.iloc[0,count]
+        temp_list.append(toc_filter)
 
         final_list.append(temp_list)
 
         temp_list = []
 
+    
+    
     return final_list
 
 
