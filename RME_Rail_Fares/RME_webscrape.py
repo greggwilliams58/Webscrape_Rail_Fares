@@ -51,7 +51,7 @@ def main():
 
     #collect route and times metadata
     alltimesdates = gettingquerydata(resource_path(routesandtimedatafile))
-
+    
     #check day of the week
     dayofexecution = calendar.day_name[datetime.today().weekday()]
 
@@ -86,10 +86,10 @@ def createdataset(filepath,alltimesdates,datetooffset=0):
     formatted_date = pd.to_datetime(datetime.now()+timedelta(days = datetooffset)).strftime('%d_%m_%Y')
     
     filename = f'RME_data_collected_for_{formatted_date}.csv'#generated the sets of dates and times to work with
-    collateddatesandtime = getdatetimesinfo(alltimesdates,datetooffset)
-
+    downddatesandtime, updatesandtime = getdatetimesinfo(alltimesdates,datetooffset)
+    #pp.pprint(collateddatesandtime)
     #generate the URL's to be processed by NRE website
-    urlstoprocess = generateurl(collateddatesandtime)
+    urlstoprocess = generateurl(downddatesandtime, updatesandtime)
         
     print(f"getting NRE data for the collection date of {formatted_date} now...")
 
@@ -119,7 +119,8 @@ def extractwebdata(urlstr):
         print(f"getting item {counter} of {len(urlstr)} with a pause of {randsleep} seconds")
 
         try:
-            response = urllib.request.urlopen(items[1])
+
+            response = urllib.request.urlopen(items)
             time.sleep(randsleep)
 
         except OSError as e:
@@ -127,7 +128,7 @@ def extractwebdata(urlstr):
             print(str(f"{e}\n"))
             print(f"The url used was {items[1]}")   
         except urllib.error.URLError as URLwrong:
-           # print(f"The URL is wrong.  The error code is {URLwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses \n")  
+            print(f"The URL is wrong.  The error code is {URLwrong.code}. Check this error code against https://docs.python.org/3/library/http.server.html#http.server.BaseHTTPRequestHandler.responses \n")  
             print(f"The reason given for the error is: {URLwrong.reason} \n")
             print(f"The url used was {items[1]}")
         except urllib.error.HTTPError as HTTPwrong:
@@ -151,7 +152,7 @@ def extractwebdata(urlstr):
         jsonData = json.loads(td_class)
 
         #add the travel date information to the json data
-        jsonData['jsonJourneyBreakdown'].update(TravelDate = items[0])
+        jsonData['jsonJourneyBreakdown'].update(TravelDate = items[61:67])
             
         rawjsondata.append(jsonData)
   
@@ -223,15 +224,17 @@ def processjson(jsoninfo,fp, fn):
         response.append(todaydate.strftime('%Y%m%d_%H-%M'))
         
         #get and format date of travel
-        traveldate = str(journey['jsonJourneyBreakdown']['TravelDate']).zfill(6)
+        traveldate = str(journey['jsonJourneyBreakdown']['TravelDate'])
+        
         #add / marks to avoid excel formatting doing odd things
         traveldate = traveldate[0:2] + '/' + traveldate[2:4] + '/' + traveldate [4:6]
-
+        
         #placeholder for 'Departure_Days_Ahead'
         timedelta_gap = (datetime.strptime(traveldate,"%d/%m/%y") - todaydate)+timedelta(days=1)
+        
         travel_gap = timedelta_gap.days
         
-        response.append(travel_gap)
+        #response.append(travel_gap)
 
         #add the formatted travel date to list
         response.append(traveldate)
@@ -266,7 +269,7 @@ def processjson(jsoninfo,fp, fn):
     datafile.close()
 
     
-def generateurl(collecteddateinfo):
+def generateurl(downinfo,upinfo):
     """
     This generates a list of urls based on provided date,route and time information, which are then fed to the NRE website
 
@@ -280,45 +283,36 @@ def generateurl(collecteddateinfo):
     urldown = []
     urlup = []
 
-    #extract date and departure station from key of collecteddata dictionary
-    dateanddeparturestation = list(collecteddateinfo.keys())
-
     #walk through dates, routes and times to create url
-    for departstationanddate in dateanddeparturestation:
+    for trip in upinfo:
         
-        for counter,dateroutetimes in enumerate(collecteddateinfo[departstationanddate]):
+        for tcounter,times in enumerate(trip[3],0):
+            url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'
+                    
+        #check if times have been supplied from the metadata
+            if "//dep" in url:
+                print("No times supplied here")
+            else:
+                urldown.append(url)
+                print(url)
+                  
+    for trip in downinfo:
+        
+        for tcounter,times in enumerate(trip[3],0):
+            url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'
+                    
+    #check if times have been supplied from the metadata
+            if "//dep" in url:
+                print("No times supplied here")
+            else:
+                urldown.append(url)
+                print(url)
 
-            if departstationanddate[6:] ==  dateroutetimes[1][0]:
-                for counter,downtime in enumerate(dateroutetimes[2],0):
-                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[1][0]+'/'+dateroutetimes[1][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[2][counter])+'/dep/?directonly']
-                    
-                    #check if times have been supplied from the metadata
-                    if "//dep" in url[1]:
-                        print("No times supplied here")
-                    else:
-                        urldown.append(url)
-                        print(url)
-                    
-  
-            if departstationanddate[6:] == dateroutetimes[1][1]:
-                for counter,uptime in enumerate(dateroutetimes[4],0):
-                    url = [dateroutetimes[0],'https://ojp.nationalrail.co.uk/service/timesandfares/'+dateroutetimes[3][0]+'/'+dateroutetimes[3][1]+'/'+dateroutetimes[0]+'/'+str(dateroutetimes[4][counter])+'/dep/?directonly']
-                    
-                    #check if times have been supplied from the metadata
-                    if "//dep" in url[1]:
-                        print("No times supplied here")
-                    else:
-                        urlup.append(url)
-                        print(url)                 
+
 
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
     
- 
-    ##remove dead URLs (ie no times supplied by source file)
-    #combinedupanddownurls[:] = [url[1] for url[1] in combinedupanddownurls[1] if "//dep/" not in url[1]]
-
-
     return combinedupanddownurls
         
   
@@ -335,7 +329,7 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times]]}
 
     """
-    #pp.pprint(routesandtimes)
+    
     
     #increment date to check if needed
     datetocheck = datetime.today()+timedelta(days=dateoffset)
@@ -346,12 +340,14 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     daystomoveahead = [1,7,30]
     #populate defaultdict with values depending on date increments day of the week
     
-    datesandtimes = defaultdict(list)
+    downdatesandtimes = list()
+    updatesandtimes = list()
 
     ###start loop with all the dates and times here
     for count, items in enumerate(routesandtimes):
-        originanddestination = routesandtimes[count][0]
-      
+        
+        downroute = routesandtimes[count][0][0]
+        uproute = routesandtimes[count][0][1]
         downweekdaytimes = routesandtimes[count][1]
         downsaturdaytimes = routesandtimes[count][2]
         downsundaytimes = routesandtimes[count][3]
@@ -361,7 +357,7 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         upsundaytimes = routesandtimes[count][6]
         
         for upanddown in routesandtimes[count][0]:
-
+            
         #for each date to move ahead increment
             for counter,item in enumerate(daystomoveahead):
 
@@ -387,9 +383,10 @@ def getdatetimesinfo(routesandtimes, dateoffset):
                 else:
                     print("error")
 
-                datesandtimes[ formattedfuturedate + upanddown[0]] = [[formattedfuturedate,   originanddestination[0],downtimestocheck,originanddestination[1],uptimestocheck]]
-                
-    return datesandtimes
+                downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck])
+                updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck])
+
+    return downdatesandtimes,updatesandtimes
 
 
 def gettingquerydata(fp):
@@ -405,7 +402,7 @@ def gettingquerydata(fp):
     """
     
     raw_data = pd.read_excel(fp)
-    
+
     del raw_data['variable name']
 
     final_list = []
