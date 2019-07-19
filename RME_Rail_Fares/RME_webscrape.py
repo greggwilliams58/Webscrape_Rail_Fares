@@ -111,16 +111,17 @@ def extractwebdata(urlstr):
     Returns:
     rawjsondata     A list of json-formatted journey information 
     """
-
+    
     rawjsondata=[]
     for counter, items in enumerate(urlstr,1):
+        
         randsleep = random.randrange(10,99)/100
         
         print(f"getting item {counter} of {len(urlstr)} with a pause of {randsleep} seconds")
 
         try:
 
-            response = urllib.request.urlopen(items)
+            response = urllib.request.urlopen(items[1])
             time.sleep(randsleep)
 
         except OSError as e:
@@ -153,9 +154,12 @@ def extractwebdata(urlstr):
         #convert the json data into a dictionary
         jsonData = json.loads(td_class)
 
-        #add the travel date information to the json data
-        jsonData['jsonJourneyBreakdown'].update(TravelDate = items[61:67])
-            
+        #add the search data information to the json data
+        
+        jsonData['jsonJourneyBreakdown'].update(TravelDate = items[1][61:67])
+        jsonData['jsonJourneyBreakdown'].update(TOCSearchCriteria = items[0])    
+        jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = items[2]) 
+        
         rawjsondata.append(jsonData)
   
             
@@ -177,8 +181,9 @@ def processjson(jsoninfo,fp, fn):
     """
 
     print("preparing the csv file")
-        #initialisation information
+    #initialisation information
     weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+    response_header = list()
 
     #create a blank csv object
     datafile = open(fp + fn, 'w',newline='')
@@ -187,13 +192,14 @@ def processjson(jsoninfo,fp, fn):
     csvwriter = csv.writer(datafile)
 
     #create a header for the csv file
-    response_header = []
     
+    response_header.append('TOC Criteria')
     response_header.append('Origin')
     response_header.append('Origin_Code')
     response_header.append('Destination')
     response_header.append('Destination_Code')
     response_header.append('Date_accessed')
+    response_header.append('Time_searched_against')
     response_header.append('Departure_Gap')
     response_header.append('Departure_Date')
     response_header.append('Departure_Day')
@@ -217,6 +223,7 @@ def processjson(jsoninfo,fp, fn):
     #extract data from the json file
     response = []
     for journey in jsoninfo:
+        response.append(journey['jsonJourneyBreakdown']['TOCSearchCriteria'])
         response.append(journey['jsonJourneyBreakdown']['departureStationName'])
         response.append(journey['jsonJourneyBreakdown']['departureStationCRS'])
         response.append(journey['jsonJourneyBreakdown']['arrivalStationName'])
@@ -224,7 +231,7 @@ def processjson(jsoninfo,fp, fn):
         #derived formatted date for date of data extraction
         todaydate = datetime.now()
         response.append(todaydate.strftime('%Y%m%d_%H-%M'))
-        
+        response.append(journey['jsonJourneyBreakdown']['TimeSearchedFor'])
         #get and format date of travel
         traveldate = str(journey['jsonJourneyBreakdown']['TravelDate'])
         
@@ -302,17 +309,16 @@ def generateurl(downinfo,upinfo):
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
             #check if times have been supplied from the metadata
-                if "//dep" in url:
-                        print("No times supplied here")
         else:
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
-                if "//dep" in url:
-                        print("No times supplied here")
 
-        urldown.append(url)
-        print(url)
+        if "//dep" in url:
+            print(f"No times supplied for time {trip[3]} and {url}")
+        else:
+            urldown.append([trip[4],url,trip[3][tcounter]])
+            print(url)
                   
 
     for trip in downinfo:
@@ -321,17 +327,16 @@ def generateurl(downinfo,upinfo):
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
             #check if times have been supplied from the metadata
-                if "//dep" in url:
-                        print("No times supplied here")
         else:
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
-                if "//dep" in url:
-                        print("No times supplied here")
 
-        urldown.append(url)
-        print(url)
+        if "//dep" in url:
+            print(f"No times supplied for time {trip[3]}: {url}")
+        else:
+            urldown.append([trip[4],url,trip[3][tcounter]])
+            print(url)
 
 
 
