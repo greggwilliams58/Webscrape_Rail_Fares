@@ -158,7 +158,9 @@ def extractwebdata(urlstr):
         
         jsonData['jsonJourneyBreakdown'].update(TravelDate = items[1][61:67])
         jsonData['jsonJourneyBreakdown'].update(TOCSearchCriteria = items[0])    
-        jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = items[2]) 
+        filledtime = items[2].zfill(4)
+        formattedtime = filledtime[:2]+ ":" + filledtime[2:]
+        jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = formattedtime) 
         
         rawjsondata.append(jsonData)
   
