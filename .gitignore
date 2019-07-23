@@ -262,3 +262,5 @@ __pycache__/
 datafile.xlsx
 *.xlsx
 *.csv
+*.xlsx
+*.csv
