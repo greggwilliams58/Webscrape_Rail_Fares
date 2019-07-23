@@ -264,3 +264,15 @@ datafile.xlsx
 *.csv
 *.xlsx
 *.csv
+*.xlsx
+RME_Rail_Fares/build/RME_webscrape_many_files/Analysis-00.toc
+*.zip
+*.toc
+*.pkg
+*.pyz
+*.exe
+*.html
+*.txt
+*.xlsx
+*.zip
+*.exe

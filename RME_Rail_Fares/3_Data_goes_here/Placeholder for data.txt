@@ -1,3 +1,0 @@
-This text file intentionally left blank.
-
-Text file created as placehold for the "output folder" when .exe file is compiled.
