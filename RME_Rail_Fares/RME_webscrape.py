@@ -158,6 +158,7 @@ def extractwebdata(urlstr):
         
         jsonData['jsonJourneyBreakdown'].update(TravelDate = items[1][61:67])
         jsonData['jsonJourneyBreakdown'].update(TOCSearchCriteria = items[0])    
+        
         filledtime = items[2].zfill(4)
         formattedtime = filledtime[:2]+ ":" + filledtime[2:]
         jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = formattedtime) 
@@ -283,7 +284,7 @@ def processjson(jsoninfo,fp, fn):
     df_data = pd.read_csv(fp + fn)
 
     #identify duplicates
-    df_data['Duplicate']= df_data.duplicated(subset=['Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='last')
+    df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='last')
 
     df_data.to_excel(fp + fn.replace('csv','xlsx'))
 
