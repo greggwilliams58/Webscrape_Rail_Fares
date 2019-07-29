@@ -309,19 +309,29 @@ def generateurl(downinfo,upinfo):
     for trip in upinfo:
 
         if trip[4] == 'All TOCs':
+            #print(f"The time interator object is {trip[3]}")
             for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
+                #print(f"The individual time interator object is {trip[3][tcounter]}")
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'  
+                
+                if "//dep" in url:
+                    print(f"No times supplied for time {trip[3]} and {url}")
+                else:
+            
+                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    print(url)
             #check if times have been supplied from the metadata
         else:
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
-        if "//dep" in url:
-            print(f"No times supplied for time {trip[3]} and {url}")
-        else:
-            urldown.append([trip[4],url,trip[3][tcounter]])
-            print(url)
+                if "//dep" in url:
+                    print(f"No times supplied for time {trip[3]} and {url}")
+                else:
+            
+                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    print(url)
                   
 
     for trip in downinfo:
@@ -330,16 +340,23 @@ def generateurl(downinfo,upinfo):
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
             #check if times have been supplied from the metadata
+            
+                if "//dep" in url:
+                    print(f"No times supplied for time {trip[3]}: {url}")
+                else:
+                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    print(url)
+
         else:
             for tcounter,times in enumerate(trip[3],0):
                 url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
-        if "//dep" in url:
-            print(f"No times supplied for time {trip[3]}: {url}")
-        else:
-            urldown.append([trip[4],url,trip[3][tcounter]])
-            print(url)
+                if "//dep" in url:
+                    print(f"No times supplied for time {trip[3]}: {url}")
+                else:
+                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    print(url)
 
 
 
@@ -421,7 +438,7 @@ def getdatetimesinfo(routesandtimes, dateoffset):
 
                 downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter])
                 updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter])
-    
+
     return downdatesandtimes,updatesandtimes
 
 
