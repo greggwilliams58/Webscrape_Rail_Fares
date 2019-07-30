@@ -1,6 +1,10 @@
 Application for getting data from NRE Website for the RME Team.
-Version 1.0
-Written by Greg Williams at ORR, 11th July 2019
+Version 2.2
+Written by Greg Williams at ORR, 29th July 2019
+
+WHAT'S NEW
+Bug that only returned last time in list of times corrected.
+
 
 HOW TO INSTALL
 If application has been recieved as a zip file, it should be unzipped to a location of your choice.
