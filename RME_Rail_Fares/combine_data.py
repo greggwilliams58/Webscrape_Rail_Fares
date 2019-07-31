@@ -11,13 +11,16 @@ def main():
     combineddatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\appended_data\\'
     dailydataname = 'RME_data_collected_for*'
     combineddataname = 'appended_data'
-    #fileextension = '.csv'
-    fileextension = '.xlsx'
+    
+    fileextension = '.csv'
+    #fileextension = '.xlsx'
 
-    combine_data(dailydatapath,dailydataname,fileextension)
+    combine_daily_data(dailydatapath,dailydataname,fileextension)
+    get_appended_data(combineddatapath,combineddataname,fileextension)
+    combine_daily_and_appended_data(dailydata, appendeddata)
 
 
-def combine_data(filepath, filename, fileextension):
+def combine_daily_data(filepath, filename, fileextension):
     print(filepath,filename,fileextension)
     
 
@@ -44,9 +47,8 @@ def combine_data(filepath, filename, fileextension):
                                header=0,
                                encoding='Windows-1252',
                                parse_dates=True)
-
             dataframes.append(temp)
-
+            
     elif fileextension == '.xlsx':
         for count, file in enumerate(listoffiles,1):
             print(f"Loading {os.path.basename(file)} into memory.")
@@ -56,16 +58,27 @@ def combine_data(filepath, filename, fileextension):
                                header=0,
                                encoding='Windows-1252',
                                parse_dates=True)
-
             dataframes.append(temp)
 
     else:
         print("file extension not specified correctly")
 
-    print(dataframes[0].info())
-    print(len(listoffiles))
+    #check there are more than one daily file first    
+    if numberoffiles > 1:
+        alldailydata = pd.concat(dataframes,axis=0,ignore_index=True,verify_integrity=True,sort=False)
+
+    else:
+        alldailydata = dataframes
+    
+
+    return alldailydata
 
 
+def get_appended_data(filepath, filename, fileextension):
+    pass
+
+def combine_daily_and_appended_data(dailydata, appendeddata):
+    pass
 
 if __name__ == '__main__':
     main()
