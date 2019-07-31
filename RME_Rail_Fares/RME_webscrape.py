@@ -280,11 +280,12 @@ def processjson(jsoninfo,fp, fn):
     #close the file and export the data
     csv_data = datafile.close()
     
+
     #convert into a dataframe
     df_data = pd.read_csv(fp + fn)
 
     #identify duplicates
-    df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='last')
+    df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
 
     df_data.to_excel(fp + fn.replace('csv','xlsx'))
 
