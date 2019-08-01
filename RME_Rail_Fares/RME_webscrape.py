@@ -382,7 +382,8 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times]]}
 
     """
-    
+    #ok here
+    #pp.pprint(routesandtimes)
     
     #increment date to check if needed
     datetocheck = datetime.today()+timedelta(days=dateoffset)
@@ -411,36 +412,36 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         
         toc_filter = routesandtimes[count][7]
         
-        for upanddown in routesandtimes[count][0]:
             
         #for each date to move ahead increment
-            for counter,item in enumerate(daystomoveahead):
+        for counter,item in enumerate(daystomoveahead):
 
-                futuredate = datetocheck + timedelta(daystomoveahead[counter])
+            futuredate = datetocheck + timedelta(daystomoveahead[counter])
 
-                formattedfuturedate, dayofweek = futuredate.strftime('%d%m%y'), weekdays[futuredate.weekday()]
+            formattedfuturedate, dayofweek = futuredate.strftime('%d%m%y'), weekdays[futuredate.weekday()]
 
 
-                #derive day of week from date
-                daycheck = weekdays[futuredate.weekday()]
-                if daycheck in ("Monday","Tuesday","Wednesday","Thursday","Friday"):
-                    daytocheck = 'weekday'
-                    downtimestocheck = downweekdaytimes
-                    uptimestocheck = upweekdaytimes
-                elif daycheck in ("Saturday"):
-                    daytocheck = 'saturday'
-                    downtimestocheck = downsaturdaytimes
-                    uptimestocheck = upsaturdaytimes
-                elif daycheck in ("Sunday"):
-                    daytocheck = 'sunday'
-                    downtimestocheck = downsundaytimes
-                    uptimestocheck = upsundaytimes
-                else:
-                    print("error")
+            #derive day of week from date
+            daycheck = weekdays[futuredate.weekday()]
+            if daycheck in ("Monday","Tuesday","Wednesday","Thursday","Friday"):
+                daytocheck = 'weekday'
+                downtimestocheck = downweekdaytimes
+                uptimestocheck = upweekdaytimes
+            elif daycheck in ("Saturday"):
+                daytocheck = 'saturday'
+                downtimestocheck = downsaturdaytimes
+                uptimestocheck = upsaturdaytimes
+            elif daycheck in ("Sunday"):
+                daytocheck = 'sunday'
+                downtimestocheck = downsundaytimes
+                uptimestocheck = upsundaytimes
+            else:
+                print("error")
 
-                downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter])
-                updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter])
-
+            
+            downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter])
+            updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter])
+    
     return downdatesandtimes,updatesandtimes
 
 
@@ -502,7 +503,7 @@ def gettingquerydata(fp):
         temp_list = []
 
     
-    
+
     return final_list
 
 
