@@ -391,6 +391,8 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     #initialisation information
     weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
     
+    #test placeholder for beth's 1-30 days
+    #daystomoveahead = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
     daystomoveahead = [1,7,30]
     #populate defaultdict with values depending on date increments day of the week
     

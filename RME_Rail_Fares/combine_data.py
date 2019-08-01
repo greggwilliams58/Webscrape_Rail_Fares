@@ -8,19 +8,23 @@ import pprint as pp
 def main():
 
     dailydatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\'
-    combineddatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\appended_data\\'
+    appendeddatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\appended_data\\'
     dailydataname = 'RME_data_collected_for*'
-    combineddataname = 'appended_data'
+    appendeddataname = 'appended_data'
     
     fileextension = '.csv'
     #fileextension = '.xlsx'
 
-    combine_daily_data(dailydatapath,dailydataname,fileextension)
-    get_appended_data(combineddatapath,combineddataname,fileextension)
-    combine_daily_and_appended_data(dailydata, appendeddata)
+    dailydata = get_daily_data(dailydatapath,dailydataname,fileextension)
+    appendeddata = get_appended_data(appendeddatapath,appendeddataname,fileextension)
+    alldata = combine_daily_and_appended_data(dailydata, appendeddata)
 
 
-def combine_daily_data(filepath, filename, fileextension):
+    todaysdate = datetime.now().strftime("%Y_%m_%d")
+    alldata.to_csv(appendeddatapath + appendeddataname  +"_for_"+ todaysdate + fileextension)
+    
+
+def get_daily_data(filepath, filename, fileextension):
     print(filepath,filename,fileextension)
     
 
@@ -46,7 +50,9 @@ def combine_daily_data(filepath, filename, fileextension):
                                dtype=dtypedictionary,
                                header=0,
                                encoding='Windows-1252',
-                               parse_dates=True)
+                               parse_dates=True
+                               )
+
             dataframes.append(temp)
             
     elif fileextension == '.xlsx':
@@ -57,7 +63,9 @@ def combine_daily_data(filepath, filename, fileextension):
                                dtype=dtypedictionary,
                                header=0,
                                encoding='Windows-1252',
-                               parse_dates=True)
+                               parse_dates=True
+                               )
+            temp.index.rename = 'daily_index'
             dataframes.append(temp)
 
     else:
@@ -65,20 +73,38 @@ def combine_daily_data(filepath, filename, fileextension):
 
     #check there are more than one daily file first    
     if numberoffiles > 1:
-        alldailydata = pd.concat(dataframes,axis=0,ignore_index=True,verify_integrity=True,sort=False)
+        alldailydata = pd.concat(dataframes,axis=0,sort=False)
 
     else:
         alldailydata = dataframes
     
 
+
     return alldailydata
 
 
 def get_appended_data(filepath, filename, fileextension):
-    pass
+    dtypedictionary = {'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
+                     'Departure_Date':str,'Arrival_time':str,'Duration':str, 'Changes':int,'Price':float,'Fare_Route_Description':str,'Fare_Provider':str,'TOC_Name':str,
+                     'TOC_Provider':str,'Ticket_type':str,'nre_fare_category':str,'Duplicate':bool}
+    
+    df = pd.read_csv(filepath + filename + fileextension,
+                               dtype=dtypedictionary,
+                               header=0,
+                               encoding='Windows-1252',
+                               parse_dates=True
+                     )
+    
+    return df
 
 def combine_daily_and_appended_data(dailydata, appendeddata):
-    pass
+    all_data = appendeddata.append(dailydata,ignore_index=True)
+    print(all_data.info())
+    print(all_data.head(10))
+    return all_data
+
+
+
 
 if __name__ == '__main__':
     main()
