@@ -285,10 +285,11 @@ def processjson(jsoninfo,fp, fn):
     df_data = pd.read_csv(fp + fn)
 
     #identify duplicates
-    df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
+    df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Time_searched_against','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
 
-    df_data.to_excel(fp + fn.replace('csv','xlsx'))
-
+    #legacy code to export file as excel
+    #df_data.to_excel(fp + fn.replace('csv','xlsx'))
+    df_data.to_csv(fp+fn)
     
 def generateurl(downinfo,upinfo):
     """
