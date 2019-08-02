@@ -242,6 +242,7 @@ def processjson(jsoninfo,fp, fn):
         traveldate = traveldate[0:2] + '/' + traveldate[2:4] + '/' + traveldate [4:6]
         
         #placeholder for 'Departure_Days_Ahead'
+
         timedelta_gap = (datetime.strptime(traveldate,"%d/%m/%y") - todaydate)+timedelta(days=1)
         
         travel_gap = timedelta_gap.days
