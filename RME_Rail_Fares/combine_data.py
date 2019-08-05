@@ -20,13 +20,13 @@ def main():
     dailydata = get_daily_data(dailydatapath,dailydataname,fileextension)
     appendeddata = get_appended_data(appendeddatapath,appendeddataname,fileextension)
     
-    #alldata = combine_daily_and_appended_data(dailydata, appendeddata)
+    alldata = combine_daily_and_appended_data(dailydata, appendeddata)
 
 
-    #todaysdate = datetime.now().strftime("%Y_%m_%d")
-    #alldata.to_csv(appendeddatapath + appendeddataname  +"_for_"+ todaysdate + fileextension)
+    todaysdate = datetime.now().strftime("%Y_%m_%d")
+    alldata.to_csv(appendeddatapath + appendeddataname  +"_for_"+ todaysdate + fileextension)
     
-    #cleanup(todaysdate)
+    cleanup(dailydatapath,appendeddatapath,todaysdate)
 
 
 def get_daily_data(filepath, filename, fileextension):
@@ -67,10 +67,15 @@ def get_daily_data(filepath, filename, fileextension):
                                dtype=dtypedictionary,
                                header=0,
                                encoding='Windows-1252',
-                               parse_dates=True
-                               )
+                               parse_dates=True,
+                               ignore_index= True
 
+                               )
+           
+            print(temp.info())
+            print(temp.head(100))
             dataframes.append(temp)
+            
             
     elif fileextension == '.xlsx':
         for count, file in enumerate(listoffiles,1):
@@ -80,20 +85,21 @@ def get_daily_data(filepath, filename, fileextension):
                                dtype=dtypedictionary,
                                header=0,
                                encoding='Windows-1252',
-                               parse_dates=True
+                               parse_dates=True,
+                               index_col = False
                                )
-            temp.index.rename = 'daily_index'
+            #temp.index.name = 'load_index'
             dataframes.append(temp)
 
     else:
         print("file extension not specified correctly")
 
     #check there are more than one daily file first    
-    if numberoffiles > 1:
-        alldailydata = pd.concat(dataframes,axis=0,sort=False)
+    #if numberoffiles > 1:
+    alldailydata = pd.concat(dataframes,sort=False)
 
-    else:
-        alldailydata = dataframes
+    #else:
+    #    alldailydata = dataframes
     
 
 
@@ -115,6 +121,7 @@ def get_appended_data(filepath, filename, fileextension):
     """
     list_of_files = glob(filepath +'*') # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
+    print(latest_file)
    
     dtypedictionary = {'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
                      'Departure_Date':str,'Arrival_time':str,'Duration':str, 'Changes':int,'Price':float,'Fare_Route_Description':str,'Fare_Provider':str,'TOC_Name':str,
@@ -125,8 +132,9 @@ def get_appended_data(filepath, filename, fileextension):
                                header=0,
                                encoding='Windows-1252',
                                parse_dates=True
+                               
                      )
-    print(df.info())
+   
     return df
 
 def combine_daily_and_appended_data(dailydata, appendeddata):
@@ -134,20 +142,27 @@ def combine_daily_and_appended_data(dailydata, appendeddata):
     This appends the 
     """
 
-    all_data = pd.concat([appendeddata,dailydata],ignore_index=True,sort=False) 
+    all_data = pd.concat([appendeddata,dailydata],sort=False,ignore_index=True) 
+    all_data.rename_axis('general_index',axis='index',inplace=True)
+    all_data.info()
     
-    all_data.rename_axis('General_index', axis = 'index', inplace=True)
-
-    all_data.rename(columns={'Unnamed: 0':'load_index'}, inplace=True)
-
-    all_data.set_index(['load_index'],append=True,inplace=True)
-    print(all_data.info())
 
 
     return all_data
 
-def cleanup():
-    pass
+def cleanup(dailydatapath, appendeddatapath,todaysdate):
+    #delete from daily data
+    dailyfilelist = glob(dailydatapath+'*.csv')
+    
+    for f in dailyfilelist:
+        os.remove(f)
+
+    appendedfilelist = glob(appendeddatapath + '*.csv')
+    for f in appendedfilelist:
+        if todaysdate not in f:
+            os.remove(f)
+
+
 
 
 

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0205329d-0a26-445f-a155-8d2eb9f496c8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RME_webscrape.py</StartupFile>
+    <StartupFile>combine_data.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

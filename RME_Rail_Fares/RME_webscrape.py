@@ -122,6 +122,7 @@ def extractwebdata(urlstr):
         try:
 
             response = urllib.request.urlopen(items[1])
+            
             time.sleep(randsleep)
 
         except OSError as e:
@@ -146,6 +147,7 @@ def extractwebdata(urlstr):
 
         soup = BeautifulSoup(response,'html.parser')
 
+        
         #extract the required json data
         if soup.find('script',{ 'id':f'jsonJourney-4-1' }) is not None:
             td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
@@ -283,11 +285,16 @@ def processjson(jsoninfo,fp, fn):
     
 
     #convert into a dataframe
-    df_data = pd.read_csv(fp + fn)
-
+    df_data = pd.read_csv(fp + fn, index_col=False)
+    df_data.reset_index(drop=True,inplace=True)
+    
     #identify duplicates
     df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Time_searched_against','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
 
+    #give daily index a name
+    #df_data.rename_axis('daily_load_index',axis='index',inplace=True)
+
+    
     #legacy code to export file as excel
     #df_data.to_excel(fp + fn.replace('csv','xlsx'))
     df_data.to_csv(fp+fn)
