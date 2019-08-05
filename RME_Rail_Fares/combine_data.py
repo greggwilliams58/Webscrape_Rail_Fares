@@ -26,7 +26,7 @@ def main():
     todaysdate = datetime.now().strftime("%Y_%m_%d")
     alldata.to_csv(appendeddatapath + appendeddataname  +"_for_"+ todaysdate + fileextension)
     
-    cleanup(dailydatapath,appendeddatapath,todaysdate)
+    #cleanup(dailydatapath,appendeddatapath,todaysdate)
 
 
 def get_daily_data(filepath, filename, fileextension):
@@ -67,11 +67,11 @@ def get_daily_data(filepath, filename, fileextension):
                                dtype=dtypedictionary,
                                header=0,
                                encoding='Windows-1252',
-                               parse_dates=True,
-                               ignore_index= True
+                               parse_dates=True
+                               
 
                                )
-           
+            
             print(temp.info())
             print(temp.head(100))
             dataframes.append(temp)
@@ -134,7 +134,8 @@ def get_appended_data(filepath, filename, fileextension):
                                parse_dates=True
                                
                      )
-   
+    #remove previous index from previously appended dataset
+    del df['General_index']   
     return df
 
 def combine_daily_and_appended_data(dailydata, appendeddata):
@@ -144,9 +145,6 @@ def combine_daily_and_appended_data(dailydata, appendeddata):
 
     all_data = pd.concat([appendeddata,dailydata],sort=False,ignore_index=True) 
     all_data.rename_axis('general_index',axis='index',inplace=True)
-    all_data.info()
-    
-
 
     return all_data
 

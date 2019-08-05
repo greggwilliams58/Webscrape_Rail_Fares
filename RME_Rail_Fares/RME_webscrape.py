@@ -297,8 +297,10 @@ def processjson(jsoninfo,fp, fn):
     
     #legacy code to export file as excel
     #df_data.to_excel(fp + fn.replace('csv','xlsx'))
-    df_data.to_csv(fp+fn)
+    df_data.to_csv(fp+fn, index=False)
     
+
+
 def generateurl(downinfo,upinfo):
     """
     This generates a list of urls based on provided date,route and time information, which are then fed to the NRE website
