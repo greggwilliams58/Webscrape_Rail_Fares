@@ -335,7 +335,7 @@ def generateurl(downinfo,upinfo):
             #check if times have been supplied from the metadata
         else:
             for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
                 if "//dep" in url:
@@ -361,7 +361,7 @@ def generateurl(downinfo,upinfo):
 
         else:
             for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
                 if "//dep" in url:

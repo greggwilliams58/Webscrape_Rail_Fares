@@ -26,7 +26,7 @@ def main():
     todaysdate = datetime.now().strftime("%Y_%m_%d")
     alldata.to_csv(appendeddatapath + appendeddataname  +"_for_"+ todaysdate + fileextension)
     
-    #cleanup(dailydatapath,appendeddatapath,todaysdate)
+    cleanup(dailydatapath,appendeddatapath,todaysdate)
 
 
 def get_daily_data(filepath, filename, fileextension):
@@ -135,7 +135,7 @@ def get_appended_data(filepath, filename, fileextension):
                                
                      )
     #remove previous index from previously appended dataset
-    del df['General_index']   
+    del df['general_index']   
     return df
 
 def combine_daily_and_appended_data(dailydata, appendeddata):
