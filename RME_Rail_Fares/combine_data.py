@@ -4,13 +4,14 @@ import sys
 import os
 import pandas as pd
 import pprint as pp
+import RME_webscrape
 
-def main():
+
+def tidyupfiles(dailydatapath, appendeddatapath):
     """
     This serves the purpose of appending daily data to a combined dataset
     """
-    dailydatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\'
-    appendeddatapath = 'C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\3_Data_goes_here\\appended_data\\'
+    
     dailydataname = 'RME_data_collected_for*'
     appendeddataname = 'appended_data'
     
@@ -159,12 +160,5 @@ def cleanup(dailydatapath, appendeddatapath,todaysdate):
     for f in appendedfilelist:
         if todaysdate not in f:
             os.remove(f)
-
-
-
-
-
-if __name__ == '__main__':
-    main()
 
 

@@ -12,7 +12,7 @@ import time
 import random
 import sys
 import os
-
+import combine_data
 
 def main():
     
@@ -47,7 +47,7 @@ def main():
     #input datafile location and data output location
     routesandtimedatafile = '\\2_Route_and_times_metadata\\route_and_time_metadata.xlsx'
     outputfilepath = '\\3_Data_goes_here\\'
-    
+    appendeddatapath = '\\3_Data_goes_here\\appended_data\\'
 
     #collect route and times metadata
     alltimesdates = gettingquerydata(resource_path(routesandtimedatafile))
@@ -63,7 +63,10 @@ def main():
             createdataset(resource_path(outputfilepath),alltimesdates,i)
     else:
         createdataset(resource_path(outputfilepath),alltimesdates)
-
+    
+    #append daily data to appended file
+    combine_data.tidyupfiles(resource_path(outputfilepath), resource_path(appendeddatapath))
+    
     #keep the console window open
     input("Press enter to exit after this ;)")
 
