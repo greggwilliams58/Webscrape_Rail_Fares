@@ -270,13 +270,25 @@ def processjson(jsoninfo,fp, fn):
 
         response.append(travel_time)
         response.append(journey['jsonJourneyBreakdown']['changes'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['tocName'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['tocProvider'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
-        response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
+        
+        #test for null responses on fare information
+        if journey['singleJsonFareBreakdowns']:
+            response.append(journey['singleJsonFareBreakdowns'][0]['ticketPrice'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['fareRouteDescription'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['fareProvider'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['tocName'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['tocProvider'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['fareTicketType'])
+            response.append(journey['singleJsonFareBreakdowns'][0]['nreFareCategory'])
+        else:
+            response.append(float(0.00))
+            response.append("missing")
+            response.append("missing")
+            response.append("missing")
+            response.append("missing")
+            response.append("missing")
+            response.append("missing")
+
         
 
         #write data to the row of the csv file

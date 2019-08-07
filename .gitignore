@@ -276,3 +276,10 @@ RME_Rail_Fares/build/RME_webscrape_many_files/Analysis-00.toc
 *.xlsx
 *.zip
 *.exe
+*.json
+*.pem
+*.pem
+*.json
+*.afm
+*.conf
+*.svg
