@@ -168,6 +168,7 @@ def extractwebdata(urlstr):
         formattedtime = filledtime[:2]+ ":" + filledtime[2:]
         jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = formattedtime) 
         
+        #pp.pprint(jsonData)
         rawjsondata.append(jsonData)
   
             
@@ -231,6 +232,7 @@ def processjson(jsoninfo,fp, fn):
     #extract data from the json file
     response = []
     for journey in jsoninfo:
+        #pp.pprint(journey)
         response.append(journey['jsonJourneyBreakdown']['TOCSearchCriteria'])
         response.append(journey['jsonJourneyBreakdown']['departureStationName'])
         response.append(journey['jsonJourneyBreakdown']['departureStationCRS'])
@@ -338,7 +340,7 @@ def generateurl(downinfo,upinfo):
             #check if times have been supplied from the metadata
         else:
             for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?&show='+trip[4]                    
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
                 if "//dep" in url:
@@ -364,7 +366,7 @@ def generateurl(downinfo,upinfo):
 
         else:
             for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?&show='+trip[4]                    
+                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
             #check if times have been supplied from the metadata
 
                 if "//dep" in url:
