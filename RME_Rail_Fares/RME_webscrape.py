@@ -65,7 +65,7 @@ def main():
         createdataset(resource_path(outputfilepath),alltimesdates)
     
     #append daily data to appended file
-    #combine_data.tidyupfiles(resource_path(outputfilepath), resource_path(appendeddatapath))
+    combine_data.tidyupfiles(resource_path(outputfilepath), resource_path(appendeddatapath))
     
     #keep the console window open
     input("Press enter to exit after this ;)")

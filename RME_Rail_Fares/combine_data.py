@@ -58,7 +58,7 @@ def get_daily_data(filepath, filename, fileextension):
 
     #create empty list to hold temp dataframes read in from CSV
     dataframes = []
-    dtypedictionary = {'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
+    dtypedictionary = {'Search_Type':str,'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
                      'Departure_Date':str,'Arrival_time':str,'Duration':str, 'Changes':int,'Price':float,'Fare_Route_Description':str,'Fare_Provider':str,'TOC_Name':str,
                      'TOC_Provider':str,'Ticket_type':str,'nre_fare_category':str,'Duplicate':bool}
 
@@ -93,23 +93,30 @@ def get_appended_data(filepath, filename, fileextension):
     df:             A df containing the appended dataset
     """
     list_of_files = glob(filepath +'*') # * means all if need specific format then *.csv
-    latest_file = max(list_of_files, key=os.path.getctime)
-    print(latest_file)
+    
+    #check if any appended files exist
+    if list_of_files:
+        latest_file = max(list_of_files, key=os.path.getctime)
+        print(latest_file)
    
-    dtypedictionary = {'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
-                     'Departure_Date':str,'Arrival_time':str,'Duration':str, 'Changes':int,'Price':float,'Fare_Route_Description':str,'Fare_Provider':str,'TOC_Name':str,
-                     'TOC_Provider':str,'Ticket_type':str,'nre_fare_category':str,'Duplicate':bool}
+        dtypedictionary = {'Search_Type':str,'TOC Criteria':str,'Origin':str,'Origin_Code':str,'Destination':str,'Destination_Code':str,'Date_accessed':str,'Time_searched_against':str,'Departure_Gap':str,
+                         'Departure_Date':str,'Arrival_time':str,'Duration':str, 'Changes':int,'Price':float,'Fare_Route_Description':str,'Fare_Provider':str,'TOC_Name':str,
+                         'TOC_Provider':str,'Ticket_type':str,'nre_fare_category':str,'Duplicate':bool}
     
-    df = pd.read_csv(latest_file,
-                               dtype=dtypedictionary,
-                               header=0,
-                               encoding='Windows-1252',
-                               parse_dates=True      
-                     )
+        df = pd.read_csv(latest_file,
+                                   dtype=dtypedictionary,
+                                   header=0,
+                                   encoding='Windows-1252',
+                                   parse_dates=True      
+                         )
 
-    #remove previous index from previously appended dataset
-    del df['general_index']  
-    
+        #remove previous index from previously appended dataset
+        del df['general_index']  
+        del df['general_index.1']
+    #create an empty data frame for first execution so the appended + daily data don't fall over.
+    else:
+        df = pd.DataFrame(columns=['general_index','Search_Type','TOC Criteria','Origin','Origin_Code',	'Destination',	'Destination_Code',	'Date_accessed',	'Time_searched_against',	'Departure_Gap',	'Departure_Date',	'Departure_Day',	'Departure_time',	'Arrival_time',	'Duration',	'Changes',	'Price','Fare_Route_Description','Fare_Provider','TOC_Name','TOC_Provider','Ticket_type','nre_fare_category','Duplicate'])
+
     return df
 
 def combine_daily_and_appended_data(dailydata, appendeddata):
