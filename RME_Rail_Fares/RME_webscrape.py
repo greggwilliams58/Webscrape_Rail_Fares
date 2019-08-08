@@ -2,7 +2,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 import json
 import pprint as pp
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import calendar
 from collections import defaultdict
 import csv
@@ -65,7 +65,7 @@ def main():
         createdataset(resource_path(outputfilepath),alltimesdates)
     
     #append daily data to appended file
-    combine_data.tidyupfiles(resource_path(outputfilepath), resource_path(appendeddatapath))
+    #combine_data.tidyupfiles(resource_path(outputfilepath), resource_path(appendeddatapath))
     
     #keep the console window open
     input("Press enter to exit after this ;)")
@@ -90,7 +90,7 @@ def createdataset(filepath,alltimesdates,datetooffset=0):
     
     filename = f'RME_data_collected_for_{formatted_date}.csv'#generated the sets of dates and times to work with
     downddatesandtime, updatesandtime = getdatetimesinfo(alltimesdates,datetooffset)
-    #pp.pprint(collateddatesandtime)
+    
     #generate the URL's to be processed by NRE website
     urlstoprocess = generateurl(downddatesandtime, updatesandtime)
         
@@ -145,12 +145,8 @@ def extractwebdata(urlstr):
             print("OOPS!! Timeout Error.  Check that the URL is correct.\n")
             print(f"The url used was {items[1]}")
 
-
-
-
         soup = BeautifulSoup(response,'html.parser')
-
-        
+  
         #extract the required json data
         if soup.find('script',{ 'id':f'jsonJourney-4-1' }) is not None:
             td_class = soup.find('script',{ 'id':f'jsonJourney-4-1' }).text
@@ -168,10 +164,10 @@ def extractwebdata(urlstr):
         formattedtime = filledtime[:2]+ ":" + filledtime[2:]
         jsonData['jsonJourneyBreakdown'].update(TimeSearchedFor = formattedtime) 
         
-        #pp.pprint(jsonData)
+        jsonData['jsonJourneyBreakdown'].update(SearchType = items[3])
+
         rawjsondata.append(jsonData)
-  
-            
+   
     return rawjsondata
 
 
@@ -201,7 +197,7 @@ def processjson(jsoninfo,fp, fn):
     csvwriter = csv.writer(datafile)
 
     #create a header for the csv file
-    
+    response_header.append('Search_Type')
     response_header.append('TOC Criteria')
     response_header.append('Origin')
     response_header.append('Origin_Code')
@@ -217,7 +213,6 @@ def processjson(jsoninfo,fp, fn):
     response_header.append('Duration')
     response_header.append('Changes')
     response_header.append('Price')
-
     response_header.append('Fare_Route_Description')
     response_header.append('Fare_Provider')
     response_header.append('TOC_Name')
@@ -232,7 +227,7 @@ def processjson(jsoninfo,fp, fn):
     #extract data from the json file
     response = []
     for journey in jsoninfo:
-        #pp.pprint(journey)
+        response.append(journey['jsonJourneyBreakdown']['SearchType'])
         response.append(journey['jsonJourneyBreakdown']['TOCSearchCriteria'])
         response.append(journey['jsonJourneyBreakdown']['departureStationName'])
         response.append(journey['jsonJourneyBreakdown']['departureStationCRS'])
@@ -308,12 +303,6 @@ def processjson(jsoninfo,fp, fn):
     #identify duplicates
     df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Time_searched_against','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
 
-    #give daily index a name
-    #df_data.rename_axis('daily_load_index',axis='index',inplace=True)
-
-    
-    #legacy code to export file as excel
-    #df_data.to_excel(fp + fn.replace('csv','xlsx'))
     df_data.to_csv(fp+fn, index=False)
     
 
@@ -323,10 +312,10 @@ def generateurl(downinfo,upinfo):
     This generates a list of urls based on provided date,route and time information, which are then fed to the NRE website
 
     Parameters:
-    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times]]}
+    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times],TOC search, searchType]}
 
     Returns:
-    urltoprocess:       a list containting travel date and url information [traveldate, url]
+    urltoprocess:       a list containting travel date and url information [traveldate, url, TOCSearched, SearchType]
     """
     
     
@@ -336,7 +325,7 @@ def generateurl(downinfo,upinfo):
 
     #walk through dates, routes and times to create url
     for trip in upinfo:
-
+        
         if trip[4] == 'All TOCs':
             #print(f"The time interator object is {trip[3]}")
             for tcounter,times in enumerate(trip[3],0):
@@ -347,7 +336,7 @@ def generateurl(downinfo,upinfo):
                     print(f"No times supplied for time {trip[3]} and {url}")
                 else:
             
-                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
                     print(url)
             #check if times have been supplied from the metadata
         else:
@@ -359,7 +348,7 @@ def generateurl(downinfo,upinfo):
                     print(f"No times supplied for time {trip[3]} and {url}")
                 else:
             
-                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
                     print(url)
                   
 
@@ -373,7 +362,7 @@ def generateurl(downinfo,upinfo):
                 if "//dep" in url:
                     print(f"No times supplied for time {trip[3]}: {url}")
                 else:
-                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
                     print(url)
 
         else:
@@ -384,11 +373,8 @@ def generateurl(downinfo,upinfo):
                 if "//dep" in url:
                     print(f"No times supplied for time {trip[3]}: {url}")
                 else:
-                    urldown.append([trip[4],url,trip[3][tcounter]])
+                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
                     print(url)
-
-
-
 
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
@@ -409,19 +395,12 @@ def getdatetimesinfo(routesandtimes, dateoffset):
     datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times]]}
 
     """
-    #ok here
-    #pp.pprint(routesandtimes)
-    
+      
     #increment date to check if needed
     datetocheck = datetime.today()+timedelta(days=dateoffset)
     
     #initialisation information
     weekdays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
-    
-    #test placeholder for beth's 1-30 days
-    #daystomoveahead = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-    daystomoveahead = [1,7,30]
-    #populate defaultdict with values depending on date increments day of the week
     
     downdatesandtimes = list()
     updatesandtimes = list()
@@ -441,7 +420,12 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         
         toc_filter = routesandtimes[count][7]
         
-            
+        daystomoveahead = routesandtimes[count][8]
+
+        searchtype = routesandtimes[count][9]
+        
+        
+
         #for each date to move ahead increment
         for counter,item in enumerate(daystomoveahead):
 
@@ -468,8 +452,8 @@ def getdatetimesinfo(routesandtimes, dateoffset):
                 print("error")
 
             
-            downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter])
-            updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter])
+            downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter,searchtype])
+            updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter,searchtype])
     
     return downdatesandtimes,updatesandtimes
 
@@ -490,49 +474,57 @@ def gettingquerydata(fp):
 
     del raw_data['variable name']
 
+    todaysdate = datetime.today()
+    
     final_list = []
     temp_list = []
     
     for count, items in enumerate(raw_data):
         
-        routesup = raw_data.iloc[1,count].split(',') 
-        routesdown = raw_data.iloc[2,count].split(',')
+        routesup = raw_data.iloc[2,count].split(',') 
+        routesdown = raw_data.iloc[3,count].split(',')
     
         routes = [routesup, routesdown]
         temp_list.append(routes)
 
-        
-        downweekdaytime = raw_data.iloc[3,count].split(',')
+        downweekdaytime = raw_data.iloc[4,count].split(',')
         temp_list.append(downweekdaytime)
     
-        
-
-        downsaturdaytime = raw_data.iloc[4,count].split(',')
+        downsaturdaytime = raw_data.iloc[5,count].split(',')
         temp_list.append(downsaturdaytime)
 
-        
-
-        downsundaytime = raw_data.iloc[5,count].split(',')
+        downsundaytime = raw_data.iloc[6,count].split(',')
         temp_list.append(downsundaytime)
 
-        upweekdaytime = raw_data.iloc[6,count].split(',')
+        upweekdaytime = raw_data.iloc[7,count].split(',')
         temp_list.append(upweekdaytime)
 
-        upsaturdaytime = raw_data.iloc[7,count].split(',')
+        upsaturdaytime = raw_data.iloc[8,count].split(',')
         temp_list.append(upsaturdaytime)
 
-        upsundaytime = raw_data.iloc[8,count].split(',')
+        upsundaytime = raw_data.iloc[9,count].split(',')
         temp_list.append(upsundaytime)
 
         toc_filter = raw_data.iloc[0,count]
         temp_list.append(toc_filter)
 
+        #handle search criteria here
+        searchfilter = raw_data.iloc[1,count]
+        searchterms = getdaysahead(searchfilter)
+        temp_list.append(searchterms)
+
+        if len(searchterms) == 1:
+            futuredate = todaysdate+timedelta(days=searchterms[0])
+            searchtype = f"Fixed to the future date, {futuredate.strftime('%d/%m/%Y')}"
+        else:
+            searchtype = f"Relative to today, {todaysdate.strftime('%d/%m/%Y')}"
+        
+
+        temp_list.append(searchtype)
         final_list.append(temp_list)
 
         temp_list = []
-
-    
-
+        
     return final_list
 
 
@@ -563,6 +555,35 @@ def resource_path(relativepath):
         fullpath = os.path.dirname(os.path.abspath(__file__)) + relativepath
     
     return fullpath
+
+
+def getdaysahead(searchstring):
+
+        if 'days ahead' in searchstring:
+            #split filter by day, split into list of number strings and then convert into list of ints
+            days = searchstring.split("days",1)
+            dayslist = days[0].split(",")
+            dayslist = [int(i) for i in dayslist]
+            
+            return dayslist
+        
+        if "departing on" in searchstring:             
+            search_date = datetime.strptime(str(searchstring[-10:]),'%d/%m/%Y')
+            
+            daysahead = (search_date - datetime.today()).days
+
+            dayslist = [daysahead]
+            
+            return dayslist
+            
+        else:
+            print(searchstring)
+            print("Your search criteria is wrong.")
+            
+            return [99,100]
+
+        
+
 
 #routine boilerplate
 if __name__ == '__main__':

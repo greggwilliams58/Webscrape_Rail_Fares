@@ -127,7 +127,7 @@ def combine_daily_and_appended_data(dailydata, appendeddata):
     all_data = pd.concat([appendeddata,dailydata],sort=False,ignore_index=True) 
     all_data.rename_axis('general_index',axis='index',inplace=True)
 
-    print(f"alldata is {type(all_data)}")
+    #print(f"alldata is {type(all_data)}")
     return all_data
 
 
