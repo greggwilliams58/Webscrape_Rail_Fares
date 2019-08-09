@@ -310,10 +310,10 @@ def processjson(jsoninfo,fp, fn,datetooffset):
 
 def generateurl(downinfo,upinfo):
     """
-    This generates a list of urls based on provided date,route and time information, which are then fed to the NRE website
+    This generates a list of urls based on provided date,route, time,toc_type and searchtype information, which are then fed to the NRE website
 
     Parameters:
-    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times],TOC search, searchType]}
+    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times],[TOC search], [searchType]]}
 
     Returns:
     urltoprocess:       a list containting travel date and url information [traveldate, url, TOCSearched, SearchType]
@@ -447,14 +447,15 @@ def generateurl(downinfo,upinfo):
 def getdatetimesinfo(routesandtimes, dateoffset):
     """
     This is an 'initialisation' procedure which sets most of the parameters for the functioning of the whole process.
-    It takes a date and derives the dates 1,7 and 30 days in the future and then dertives the appropriate days, origin and destination routes and departure times for each of these factors
+    It takes a date and derives the dates for the future based on metadata provided 
+    and then derives the appropriate days, origin and destination routes and departure times for each of these factors
     
     Parameters:
     routesandtimes: A dataframe holding routes and times information
     dateoffset:     An integer representing the number of days to alter the date of search by.  DEFAULT is 0 days
 
     Returns:
-    datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times]]}
+    datesandtimes:  A default dictionary containing {dateoftravel+startstationcode:[[up journey],[times],[down journey],[times],[toc_filter],[search_type]]}
 
     """
       
@@ -485,8 +486,6 @@ def getdatetimesinfo(routesandtimes, dateoffset):
         daystomoveahead = routesandtimes[count][8]
 
         searchtype = routesandtimes[count][9]
-        
-        
 
         #for each date to move ahead increment
         for counter,item in enumerate(daystomoveahead):
@@ -494,7 +493,6 @@ def getdatetimesinfo(routesandtimes, dateoffset):
             futuredate = datetocheck + timedelta(daystomoveahead[counter])
 
             formattedfuturedate, dayofweek = futuredate.strftime('%d%m%y'), weekdays[futuredate.weekday()]
-
 
             #derive day of week from date
             daycheck = weekdays[futuredate.weekday()]
@@ -513,7 +511,6 @@ def getdatetimesinfo(routesandtimes, dateoffset):
             else:
                 print("error")
 
-            
             downdatesandtimes.append(["downroute",formattedfuturedate,downroute,downtimestocheck,toc_filter,searchtype])
             updatesandtimes.append(["uproute",formattedfuturedate, uproute,uptimestocheck,toc_filter,searchtype])
     
@@ -522,14 +519,14 @@ def getdatetimesinfo(routesandtimes, dateoffset):
 
 def gettingquerydata(fp):
     """
-    This reads in route and time table information from an excel file. It also converts this excel data into a list of lists to be plugged into
+    This reads in route,times,toc_filter and search type information from an excel file. It also converts this excel data into a list of lists to be plugged into
     the function gettimesdatesinfo.
 
     Parameters:
     fp: a string containing the filepath of the data file holding route and time info
 
     Returns:
-    a list of list with 
+    a list of list with [[uproutes,downroutes],[downweekdays],[downsaturday],[downsunday],[upweekdays],[upsaturdays],[upsundays],[toc_filter],[search_type and search_date]]
     """
     
     raw_data = pd.read_excel(fp)
@@ -581,7 +578,6 @@ def gettingquerydata(fp):
         else:
             searchtype = f"Relative to today, {todaysdate.strftime('%d/%m/%Y')}"
         
-
         temp_list.append(searchtype)
         final_list.append(temp_list)
 
@@ -608,7 +604,6 @@ def resource_path(relativepath):
     Returns
     fullpath        A string containing the right root and relative path
     """
-    
     fullpath = ''
 
     if getattr(sys, 'frozen',False):
@@ -620,29 +615,46 @@ def resource_path(relativepath):
 
 
 def getdaysahead(searchstring):
+    """
+    This handles the information from search type held in the metadata.  If it's a relative search, splits the comma-separated values in the string into a list of values for the days to move ahead.
+    If it's a fixed date, it derives the number of days from today to the desired search date and passes that on as a list
 
-        if 'days ahead' in searchstring:
-            #split filter by day, split into list of number strings and then convert into list of ints
-            days = searchstring.split("days",1)
-            dayslist = days[0].split(",")
-            dayslist = [int(i) for i in dayslist]
-            
-            return dayslist
+    Parameters:
+    searchstring:   A string containing the search type specified in the metadata
+
+    Returns:
+    dayslist:       A list containing the days ahead to generate results for.
+
+    """
+    if 'days ahead' in searchstring:
+        #split filter by day, split into list of number strings and then convert into a list of ints
+        days = searchstring.split("days",1) # split string by 'days'
+        dayslist = days[0].split(",") #split numbers into a list of string chars
+        dayslist = [int(i) for i in dayslist] # convert into a list of ints
+        return dayslist
         
-        if "departing on" in searchstring:             
-            search_date = datetime.strptime(str(searchstring[-10:]),'%d/%m/%Y')
-            
-            daysahead = (search_date - datetime.today()).days
+    if "departing on" in searchstring:
+        # extract date from the last 10 characters of the searchstring and convert to a datetime format
+        search_date = datetime.strptime(str(searchstring[-10:]),'%d/%m/%Y')
+        
+        #calculate the number of days between current date and fixed date of travel
+        daysahead = (search_date - datetime.today()).days
 
-            dayslist = [daysahead]
-            
+        dayslist = [daysahead]
+        
+        #handle if datediff is negative
+        if dayslist < 0:
+            print("fixed date is now in the past")
+            dayslist = [100]
+        else:
+
             return dayslist
             
-        else:
-            print(searchstring)
-            print("Your search criteria is wrong.")
-            
-            return [99,100]
+    else:
+        print(searchstring)
+        print("Your search criteria is wrong.")
+        dayslist = [100]    
+        return dayslist
 
         
 
