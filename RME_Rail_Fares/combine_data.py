@@ -111,11 +111,15 @@ def get_appended_data(filepath, filename, fileextension):
                          )
 
         #remove previous index from previously appended dataset
+        print("this is before the general index del")
+        print(df.info())
+        
         del df['general_index']  
-        del df['general_index.1']
+        print("this is before the general index del")
+        print(df.info())
     #create an empty data frame for first execution so the appended + daily data don't fall over.
     else:
-        df = pd.DataFrame(columns=['general_index','Search_Type','TOC Criteria','Origin','Origin_Code',	'Destination',	'Destination_Code',	'Date_accessed',	'Time_searched_against',	'Departure_Gap',	'Departure_Date',	'Departure_Day',	'Departure_time',	'Arrival_time',	'Duration',	'Changes',	'Price','Fare_Route_Description','Fare_Provider','TOC_Name','TOC_Provider','Ticket_type','nre_fare_category','Duplicate'])
+        df = pd.DataFrame(columns=['Search_Type','TOC Criteria','Origin','Origin_Code',	'Destination',	'Destination_Code',	'Date_accessed',	'Time_searched_against',	'Departure_Gap',	'Departure_Date',	'Departure_Day',	'Departure_time',	'Arrival_time',	'Duration',	'Changes',	'Price','Fare_Route_Description','Fare_Provider','TOC_Name','TOC_Provider','Ticket_type','nre_fare_category','Duplicate'])
 
     return df
 
