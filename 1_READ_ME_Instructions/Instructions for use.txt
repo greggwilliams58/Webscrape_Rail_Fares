@@ -1,10 +1,10 @@
 Application for getting data from NRE Website for the RME Team.
-Version 2.2
+Version 3.0
 Written by Greg Williams at ORR, 29th July 2019
 
 WHAT'S NEW
-Bug that only returned last time in list of times corrected.
-
+"Project Type: field added to metadata.  Allow two types of date-based searching to be conducted within the same project; the first allows a range of days relative to the date of code execution, the second fixed to a future date, regardless of when the code is executed."
+Exports "all", "fixed", "relative" datasets as separate csv files.
 
 HOW TO INSTALL
 If application has been recieved as a zip file, it should be unzipped to a location of your choice.
@@ -27,6 +27,7 @@ Column 2 and others are lists of routes and times, which can be edited.
 
 Variable Descriptions:
 TOC Filter: This specified if the search in this column (routes/times) for "All TOCs" or just one TOC
+Project Type: This defines whether the dates searched for are a given number of day(s) away from the date the code is executed, OR the date searched for is a given day in the future.
 origin and destination down: routes which run away from London
 origin and destination up: routes which run up towards London
 
@@ -46,6 +47,10 @@ This item cannot be left blank
 If you want no filter, use "All TOCs"
 If you want a TOC filter, use the appropriate TOC code.  This can be found via the NRE website, run a search and look for the last two letter at the end of the URL from the returned answer.
 (eg show=GW  for GWR from the string https://ojp.nationalrail.co.uk/service/timesandfares/PAD/BRI/today/1145/dep?show=GW)
+
+FORMATTING OF PROJECT TYPE:
+1) Relative to execution date: "'n1,n2,n3,n days ahead from today"  (The leading apstrophe is to force a text data type. the list of comma-separated numbers with no spaces is followed by the phrase "days ahead from today")
+2) Fixed to future date: "'departing on DD/MM/YYYY" (The leading apstrophe is to force a text data type.  The phrase "departing on " is followed by a date in the format DD/MM/YYYY.  The date should always be in the future.
 
 FORMATTING OF ROUTES
 Stations are given in the three letter CRS code, which can be found by running a dummy query for your route on the NRE website (https://www.nationalrail.co.uk/default.aspx)
