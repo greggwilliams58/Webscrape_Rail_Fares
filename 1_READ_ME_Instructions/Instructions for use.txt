@@ -12,13 +12,27 @@ If application has been recieved as a zip file, it should be unzipped to a locat
 HOW TO USE
 go to the //dist/RME_webscrape folder.
 
-The first three folders in this location are relevant.  All other folders and files (apart from the oneending in .exe) should be ignored
+FOLDER LOCATIONS AND THEIR MEANINGS
+The first three folders in this location are relevant.  All other folders and files (apart from the one ending in .exe) should be ignored
 
 1_READ_ME_Instructions
-This is a copy of these instructions
+This folder contains a copy of these instructions
 
 2_Routes_and_times_metadata
-Edit this Excel file to specify the routes and times you want to search
+This folder contains an excel spreadsheet which hold metadata which defines the type of TOCs to be searched for, the kind of dates to be searched for, the routes and the times to be searched for
+
+3_Data_goes_here
+This folder contains temporary daily dataloads, which are deleted at the end of each execution
+
+3_Data_goes_here\\appended_data
+This is where the completed datasets are appended to previous datasets.  There should be three kinds of appended file
+A)  All_appended_data: Both Fixed and Relative Search types
+B) fixed appended data: Just the appended search types
+C) relative appended data: Just the relatiive search types 
+
+
+USE OF METADATA
+Edit this Excel file to specify the TOCs, search types. routes and times you want to search against
 The first column is fixed
 All other columns may be edited.
 
