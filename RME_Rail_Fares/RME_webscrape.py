@@ -643,7 +643,7 @@ def getdaysahead(searchstring):
         dayslist = [daysahead]
         
         #handle if datediff is negative
-        if dayslist < 0:
+        if dayslist[0] < 0:
             print("fixed date is now in the past")
             dayslist = [100]
         else:
