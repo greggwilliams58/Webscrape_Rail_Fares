@@ -13,6 +13,7 @@ import random
 import sys
 import os
 import combine_data
+import numpy as np
 
 def main():
     
@@ -303,6 +304,8 @@ def processjson(jsoninfo,fp, fn,datetooffset):
     
     #identify duplicates
     df_data['Duplicate']= df_data.duplicated(subset=['TOC Criteria','Origin','Origin_Code','Destination','Destination_Code','Date_accessed','Time_searched_against','Departure_Gap','Departure_Date','Departure_Day','Departure_time','Arrival_time','Duration','Price','Fare_Route_Description'],keep='first')
+    df_data['search_and_departure_time_match'] = np.where(df_data['Time_searched_against']==df_data['Departure_time'],'match','no match')
+
 
     df_data.to_csv(fp+fn, index=False)
     
