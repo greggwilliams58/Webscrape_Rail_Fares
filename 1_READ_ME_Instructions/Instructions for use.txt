@@ -1,10 +1,9 @@
 Application for getting data from NRE Website for the RME Team.
-Version 3.0
-Written by Greg Williams at ORR, 29th July 2019
+Version 3.1
+Written by Greg Williams at ORR, 21st August 2019
 
 WHAT'S NEW
-"Project Type: field added to metadata.  Allow two types of date-based searching to be conducted within the same project; the first allows a range of days relative to the date of code execution, the second fixed to a future date, regardless of when the code is executed."
-Exports "all", "fixed", "relative" datasets as separate csv files.
+A new field has been added to the output indicating where search and departure times match or don't match
 
 HOW TO INSTALL
 If application has been recieved as a zip file, it should be unzipped to a location of your choice.
