@@ -321,6 +321,12 @@ def generateurl(downinfo,upinfo):
     Returns:
     urltoprocess:       a list containting travel date and url information [traveldate, url, TOCSearched, SearchType]
     """
+    print("downinfo")
+    print(downinfo)
+
+    print("upinfo")
+    print(upinfo)
+    
     combinedupanddownurls = {}
     urldown = []
     urlup = []
@@ -441,9 +447,10 @@ def generateurl(downinfo,upinfo):
                     urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
                     print(url)
 
+
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
-    
+
     return combinedupanddownurls
         
   
