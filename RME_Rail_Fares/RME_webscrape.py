@@ -41,10 +41,6 @@ def main():
     print( 'os.getcwd is', os.getcwd() )
     
 
-    #file paths to be used when working at home
-    #routesandtimedata = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\route_and_time_metadata.xlsx'
-    #filepath = 'C:\\Users\\gregg_000\\Documents\\GitHub\\RME_Rail_Fares\\RME_Rail_Fares\\'
-
     #input datafile location and data output location
     routesandtimedatafile = '\\2_Route_and_times_metadata\\route_and_time_metadata.xlsx'
     outputfilepath = '\\3_Data_goes_here\\'
@@ -316,137 +312,16 @@ def generateurl(downinfo,upinfo):
     This generates a list of urls based on provided date,route, time,toc_type and searchtype information, which are then fed to the NRE website
 
     Parameters:
-    collecteddateinfo:  a default dictionary {dateoftravel:[[up journey],[times],[down journey],[times],[TOC search], [searchType]]}
+    downinfo:  a list of lists with data for down routes [[direction of travel,dateoftravel,[org stn, dest stn],[depart times],toc/all toc flags,fixed/relative search]
+    upinfo: a list of lists with data for up routes [[direction of travel,dateoftravel,[org stn, dest stn],[depart times],toc/all toc flags,fixed/relative search]
 
     Returns:
-    urltoprocess:       a list containting travel date and url information [traveldate, url, TOCSearched, SearchType]
+    combinedupanddownurls: a list of lists containting information for both up and down routes
     """
-    print("downinfo")
-    print(downinfo)
 
-    print("upinfo")
-    print(upinfo)
     
-    combinedupanddownurls = {}
-    urldown = []
-    urlup = []
-
-    #walk through dates, routes and times to create url
-    for trip in upinfo:
-        #  CASE: ALL TOCs and Relative search
-        if  "All TOCs" in trip[4] and 'Relative' in trip[5]:
-      
-            for tcounter,times in enumerate(trip[3],0):
-                
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'  
-                
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
-        #CASE: Any TOC with a Relative search    
-        elif 'Relative' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-        
-        #CASE:  All TOCs with a Fixed Search
-        elif "All TOCs" in trip[4] and 'Fixed' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                
-                fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
-        #CASE Any TOC with a Fixed search          
-        elif 'Fixed' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
-
-    for trip in downinfo:
-        #  CASE: ALL TOCs and Relative search
-        if "All TOCs" in trip[4] and 'relative' in trip[5]:
-      
-            for tcounter,times in enumerate(trip[3],0):
-                
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'  
-                
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
-        #CASE: Any TOC with a Relative search    
-        elif 'relative' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-        
-        #CASE:  All TOCs with a Fixed Search
-        elif "All TOCs" in trip[4] and 'Fixed' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                
-                fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
-        #CASE Any TOC with a Fixed search          
-        elif 'Fixed' in trip[5]:
-            for tcounter,times in enumerate(trip[3],0):
-                fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
-                url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
-            #check if times have been supplied from the metadata
-
-                if "//dep" in url:
-                    print(f"No times supplied for time {trip[3]} and {url}")
-                else:
-            
-                    urldown.append([trip[4],url,trip[3][tcounter],trip[5]])
-                    print(url)
-
+    urldown = getrouteurl(downinfo)
+    urlup = getrouteurl(upinfo)
 
     #combine both up and down routes into a new common list
     combinedupanddownurls = urldown + urlup
@@ -667,6 +542,83 @@ def getdaysahead(searchstring):
         return dayslist
 
         
+def getrouteurl(route):
+    """
+    This function takes a list of lists representing direction/route/times/dates information and parses this information into a URL which will be sent to the NRE 
+    website later.  There is a nested if structure to reflect the choices as to type of search carried out 1) ALL TOCS and Relative Date, 2) ANY TOC and Relative 
+    Date, 3) All TOCS and Fixed, 4), Any TOC and Fixed
+
+    Parameters:
+    route:  A list of list with route information, from generateurl
+
+    Returns:
+    urllist: A list holding the parsed URLs ready to sent the the NRE server
+
+    """
+    
+    urllist = list()
+
+    for trip in route:
+            #  CASE: ALL TOCs and Relative search
+            if  "All TOCs" in trip[4] and 'Relative' in trip[5]:
+      
+                for tcounter,times in enumerate(trip[3],0):
+                
+                    url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly'  
+
+
+                    if "//dep" in url:
+                        print(f"No times supplied for time {trip[3]} and {url}")
+                    else:
+                        
+                        urllist.append([trip[4],url,trip[3][tcounter],trip[5]])
+                        print(url)
+
+            #CASE: Any TOC with a Relative search    
+            elif 'Relative' in trip[5]:
+                for tcounter,times in enumerate(trip[3],0):
+                    url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+trip[1]+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+                #check if times have been supplied from the metadata
+                    
+
+                    if "//dep" in url:
+                        print(f"No times supplied for time {trip[3]} and {url}")
+                    else:
+                        
+                        urllist.append([trip[4],url,trip[3][tcounter],trip[5]])
+                        print(url)
+        
+            #CASE:  All TOCs with a Fixed Search
+            elif "All TOCs" in trip[4] and 'Fixed' in trip[5]:
+                for tcounter,times in enumerate(trip[3],0):
+                
+                    fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
+                    url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly'                    
+                #check if times have been supplied from the metadata
+                    
+                
+                    if "//dep" in url:
+                        print(f"No times supplied for time {trip[3]} and {url}")
+                    else:
+                        
+                        urllist.append([trip[4],url,trip[3][tcounter],trip[5]])
+                        print(url)
+
+            #CASE Any TOC with a Fixed search          
+            elif 'Fixed' in trip[5]:
+                for tcounter,times in enumerate(trip[3],0):
+                    fixed_date = trip[5][-10:].replace("/20","/").replace("/","")
+                    url = 'https://ojp.nationalrail.co.uk/service/timesandfares/'+trip[2][0]+'/'+trip[2][1]+'/'+fixed_date+'/'+str(trip[3][tcounter])+'/dep/?directonly&show='+trip[4]                    
+                #check if times have been supplied from the metadata
+
+                    if "//dep" in url:
+                        print(f"UP INFO: No times supplied for time {trip[3]} and {url}")
+                    else:
+                        
+                        urllist.append([trip[4],url,trip[3][tcounter],trip[5]])
+                        print(url)
+    return urllist
+
 
 
 #routine boilerplate
