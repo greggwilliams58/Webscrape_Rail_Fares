@@ -1,9 +1,9 @@
 Application for getting data from NRE Website for the RME Team.
-Version 3.1
-Written by Greg Williams at ORR, 21st August 2019
+Version 3.2
+Written by Greg Williams at ORR, 21st February 2020
 
 WHAT'S NEW
-A new field has been added to the output indicating where search and departure times match or don't match
+A bugfix has been implemented so that both up and down data is returned by a single column of metadata.
 
 HOW TO INSTALL
 If application has been recieved as a zip file, it should be unzipped to a location of your choice.

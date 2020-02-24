@@ -9,8 +9,8 @@ a = Analysis(['RME_webscrape.py'],
              datas=[
 			 ('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\1_READ_ME_Instructions\\Instructions for use.txt','1_READ_ME_Instructions'),
 			 ('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\2_Route_and_times_metadata\\route_and_time_metadata.xlsx','2_Route_and_times_metadata'),
-			 ('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\3_Data_goes_here\\Placeholder for data.txt','3_Data_goes_here'),
-			 ('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\3_Data_goes_here\\appended_data\\appended_data_for_intial_run.csv','3_Data_goes_here\\appended_data')
+			 ('C:\\Users\\gwilliams\\Documents\\GitHub\\RME_Rail_Fares\\3_Data_goes_here\\Placeholder for data.txt','3_Data_goes_here')
+			 
 			 ],
              hiddenimports=[],
              hookspath=[],
@@ -39,4 +39,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='RME_webscrape')
+               name='NRE_webscrape_v3.1')
