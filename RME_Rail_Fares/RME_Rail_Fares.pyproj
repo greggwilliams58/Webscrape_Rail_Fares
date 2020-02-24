@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0205329d-0a26-445f-a155-8d2eb9f496c8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RME_webscrape.py</StartupFile>
+    <StartupFile>NRE_webscrape.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +24,7 @@
     <Compile Include="combine_data.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RME_webscrape.py">
+    <Compile Include="NRE_webscrape.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

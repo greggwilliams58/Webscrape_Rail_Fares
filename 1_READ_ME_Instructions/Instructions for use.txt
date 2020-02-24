@@ -1,9 +1,9 @@
 Application for getting data from NRE Website for the RME Team.
-Version 3.2
+Version 3.1
 Written by Greg Williams at ORR, 21st February 2020
 
 WHAT'S NEW
-A bugfix has been implemented so that both up and down data is returned by a single column of metadata.
+Bug fixed: up and down routes are both returned by the same column of metadata, rather than just down routes
 
 HOW TO INSTALL
 If application has been recieved as a zip file, it should be unzipped to a location of your choice.
