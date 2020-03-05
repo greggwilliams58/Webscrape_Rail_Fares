@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>RME_Rail_Fares</Name>
     <RootNamespace>RME_Rail_Fares</RootNamespace>
+    <InterpreterId>MSBuild|env_rail_fares|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,20 @@
     <Folder Include="1_READ_ME_Instructions\" />
     <Folder Include="2_Route_and_times_metadata\" />
     <Folder Include="3_Data_goes_here\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env_rail_fares\">
+      <Id>env_rail_fares</Id>
+      <Version>3.6</Version>
+      <Description>env_rail_fares (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
