@@ -17,7 +17,7 @@ import numpy as np
 
 def main():
     
-    #test for live or frozen running
+    #test for live/source code or frozen/package running
     if getattr(sys,'frozen',False):
         print("running in a bundle\n")
     else:
@@ -25,9 +25,9 @@ def main():
     
     frozen = 'not'
 
-    #test for live or frozen with path file info
+    #test for live/source code or frozen/package with path file info
     if getattr(sys, 'frozen', False):
-            # we are running in a bundle
+            # we are running in a package
             frozen = 'ever so'
             bundle_dir = sys._MEIPASS
     else:
@@ -549,7 +549,7 @@ def getrouteurl(route):
     Date, 3) All TOCS and Fixed, 4), Any TOC and Fixed
 
     Parameters:
-    route:  A list of list with route information, from generateurl
+    route:  A list of lists with route information, from generateurl
 
     Returns:
     urllist: A list holding the parsed URLs ready to sent the the NRE server
